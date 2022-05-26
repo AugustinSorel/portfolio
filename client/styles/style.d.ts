@@ -6,5 +6,23 @@ declare module "styled-components" {
       background: string;
       color: string;
     };
+
+    fontSizes: {
+      extraSmall: string;
+      small: string;
+      medium: string;
+      large: string;
+      extraLarge: string;
+    };
+
+    fontWeights: {
+      light: number;
+      regular: number;
+      bold: number;
+    };
+
+    sizes: {
+      gap: string;
+    };
   }
 }
