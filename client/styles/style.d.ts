@@ -21,6 +21,12 @@ declare module "styled-components" {
       bold: number;
     };
 
+    breakpoints: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
+
     sizes: {
       gap: string;
     };
