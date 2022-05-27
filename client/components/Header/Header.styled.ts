@@ -16,13 +16,22 @@ export const TopSection = styled.section`
   * {
     ${MediumText}
 
+    svg {
+      height: var(--font-size-medium);
+      width: var(--font-size-medium);
+    }
+
     @media ${devices.mobile} {
       ${SmallText}
+
+      svg {
+        height: var(--font-size-small);
+        width: var(--font-size-small);
+      }
     }
   }
 
   & > * {
-    padding: 0 var(--gap);
     flex: 1;
     background-color: var(--background-color);
   }
@@ -32,7 +41,7 @@ export const LanguageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: calc(var(--gap) * 3);
+  gap: 10%;
 `;
 
 export const LanguageSeparator = styled.span``;
@@ -45,6 +54,7 @@ export const LanguageText = styled.h2<LanguageProps>`
   text-align: center;
   text-transform: uppercase;
   position: relative;
+  cursor: pointer;
   --line-height: 4px;
 
   &::before {
@@ -80,11 +90,6 @@ export const ContactContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  button {
-    height: var(--font-size-medium);
-    width: var(--font-size-medium);
-  }
 `;
 
 export const ContactText = styled.h2`
@@ -96,11 +101,6 @@ export const MenuContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  button {
-    height: var(--font-size-medium);
-    width: var(--font-size-medium);
-  }
 `;
 
 export const MenuText = styled.h2`
