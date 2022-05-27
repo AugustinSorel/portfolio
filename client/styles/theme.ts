@@ -8,7 +8,6 @@ const theme: DefaultTheme = {
 
   fontSizes: {
     extraSmall: "1vw",
-    // small: "2vw",
     small: "2vw",
     medium: "3vw",
     large: "4vw",

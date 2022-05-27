@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import changeColor from "../../styles/changeColor.styled";
 import devices from "../../styles/devices";
 import {
   ExtraLargeText,
@@ -18,7 +19,37 @@ export const TopSection = styled.section`
   }
 `;
 
-export const Box = styled.div``;
+export const LanguageContainer = styled.div``;
+
+export const LanguageText = styled.h2`
+  ${MediumText};
+  text-align: center;
+`;
+
+export const ContactContainer = styled.div`
+  ${changeColor}
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const ContactText = styled.h2`
+  ${MediumText}
+  text-align: center;
+  text-transform: capitalize;
+`;
+
+export const MenuContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const MenuText = styled.h2`
+  ${MediumText}
+  display: flex;
+  align-items: center;
+`;
 
 export const BottomSection = styled.section`
   margin-top: var(--gap);
@@ -69,8 +100,7 @@ export const Paragraph = styled.p`
 
 export const Subtitle = styled.h2`
   ${MediumText}
-  color: var(--background-color);
-  background-color: var(--color);
+  ${changeColor}
   grid-row: span 2;
   display: flex;
   flex-direction: column;
