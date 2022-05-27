@@ -15,6 +15,14 @@ declare module "styled-components" {
       extraLarge: string;
     };
 
+    fontSizesMobile: {
+      extraSmall: string;
+      small: string;
+      medium: string;
+      large: string;
+      extraLarge: string;
+    };
+
     fontWeights: {
       light: number;
       regular: number;

@@ -3,15 +3,19 @@ import * as Styles from "./Header.styled";
 const Header = () => {
   return (
     <Styles.Header>
-      <Styles.TopContainer>
+      <Styles.TopSection>
         <Styles.Box>menu</Styles.Box>
         <Styles.Box>contact</Styles.Box>
         <Styles.Box>FR x UK</Styles.Box>
-      </Styles.TopContainer>
+      </Styles.TopSection>
 
-      <Styles.BottomContainer>
+      <Styles.BottomSection>
         <Styles.Title>Augustin sorel</Styles.Title>
-        <Styles.Box>software engineer student</Styles.Box>
+        <Styles.Subtitle>
+          <Styles.Strong>software</Styles.Strong>
+          <Styles.Strong> engineer </Styles.Strong>
+          student
+        </Styles.Subtitle>
         <Styles.ParagraphContainer>
           <Styles.Paragraph>
             I'm a software engineer student from the University of Leicester.
@@ -21,7 +25,7 @@ const Header = () => {
             and design.
           </Styles.Paragraph>
         </Styles.ParagraphContainer>
-      </Styles.BottomContainer>
+      </Styles.BottomSection>
     </Styles.Header>
   );
 };

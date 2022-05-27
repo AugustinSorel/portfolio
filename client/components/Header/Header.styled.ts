@@ -8,7 +8,7 @@ import {
 
 export const Header = styled.header``;
 
-export const TopContainer = styled.div`
+export const TopSection = styled.section`
   display: flex;
   gap: var(--gap);
 
@@ -18,7 +18,9 @@ export const TopContainer = styled.div`
   }
 `;
 
-export const BottomContainer = styled.div`
+export const Box = styled.div``;
+
+export const BottomSection = styled.section`
   margin-top: var(--gap);
 
   display: grid;
@@ -29,37 +31,27 @@ export const BottomContainer = styled.div`
     background-color: var(--background-color);
   }
 
-  & > div {
-    grid-row: span 2;
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    ${MediumText}
-  }
-
   @media ${devices.mobile} {
     grid-template-columns: 1fr;
   }
 `;
 
-export const Box = styled.div``;
-
 export const Title = styled.h1`
   ${ExtraLargeText}
+  text-transform: uppercase;
+  line-height: calc(var(--font-size-extra-large) * 0.55);
+  overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  text-transform: uppercase;
-  line-height: calc(9vw * 0.55);
-  user-select: none;
 
   @media ${devices.mobile} {
     line-height: normal;
   }
 `;
 
-export const ParagraphContainer = styled.span`
+export const ParagraphContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,6 +60,22 @@ export const ParagraphContainer = styled.span`
 export const Paragraph = styled.p`
   ${SmallText}
   text-align: center;
+  font-weight: var(--font-weight-regular);
+
+  @media ${devices.mobile} {
+    text-align: left;
+  }
+`;
+
+export const Subtitle = styled.h2`
+  ${MediumText}
+  color: var(--background-color);
+  background-color: var(--color);
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-transform: capitalize;
 `;
 
 export const Strong = styled.strong`
