@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import changeColor from "../../styles/changeColor.styled";
+import styled, { css } from "styled-components";
+import SwapColor from "../../styles/SwapColor.styled";
 import devices from "../../styles/devices";
 import {
   ExtraLargeText,
@@ -13,13 +13,13 @@ export const TopSection = styled.section`
   display: flex;
   gap: var(--gap);
 
+  svg {
+    height: var(--font-size-medium);
+    width: var(--font-size-medium);
+  }
+
   * {
     ${MediumText}
-
-    svg {
-      height: var(--font-size-medium);
-      width: var(--font-size-medium);
-    }
 
     @media ${devices.mobile} {
       ${SmallText}
@@ -50,6 +50,14 @@ interface LanguageProps {
   isActive: boolean;
 }
 
+const line = css`
+  content: "";
+  position: absolute;
+  top: calc(50% - var(--line-height) / 2);
+  background-color: var(--color);
+  height: var(--line-height);
+`;
+
 export const LanguageText = styled.h2<LanguageProps>`
   text-align: center;
   text-transform: uppercase;
@@ -58,25 +66,16 @@ export const LanguageText = styled.h2<LanguageProps>`
   --line-height: 4px;
 
   &::before {
+    ${line}
     display: ${({ isActive }) => (isActive ? "block" : "none")};
-    content: "";
-    position: absolute;
     top: calc(50% - var(--line-height) / 2);
-    left: 0;
-    right: 0;
-
-    background-color: var(--color);
-    height: var(--line-height);
+    width: 100%;
   }
 
   &::after {
-    content: "";
-    position: absolute;
-    top: calc(50% - var(--line-height) / 2);
+    ${line}
     left: 0;
     width: 0;
-    background-color: var(--color);
-    height: var(--line-height);
     transition: all 0.3s ease-in-out;
   }
 
@@ -86,7 +85,7 @@ export const LanguageText = styled.h2<LanguageProps>`
 `;
 
 export const ContactContainer = styled.div`
-  ${changeColor}
+  ${SwapColor}
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -142,6 +141,10 @@ export const ParagraphContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media ${devices.mobile} {
+    gap: calc(var(--gap) * 2);
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -156,7 +159,7 @@ export const Paragraph = styled.p`
 
 export const Subtitle = styled.h2`
   ${MediumText}
-  ${changeColor}
+  ${SwapColor}
   grid-row: span 2;
   display: flex;
   flex-direction: column;
