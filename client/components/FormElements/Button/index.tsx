@@ -4,7 +4,7 @@ import * as Styles from "./Button.styled";
 type Props = {
   children?: React.ReactNode;
   type?: "button" | "submit" | "reset";
-  text?: string;
+  text: string;
   onClick?: () => void;
 };
 
@@ -16,6 +16,7 @@ const Button = ({ children, type = "button", text, ...rest }: Props) => {
         whileFocus={{ ...scaleUp }}
         whileTap={{ ...scaleDown }}
         type={type}
+        aria-label={text}
         {...rest}
       >
         {children}
