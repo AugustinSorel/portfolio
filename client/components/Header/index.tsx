@@ -1,3 +1,5 @@
+import Button from "../FormElements/Button";
+import SvgIcon from "../UIElements/SvgIcon";
 import * as Styles from "./Header.styled";
 
 const HeaderTopSection = () => {
@@ -10,7 +12,9 @@ const HeaderTopSection = () => {
 
       <Styles.ContactContainer>
         <Styles.ContactText>contact</Styles.ContactText>
-        <button>X</button>
+        <Button>
+          <SvgIcon path="arrowDown" />
+        </Button>
       </Styles.ContactContainer>
 
       <Styles.LanguageContainer>

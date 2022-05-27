@@ -19,7 +19,11 @@ export const TopSection = styled.section`
   }
 `;
 
-export const LanguageContainer = styled.div``;
+export const LanguageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const LanguageText = styled.h2`
   ${MediumText};
@@ -31,6 +35,10 @@ export const ContactContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  button {
+    height: var(--font-size-medium);
+  }
 `;
 
 export const ContactText = styled.h2`

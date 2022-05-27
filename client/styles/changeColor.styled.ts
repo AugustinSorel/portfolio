@@ -3,6 +3,7 @@ import { css } from "styled-components";
 const changeColor = css`
   color: var(--background-color);
   background-color: var(--color);
+  fill: var(--background-color);
 
   *::selection,
   &::selection {

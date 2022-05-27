@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Poppins', sans-serif;
         background-color: var(--color);
         color: var(--color);
+        fill: var(--color);
         font-size: var(--font-size-medium);
         font-weight: var(--font-weight-regular);
         padding: var(--gap);
