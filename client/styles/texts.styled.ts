@@ -1,27 +1,26 @@
 import { css } from "styled-components";
-import devices from "./devices";
 
-export const ExtraLargeText = css`
+export const extraLargeText = css`
   font-size: var(--font-size-extra-large);
   font-weight: var(--font-weight-bold);
 `;
 
-export const LargeText = css`
+export const largeText = css`
   font-size: var(--font-size-large);
   font-weight: var(--font-weight-regular);
 `;
 
-export const MediumText = css`
+export const mediumText = css`
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-regular);
 `;
 
-export const SmallText = css`
+export const smallText = css`
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-light);
 `;
 
-export const ExtraSmallText = css`
+export const extraSmallText = css`
   font-size: var(--font-size-extra-small);
   font-weight: var(--font-weight-light);
 `;

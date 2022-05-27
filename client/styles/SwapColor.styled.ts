@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 
-const SwapColor = css`
+const swapColor = css`
   color: var(--background-color);
   background-color: var(--color);
   fill: var(--background-color);
@@ -12,4 +12,4 @@ const SwapColor = css`
   }
 `;
 
-export default SwapColor;
+export default swapColor;
