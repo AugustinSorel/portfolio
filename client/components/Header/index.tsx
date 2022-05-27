@@ -1,18 +1,28 @@
+import { useState } from "react";
 import Button from "../FormElements/Button";
+import MenuSvg from "../UIElements/MenuSvg";
 import SvgIcon from "../UIElements/SvgIcon";
 import * as Styles from "./Header.styled";
 
 const HeaderTopSection = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const contactClickHandler = () => {
+    console.log("go to contact page");
+  };
+
   return (
     <Styles.TopSection>
       <Styles.MenuContainer>
         <Styles.MenuText>menu</Styles.MenuText>
-        <button>X</button>
+        <Button onClick={() => setIsMenuOpen((prev) => !prev)}>
+          <MenuSvg isMenuOpen={isMenuOpen} />
+        </Button>
       </Styles.MenuContainer>
 
       <Styles.ContactContainer>
         <Styles.ContactText>contact</Styles.ContactText>
-        <Button>
+        <Button onClick={contactClickHandler}>
           <SvgIcon path="arrowDown" />
         </Button>
       </Styles.ContactContainer>

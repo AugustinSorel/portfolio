@@ -38,6 +38,7 @@ export const ContactContainer = styled.div`
 
   button {
     height: var(--font-size-medium);
+    width: var(--font-size-medium);
   }
 `;
 
@@ -51,6 +52,11 @@ export const MenuContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  button {
+    height: var(--font-size-medium);
+    width: var(--font-size-medium);
+  }
 `;
 
 export const MenuText = styled.h2`

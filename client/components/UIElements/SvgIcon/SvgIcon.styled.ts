@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
 export const Svg = styled.svg`
-  height: 100%;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
 `;
