@@ -15,10 +15,9 @@ const MenuSvg = ({ isMenuOpen }: Props) => {
         animate={{ opacity: isMenuOpen ? 0 : 1 }}
         transition={{ duration: 0.1 }}
       />
+
       <Styles.Path
-        animate={{
-          d: isMenuOpen ? "M 4 4 L 20 20" : "M 4 20 L 20 20",
-        }}
+        animate={{ d: isMenuOpen ? "M 4 4 L 20 20" : "M 4 20 L 20 20" }}
       />
     </Styles.Svg>
   );

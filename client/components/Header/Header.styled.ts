@@ -13,7 +13,16 @@ export const TopSection = styled.section`
   display: flex;
   gap: var(--gap);
 
+  * {
+    ${MediumText}
+
+    @media ${devices.mobile} {
+      ${SmallText}
+    }
+  }
+
   & > * {
+    padding: 0 var(--gap);
     flex: 1;
     background-color: var(--background-color);
   }
@@ -23,11 +32,47 @@ export const LanguageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: calc(var(--gap) * 3);
 `;
 
-export const LanguageText = styled.h2`
-  ${MediumText};
+export const LanguageSeparator = styled.span``;
+
+interface LanguageProps {
+  isActive: boolean;
+}
+
+export const LanguageText = styled.h2<LanguageProps>`
   text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  --line-height: 4px;
+
+  &::before {
+    display: ${({ isActive }) => (isActive ? "block" : "none")};
+    content: "";
+    position: absolute;
+    top: calc(50% - var(--line-height) / 2);
+    left: 0;
+    right: 0;
+
+    background-color: var(--color);
+    height: var(--line-height);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - var(--line-height) / 2);
+    left: 0;
+    width: 0;
+    background-color: var(--color);
+    height: var(--line-height);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 `;
 
 export const ContactContainer = styled.div`
@@ -43,7 +88,6 @@ export const ContactContainer = styled.div`
 `;
 
 export const ContactText = styled.h2`
-  ${MediumText}
   text-align: center;
   text-transform: capitalize;
 `;
@@ -60,9 +104,7 @@ export const MenuContainer = styled.div`
 `;
 
 export const MenuText = styled.h2`
-  ${MediumText}
-  display: flex;
-  align-items: center;
+  text-transform: capitalize;
 `;
 
 export const BottomSection = styled.section`

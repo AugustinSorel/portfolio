@@ -6,6 +6,7 @@ import * as Styles from "./Header.styled";
 
 const HeaderTopSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isEnglishSelected, setIsEnglishSelected] = useState(true);
 
   const contactClickHandler = () => {
     console.log("go to contact page");
@@ -28,7 +29,17 @@ const HeaderTopSection = () => {
       </Styles.ContactContainer>
 
       <Styles.LanguageContainer>
-        <Styles.LanguageText>FR x UK</Styles.LanguageText>
+        <Button onClick={() => setIsEnglishSelected(false)}>
+          <Styles.LanguageText isActive={!isEnglishSelected}>
+            fr
+          </Styles.LanguageText>
+        </Button>
+        <Styles.LanguageSeparator>x</Styles.LanguageSeparator>
+        <Button onClick={() => setIsEnglishSelected(true)}>
+          <Styles.LanguageText isActive={isEnglishSelected}>
+            en
+          </Styles.LanguageText>
+        </Button>
       </Styles.LanguageContainer>
     </Styles.TopSection>
   );
