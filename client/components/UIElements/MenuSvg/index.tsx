@@ -8,6 +8,7 @@ const MenuSvg = ({ isMenuOpen }: Props) => {
   return (
     <Styles.Svg viewBox="0 0 24 24">
       <Styles.Path
+        initial={{ d: "M 4 4 L 20 4" }}
         animate={{ d: isMenuOpen ? "M 4 20 L 20 4" : "M 4 4 L 20 4" }}
       />
       <Styles.Path
@@ -17,6 +18,7 @@ const MenuSvg = ({ isMenuOpen }: Props) => {
       />
 
       <Styles.Path
+        initial={{ d: "M 4 20 L 20 20" }}
         animate={{ d: isMenuOpen ? "M 4 4 L 20 20" : "M 4 20 L 20 20" }}
       />
     </Styles.Svg>
