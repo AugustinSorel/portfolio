@@ -1,14 +1,13 @@
+import useTranslation from "../../../hooks/useTranslation";
 import * as Styles from "./ParagraphBox.styled";
 
 const ParagraphBox = () => {
+  const { paragraphBottom, paragraphTop } = useTranslation();
+
   return (
     <Styles.ParagraphContainer>
-      <Styles.Paragraph>
-        I am a software engineer student from the University of Leicester.
-      </Styles.Paragraph>
-      <Styles.Paragraph>
-        <strong> Passionate </strong> about web development and design.
-      </Styles.Paragraph>
+      <Styles.Paragraph>{paragraphTop}</Styles.Paragraph>
+      <Styles.Paragraph dangerouslySetInnerHTML={{ __html: paragraphBottom }} />
     </Styles.ParagraphContainer>
   );
 };

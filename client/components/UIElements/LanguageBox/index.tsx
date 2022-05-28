@@ -1,21 +1,21 @@
-import { useState } from "react";
+import useLanguageStore from "../../../store/useLanguageStore";
 import LanguageText from "../LanguageText";
 import * as Styles from "./LanguageBox.styled";
 
 const LanguageBox = () => {
-  const [isEnglishSelected, setIsEnglishSelected] = useState(true);
+  const { isEnglishSelected, selectEnglish, selectFrench } = useLanguageStore();
 
   return (
     <Styles.Container>
       <LanguageText
         text="fr"
-        clickHandler={() => setIsEnglishSelected(false)}
+        clickHandler={selectFrench}
         isActive={!isEnglishSelected}
       />
       <Styles.LanguageSeparator>x</Styles.LanguageSeparator>
       <LanguageText
         text="en"
-        clickHandler={() => setIsEnglishSelected(true)}
+        clickHandler={selectEnglish}
         isActive={isEnglishSelected}
       />
     </Styles.Container>

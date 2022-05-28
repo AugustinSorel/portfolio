@@ -1,10 +1,9 @@
+import useTranslation from "../../../hooks/useTranslation";
 import * as Styles from "./SubtitleBox.styled";
 
-const subtitleContent = true
-  ? "<strong>software</strong> <strong> engineer </strong> student"
-  : "étudiant en <strong> génie </strong> <strong> logicel </strong>";
-
 const SubtitleBox = () => {
+  const { subtitleContent } = useTranslation();
+
   return (
     <Styles.Subtitle dangerouslySetInnerHTML={{ __html: subtitleContent }} />
   );
