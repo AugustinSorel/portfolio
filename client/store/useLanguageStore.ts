@@ -1,4 +1,4 @@
-import zustand from "zustand";
+import create from "zustand";
 
 interface LanguageStore {
   isEnglishSelected: boolean;
@@ -6,7 +6,7 @@ interface LanguageStore {
   selectFrench: () => void;
 }
 
-const useLanguageStore = zustand<LanguageStore>((set) => ({
+const useLanguageStore = create<LanguageStore>((set) => ({
   isEnglishSelected: true,
   selectEnglish: () => set({ isEnglishSelected: true }),
   selectFrench: () => set({ isEnglishSelected: false }),
