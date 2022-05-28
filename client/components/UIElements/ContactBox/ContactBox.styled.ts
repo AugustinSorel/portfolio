@@ -8,7 +8,7 @@ export const Container = styled.div`
   justify-content: space-between;
 `;
 
-export const ContactText = styled.h2`
+export const Text = styled.h2`
   text-align: center;
   text-transform: capitalize;
 `;

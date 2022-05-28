@@ -6,7 +6,7 @@ const ContactBox = () => {
   const contactClickHandler = () => {};
   return (
     <Styles.Container>
-      <Styles.ContactText>contact</Styles.ContactText>
+      <Styles.Text>contact</Styles.Text>
       <Button onClick={contactClickHandler} text="contactButton">
         <SvgIcon path="arrowDown" />
       </Button>

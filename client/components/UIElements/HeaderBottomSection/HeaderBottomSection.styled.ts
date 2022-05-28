@@ -8,10 +8,6 @@ export const Container = styled.section`
   gap: var(--gap);
   grid-template-columns: auto 1fr;
 
-  & > * {
-    background-color: var(--background-color);
-  }
-
   @media ${devices.mobile} {
     grid-template-columns: 1fr;
   }

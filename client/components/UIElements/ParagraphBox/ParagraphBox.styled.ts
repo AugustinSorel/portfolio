@@ -6,6 +6,7 @@ export const ParagraphContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: var(--background-color);
 
   @media ${devices.mobile} {
     gap: calc(var(--gap) * 2);

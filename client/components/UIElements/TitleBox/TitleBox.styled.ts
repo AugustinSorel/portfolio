@@ -7,6 +7,7 @@ export const Title = styled.h1`
   text-transform: uppercase;
   line-height: calc(var(--font-size-extra-large) * 0.55);
   overflow: hidden;
+  background-color: var(--background-color);
 
   display: flex;
   align-items: center;
