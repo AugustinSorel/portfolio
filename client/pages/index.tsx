@@ -8,13 +8,13 @@ const Home: NextPage = () => {
         <title>Welcome</title>
         <meta
           name="description"
-          content="View my portfolio, qualifications, experiences and projects !"
+          content="View my portfolio, qualifications, experiences, skills and projects !"
         />
 
         <meta property="og:title" content="Augustin Sorel - Portfolio" />
         <meta
           property="og:description"
-          content="View my portfolio, qualifications, experiences and projects !"
+          content="View my portfolio, qualifications, experiences, skills and projects !"
         />
         <meta property="og:url" content="https://augustinsorel.com/" />
         <meta property="og:type" content="website" />

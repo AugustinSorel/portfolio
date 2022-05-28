@@ -4,7 +4,6 @@
   position: absolute;
   transform: translateY(-120%);
   padding: calc(var(--gap) * 2);
-  outline: none;
 
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-medium);
@@ -20,5 +19,4 @@
 
 .skip-header-link:focus {
   transform: translateY(0);
-  outline: var(--border-height) solid var(--success-color);
 }

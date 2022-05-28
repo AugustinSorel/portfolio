@@ -7,7 +7,7 @@ const ContactBox = () => {
   return (
     <Styles.Container>
       <Styles.Text>contact</Styles.Text>
-      <Button onClick={contactClickHandler} text="contactButton">
+      <Button onClick={contactClickHandler} text="contact">
         <SvgIcon path="arrowDown" />
       </Button>
     </Styles.Container>

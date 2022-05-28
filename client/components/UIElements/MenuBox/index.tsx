@@ -13,7 +13,7 @@ const MenuBox = () => {
   return (
     <Styles.Container>
       <Styles.Text>menu</Styles.Text>
-      <Button onClick={clickHandler} text="menuButton">
+      <Button onClick={clickHandler} text="menu">
         <MenuSvg isMenuOpen={isMenuOpen} />
       </Button>
     </Styles.Container>
