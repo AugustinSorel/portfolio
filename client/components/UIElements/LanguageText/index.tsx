@@ -1,4 +1,4 @@
-import { scaleDown, scaleUp } from "../../../framerMotion/whileVariants";
+import Button from "../../FormElements/Button";
 import * as Styles from "./LanguageText.styled";
 
 type Props = {
@@ -9,14 +9,8 @@ type Props = {
 
 const LanguageText = ({ clickHandler, isActive, text }: Props) => {
   return (
-    <Styles.Text
-      $isActive={isActive}
-      onClick={clickHandler}
-      whileFocus={{ ...scaleUp }}
-      whileHover={{ ...scaleUp }}
-      whileTap={{ ...scaleDown }}
-    >
-      {text}
+    <Styles.Text $isActive={isActive}>
+      <Button text={text} onClick={clickHandler} />
     </Styles.Text>
   );
 };

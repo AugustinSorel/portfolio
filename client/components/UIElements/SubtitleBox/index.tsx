@@ -1,6 +1,6 @@
 import * as Styles from "./SubtitleBox.styled";
 
-const subtitleContent = false
+const subtitleContent = true
   ? "<strong>software</strong> <strong> engineer </strong> student"
   : "étudiant en <strong> génie </strong> <strong> logicel </strong>";
 

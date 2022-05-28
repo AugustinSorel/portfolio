@@ -4,6 +4,7 @@ const theme: DefaultTheme = {
   colors: {
     background: "#fff",
     color: "#000",
+    success: "#10ac84",
   },
 
   fontSizes: {
@@ -36,6 +37,7 @@ const theme: DefaultTheme = {
 
   sizes: {
     gap: "6px",
+    borderHeight: "4px",
   },
 };
 

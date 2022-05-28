@@ -2,6 +2,10 @@ import { createGlobalStyle } from "styled-components";
 import devices from "./devices";
 
 const GlobalStyle = createGlobalStyle`
+    html{
+        scroll-behavior: smooth;
+    }
+
     *{
         margin: 0;
         padding: 0;
@@ -11,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     :root{
         --background-color: ${({ theme }) => theme.colors.background};
         --color: ${({ theme }) => theme.colors.color};
+        --success-color: ${({ theme }) => theme.colors.success};
 
         --font-size-extra-small: ${({ theme }) => theme.fontSizes.extraSmall};
         --font-size-small: ${({ theme }) => theme.fontSizes.small};
@@ -23,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
         --font-weight-bold: ${({ theme }) => theme.fontWeights.bold};
 
         --gap: ${({ theme }) => theme.sizes.gap};
+        --border-height: ${({ theme }) => theme.sizes.borderHeight};
 
         @media ${devices.mobile} {
             --font-size-extra-small: ${({ theme }) =>

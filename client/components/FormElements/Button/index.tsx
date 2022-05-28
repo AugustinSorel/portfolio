@@ -25,13 +25,7 @@ const Button = ({ children, type = "button", text, ...rest }: Props) => {
   }
 
   return (
-    <Styles.Button
-      whileHover={{ ...scaleUp }}
-      whileFocus={{ ...scaleUp }}
-      whileTap={{ ...scaleDown }}
-      type={type}
-      {...rest}
-    >
+    <Styles.Button aria-label={text} type={type} {...rest}>
       {text}
     </Styles.Button>
   );

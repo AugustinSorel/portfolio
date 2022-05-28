@@ -33,6 +33,9 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head />
         <body>
+          <a className="skip-header-link" href="#qualifications">
+            Skip header
+          </a>
           <Main />
           <NextScript />
         </body>

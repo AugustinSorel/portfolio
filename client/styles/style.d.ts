@@ -5,6 +5,7 @@ declare module "styled-components" {
     colors: {
       background: string;
       color: string;
+      success: string;
     };
 
     fontSizes: {
@@ -37,6 +38,7 @@ declare module "styled-components" {
 
     sizes: {
       gap: string;
+      borderHeight: string;
     };
   }
 }

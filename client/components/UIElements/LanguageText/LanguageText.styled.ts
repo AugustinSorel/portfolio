@@ -4,9 +4,9 @@ import styled, { css } from "styled-components";
 const line = css`
   content: "";
   position: absolute;
-  top: calc(50% - var(--line-height) / 2);
+  top: calc(50% - var(--border-height) / 2);
   background-color: var(--color);
-  height: var(--line-height);
+  height: var(--border-height);
 `;
 
 type Props = {
@@ -18,12 +18,11 @@ export const Text = styled(motion.h2)<Props>`
   text-transform: uppercase;
   position: relative;
   cursor: pointer;
-  --line-height: 4px;
 
   &::before {
     ${line}
     display: ${({ $isActive }) => ($isActive ? "block" : "none")};
-    top: calc(50% - var(--line-height) / 2);
+    top: calc(50% - var(--border-height) / 2);
     width: 100%;
   }
 
