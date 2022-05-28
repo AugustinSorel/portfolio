@@ -21,4 +21,6 @@ const NavItem = memo(({ path: { href, label }, isActive }: Props) => {
   );
 });
 
+NavItem.displayName = "NavItem";
+
 export default NavItem;
