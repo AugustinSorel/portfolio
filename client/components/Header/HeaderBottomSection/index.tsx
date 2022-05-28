@@ -1,6 +1,6 @@
-import ParagraphBox from "../ParagraphBox";
-import SubtitleBox from "../SubtitleBox";
-import TitleBox from "../TitleBox";
+import ParagraphBox from "../../UIElements/ParagraphBox";
+import SubtitleBox from "../../UIElements/SubtitleBox";
+import TitleBox from "../../UIElements/TitleBox";
 import * as Styles from "./HeaderBottomSection.styled";
 
 const HeaderBottomSection = () => {

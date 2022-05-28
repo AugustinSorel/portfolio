@@ -33,6 +33,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head />
         <body>
+          <div id="sidebar-root" />
           <a className="skip-header-link" href="#qualifications">
             Skip header
           </a>
