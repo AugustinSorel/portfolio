@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Timelines from "../components/UIElements/Timelines";
 
 const Home: NextPage = () => {
   return (
@@ -21,6 +22,16 @@ const Home: NextPage = () => {
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <main>
+        <Timelines />
+        <section id="projects">
+          <h1>projects</h1>
+        </section>
+        <section id="skills">
+          <h1>projects</h1>
+        </section>
+      </main>
     </>
   );
 };
