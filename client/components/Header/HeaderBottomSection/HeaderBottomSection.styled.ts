@@ -12,7 +12,3 @@ export const Container = styled.section`
     grid-template-columns: 1fr;
   }
 `;
-
-export const Strong = styled.strong`
-  font-weight: var(--font-weight-bold);
-`;

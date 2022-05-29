@@ -1,4 +1,3 @@
-import { AnimatePresence } from "framer-motion";
 import useNavSideBarStore from "../../../store/useNavSideBarStore";
 import Button from "../../FormElements/Button";
 import NavSidebar from "../../navigation/NavSidebar";
