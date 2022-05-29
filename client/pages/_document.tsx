@@ -34,7 +34,6 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head />
         <body>
-          <div id="sidebar-root" />
           <Main />
           <NextScript />
         </body>

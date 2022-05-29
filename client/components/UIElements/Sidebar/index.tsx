@@ -12,7 +12,7 @@ type Props = {
 
 const Sidebar = ({ closeHandler, isSideBarOpen, children }: Props) => {
   return (
-    <Portal target="#sidebar-root">
+    <Portal target="body">
       <AnimatePresence exitBeforeEnter>
         {isSideBarOpen && (
           <Backdrop closeHandler={closeHandler}>
