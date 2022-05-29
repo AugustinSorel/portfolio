@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import Link from "next/link";
 import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
@@ -34,9 +35,6 @@ export default class MyDocument extends Document {
         <Head />
         <body>
           <div id="sidebar-root" />
-          <a className="skip-header-link" href="#qualifications">
-            Skip header
-          </a>
           <Main />
           <NextScript />
         </body>

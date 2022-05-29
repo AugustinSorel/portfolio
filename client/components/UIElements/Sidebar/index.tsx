@@ -20,6 +20,7 @@ const Sidebar = ({ closeHandler, isSideBarOpen, children }: Props) => {
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
+              transition={{ ease: "easeInOut" }}
               onClick={(e) => e.stopPropagation()}
             >
               {children}
