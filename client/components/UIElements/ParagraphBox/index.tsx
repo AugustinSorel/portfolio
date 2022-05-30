@@ -1,13 +1,16 @@
-import useTranslation from "../../../hooks/useTranslation";
+import useLanguageStore from "../../../store/useLanguageStore";
+import { paragraphBottom, paragraphTop } from "../../../utils/headerData";
 import * as Styles from "./ParagraphBox.styled";
 
 const ParagraphBox = () => {
-  const { paragraphBottom, paragraphTop } = useTranslation();
+  const { isEnglishSelected } = useLanguageStore();
 
   return (
     <Styles.ParagraphContainer>
-      <Styles.Paragraph>{paragraphTop}</Styles.Paragraph>
-      <Styles.Paragraph dangerouslySetInnerHTML={{ __html: paragraphBottom }} />
+      <Styles.Paragraph>{paragraphTop(isEnglishSelected)}</Styles.Paragraph>
+      <Styles.Paragraph
+        dangerouslySetInnerHTML={{ __html: paragraphBottom(isEnglishSelected) }}
+      />
     </Styles.ParagraphContainer>
   );
 };

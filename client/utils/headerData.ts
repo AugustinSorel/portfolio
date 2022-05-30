@@ -1,25 +1,14 @@
-import useLanguageStore from "../store/useLanguageStore";
-
-const useTranslation = () => {
-  const { isEnglishSelected } = useLanguageStore();
-
-  const subtitleContent = isEnglishSelected
+export const subtitle = (isEnglishSelected: boolean) =>
+  isEnglishSelected
     ? "<strong>software</strong> <strong> engineer </strong> student"
     : "étudiant en <strong> génie </strong> <strong> logicel </strong>";
 
-  const paragraphTop = isEnglishSelected
+export const paragraphTop = (isEnglishSelected: boolean) =>
+  isEnglishSelected
     ? "I am a software engineer student from the University of Leicester."
     : "Je suis étudiant en génie logiciel à l'Université de Leicester.";
 
-  const paragraphBottom = isEnglishSelected
+export const paragraphBottom = (isEnglishSelected: boolean) =>
+  isEnglishSelected
     ? "<strong>Passionate</strong> about web development and design."
     : "<strong>Passionné</strong> par le développement web et le design.";
-
-  return {
-    subtitleContent,
-    paragraphTop,
-    paragraphBottom,
-  };
-};
-
-export default useTranslation;

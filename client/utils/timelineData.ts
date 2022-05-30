@@ -1,4 +1,4 @@
-import TimelineData from "../types/TimelineData";
+import { TimelineData } from "../types/TimelineData";
 
 const timelinesData = (isEnglishSelected: boolean): TimelineData[] =>
   isEnglishSelected
@@ -10,9 +10,9 @@ const timelinesData = (isEnglishSelected: boolean): TimelineData[] =>
               title: "bsc",
               location: "leicester - university",
               text: [
-                "computer architecture: <strong>96%</strong>",
-                "discrete mathematic: <strong>93%</strong>",
-                "advenced programming: <strong>90%</strong>",
+                "Computer Architecture: <strong>96%</strong>",
+                "Discrete Mathematic: <strong>93%</strong>",
+                "Advenced Programming: <strong>90%</strong>",
               ],
               date: "2021 -",
             },
@@ -20,9 +20,9 @@ const timelinesData = (isEnglishSelected: boolean): TimelineData[] =>
               title: "a level",
               location: "winchester - peter symonds",
               text: [
-                "mathematic: <strong>A*</strong>",
-                "computer science: <strong>A*</strong>",
-                "french: <strong>A</strong>",
+                "Mathematic: <strong>A*</strong>",
+                "computer Science: <strong>A*</strong>",
+                "French: <strong>A</strong>",
               ],
               date: "2019 - 2021",
             },
@@ -30,9 +30,9 @@ const timelinesData = (isEnglishSelected: boolean): TimelineData[] =>
               title: "gcse",
               location: "Southampton - st mary's",
               text: [
-                "french: <strong>8</strong>",
-                "mathematic: <strong>7</strong> ",
-                "physics: <strong>6</strong>",
+                "French: <strong>8</strong>",
+                "Mathematic: <strong>7</strong> ",
+                "Physics: <strong>6</strong>",
               ],
 
               date: "2015 - 2019",
@@ -65,9 +65,9 @@ const timelinesData = (isEnglishSelected: boolean): TimelineData[] =>
               title: "seller",
               location: "ploërmel - jouet club",
               text: [
-                "improved my customer service and communication skills",
-                "was in charge of welcoming customers",
-                "learnt about items shelving, labelling products.",
+                "Improved my customer service and communication skills",
+                "Was in charge of welcoming customers",
+                "Learnt about items shelving, labelling products.",
               ],
               date: "2 months - 2029",
             },
@@ -82,9 +82,9 @@ const timelinesData = (isEnglishSelected: boolean): TimelineData[] =>
               title: "bsc",
               location: "leicester - university",
               text: [
-                "architecture: <strong>96%</strong>",
-                "mathématique: <strong>93%</strong>",
-                "programmation avancée: <strong>90%</strong>",
+                "Architecture: <strong>96%</strong>",
+                "Mathématique: <strong>93%</strong>",
+                "Programmation avancée: <strong>90%</strong>",
               ],
               date: "2021 -",
             },
@@ -92,9 +92,9 @@ const timelinesData = (isEnglishSelected: boolean): TimelineData[] =>
               title: "a level",
               location: "winchester - peter symonds",
               text: [
-                "mathématique: <strong>A*</strong>",
-                "informatique: <strong>A*</strong>",
-                "français: <strong>A</strong>",
+                "Mathématique: <strong>A*</strong>",
+                "Informatique: <strong>A*</strong>",
+                "Français: <strong>A</strong>",
               ],
               date: "2019 - 2021",
             },
@@ -102,9 +102,9 @@ const timelinesData = (isEnglishSelected: boolean): TimelineData[] =>
               title: "gcse",
               location: "Southampton - st mary's",
               text: [
-                "français: <strong>8</strong>",
-                "mathématique: <strong>7</strong> ",
-                "physique: <strong>6</strong>",
+                "Français: <strong>8</strong>",
+                "Mathématique: <strong>7</strong> ",
+                "Physique: <strong>6</strong>",
               ],
 
               date: "2015 - 2019",
@@ -118,9 +118,9 @@ const timelinesData = (isEnglishSelected: boolean): TimelineData[] =>
               title: "serveur",
               location: "carnac - la grande metairie",
               text: [
-                "reçu et accueillie les clients dans un restaurant de 130 places",
+                "Reçu et accueillie les clients dans un restaurant de 130 places",
                 "Pris les commandes de plats et boissons des clients",
-                "Gèré la zone bar et le service des boissons et des plats",
+                "Géré la zone bar et le service des boissons et des plats",
               ],
               date: "3 mois - 2021",
             },
@@ -129,7 +129,7 @@ const timelinesData = (isEnglishSelected: boolean): TimelineData[] =>
               location: "ploërmel - weldom",
               text: [
                 "Appris à gérer le stock et les commandes avec un vendeur qualifié",
-                "étiqueté, arrangé et affiché les marchandises pour promouvoir les ventes",
+                "Étiqueté, arrangé et affiché les marchandises pour promouvoir les ventes",
               ],
               date: "2 mois - 2020",
             },
@@ -138,7 +138,7 @@ const timelinesData = (isEnglishSelected: boolean): TimelineData[] =>
               location: "ploërmel - jouet club",
               text: [
                 "Développé mon service client et ma communication",
-                "Etait en charge de la bienvenue des clients",
+                "Était en charge de la bienvenue des clients",
                 "Appris à ranger les articles, les étiqueter",
               ],
               date: "2 mois - 2029",

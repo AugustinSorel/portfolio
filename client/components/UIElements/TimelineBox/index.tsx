@@ -7,7 +7,7 @@ type Props = {
 
 const TimelineBox = ({ content }: Props) => {
   return (
-    <Styles.Container key={content.date}>
+    <Styles.Container>
       <Styles.Title>{content.title}</Styles.Title>
       <Styles.Location>{content.location}</Styles.Location>
 

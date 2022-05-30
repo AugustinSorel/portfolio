@@ -49,12 +49,15 @@ const GlobalStyle = createGlobalStyle`
         font-size: var(--font-size-medium);
         font-weight: var(--font-weight-regular);
         padding: var(--gap);
+        -webkit-tap-highlight-color: transparent;
     }
 
     ::selection{
         background-color: var(--color);
         color: var(--background-color);
     }
+
+    
 `;
 
 export default GlobalStyle;

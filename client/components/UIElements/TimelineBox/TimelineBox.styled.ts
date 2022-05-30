@@ -18,9 +18,15 @@ export const Container = styled.div`
   /* circle left */
   &::after {
     --cirlce-size: 25px;
+
+    @media ${devices.mobile} {
+      --cirlce-size: 15px;
+      top: calc(var(--font-size-medium) / 2);
+    }
+
     content: "";
     position: absolute;
-    top: 0;
+    top: calc(var(--font-size-large) / 2 + var(--cirlce-size) / 2);
     right: calc(-1 * (var(--cirlce-size) / 2) - (var(--border-height) / 2));
 
     width: var(--cirlce-size);
@@ -67,10 +73,6 @@ export const ListItem = styled.li`
   font-size: 40%;
   font-weight: var(--font-weight-light);
   list-style-position: inside;
-
-  ::first-letter {
-    text-transform: capitalize;
-  }
 
   @media ${devices.desktop} {
     font-size: 75%;

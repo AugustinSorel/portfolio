@@ -11,7 +11,7 @@ const Timeline = ({ data }: Props) => {
     <Styles.Section id={data.title}>
       <Styles.Title>{data.title}</Styles.Title>
       {data.content.map((content) => (
-        <TimelineBox content={content} />
+        <TimelineBox key={content.date} content={content} />
       ))}
     </Styles.Section>
   );
