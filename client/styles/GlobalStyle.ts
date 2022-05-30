@@ -57,7 +57,17 @@ const GlobalStyle = createGlobalStyle`
         color: var(--background-color);
     }
 
-    
+    ::-webkit-scrollbar {
+        width: var(--gap);
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: var(--color);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--background-color);
+    }
 `;
 
 export default GlobalStyle;
