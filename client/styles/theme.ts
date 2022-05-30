@@ -8,10 +8,10 @@ const theme: DefaultTheme = {
   },
 
   fontSizes: {
-    extraSmall: "1vw",
-    small: "2vw",
-    medium: "3vw",
-    large: "4vw",
+    extraSmall: "max(1vw, 1rem)",
+    small: "max(2vw, 1.5rem)",
+    medium: "max(3vw, 2rem)",
+    large: "max(4vw, 2.5rem)",
     extraLarge: "9vw",
   },
 

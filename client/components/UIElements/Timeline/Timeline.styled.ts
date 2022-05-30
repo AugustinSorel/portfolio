@@ -27,6 +27,10 @@ export const Section = styled.section`
     top: 0;
     bottom: 0;
     left: 50%;
+
+    @media ${devices.mobile} {
+      left: 90%;
+    }
   }
 `;
 
