@@ -63,13 +63,13 @@ const timelinesData = (isEnglishSelected: boolean): TimelineData[] =>
             },
             {
               title: "seller",
-              location: "ploërmel - jouet club",
+              location: "ploërmel - JouéClub",
               text: [
                 "Improved my customer service and communication skills",
                 "Was in charge of welcoming customers",
                 "Learnt about items shelving, labelling products.",
               ],
-              date: "2 months - 2029",
+              date: "2 months - 2019",
             },
           ],
         },
@@ -135,13 +135,13 @@ const timelinesData = (isEnglishSelected: boolean): TimelineData[] =>
             },
             {
               title: "vendeur",
-              location: "ploërmel - jouet club",
+              location: "ploërmel - JouéClub",
               text: [
                 "Développé mon service client et ma communication",
                 "Était en charge de la bienvenue des clients",
                 "Appris à ranger les articles, les étiqueter",
               ],
-              date: "2 mois - 2029",
+              date: "2 mois - 2019",
             },
           ],
         },
