@@ -11,7 +11,7 @@ export const Container = styled.div`
   width: 50%;
 
   > * {
-    padding-top: 0.5rem;
+    padding-top: calc(var(--gap) * 2);
   }
 
   @media ${devices.mobile} {
@@ -20,25 +20,21 @@ export const Container = styled.div`
 
   &:nth-child(2n + 1) {
     left: 50%;
-    padding-left: 4%;
+    padding-left: calc(var(--gap) * 4);
 
     @media ${devices.mobile} {
       left: 0;
+      padding-left: calc(var(--gap) * 2);
     }
   }
 
   /* circle left */
   &::after {
-    --cirlce-size: 25px;
-
-    @media ${devices.mobile} {
-      --cirlce-size: 15px;
-      top: calc(var(--font-size-medium) / 2);
-    }
+    --cirlce-size: var(--font-size-extra-small);
 
     content: "";
     position: absolute;
-    top: calc(var(--font-size-large) / 2 + var(--cirlce-size) / 2);
+    top: calc(var(--cirlce-size) * 2);
     right: calc(-1 * (var(--cirlce-size) / 2) - (var(--border-height) / 2));
 
     width: var(--cirlce-size);

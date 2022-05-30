@@ -10,8 +10,8 @@ export const Section = styled.section`
   justify-content: space-between;
 
   > * {
-    padding-left: 2%;
-    margin: 1rem 0;
+    padding-left: calc(var(--gap) * 2);
+    margin: calc(var(--gap) * 2) 0;
   }
 
   &:first-child {
@@ -24,8 +24,7 @@ export const Section = styled.section`
     position: absolute;
     width: var(--border-height);
     background-color: var(--color);
-    top: 0;
-    bottom: 0;
+    height: 100%;
     left: 50%;
 
     @media ${devices.mobile} {
@@ -41,8 +40,4 @@ export const Title = styled.h2`
   position: relative;
   background-color: var(--background-color);
   width: min-content;
-
-  @media ${devices.desktop} {
-    font-size: 6vw;
-  }
 `;
