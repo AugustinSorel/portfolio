@@ -1,54 +1,18 @@
+import { TimelineData } from "../../../types/TimelineData";
+import TimelineBox from "../TimelineBox";
 import * as Styles from "./Timeline.styled";
 
-type Props = {};
+type Props = {
+  data: TimelineData;
+};
 
-const Timeline = (props: Props) => {
+const Timeline = ({ data }: Props) => {
   return (
-    <Styles.Section>
-      <Styles.Title>Qualifications</Styles.Title>
-
-      <Styles.Box>
-        <Styles.BoxTitle>bsc</Styles.BoxTitle>
-        <Styles.BoxLocation>leicester - university</Styles.BoxLocation>
-
-        <Styles.BoxText>
-          Computer Architecture: <strong>96%</strong>
-          <br />
-          Discrete Mathematic: <strong>93%</strong>
-          <br />
-          Advenced Programming: <strong>90%</strong>
-        </Styles.BoxText>
-
-        <Styles.BoxDate>2021 -</Styles.BoxDate>
-      </Styles.Box>
-      <Styles.Box>
-        <Styles.BoxTitle>bsc</Styles.BoxTitle>
-        <Styles.BoxLocation>leicester - university</Styles.BoxLocation>
-
-        <Styles.BoxText>
-          Computer Architecture: <strong>96%</strong>
-          <br />
-          Discrete Mathematic: <strong>93%</strong>
-          <br />
-          Advenced Programming: <strong>90%</strong>
-        </Styles.BoxText>
-
-        <Styles.BoxDate>2021 -</Styles.BoxDate>
-      </Styles.Box>
-      <Styles.Box>
-        <Styles.BoxTitle>bsc</Styles.BoxTitle>
-        <Styles.BoxLocation>leicester - university</Styles.BoxLocation>
-
-        <Styles.BoxText>
-          Computer Architecture: <strong>96%</strong>
-          <br />
-          Discrete Mathematic: <strong>93%</strong>
-          <br />
-          Advenced Programming: <strong>90%</strong>
-        </Styles.BoxText>
-
-        <Styles.BoxDate>2021 -</Styles.BoxDate>
-      </Styles.Box>
+    <Styles.Section id={data.title}>
+      <Styles.Title>{data.title}</Styles.Title>
+      {data.content.map((content) => (
+        <TimelineBox content={content} />
+      ))}
     </Styles.Section>
   );
 };

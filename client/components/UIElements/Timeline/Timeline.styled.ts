@@ -1,19 +1,24 @@
 import styled from "styled-components";
+import devices from "../../../styles/devices";
 import swapColor from "../../../styles/swapColor.styled";
-import {
-  extraSmallText,
-  largeText,
-  mediumText,
-  smallText,
-} from "../../../styles/texts.styled";
+import { largeText } from "../../../styles/texts.styled";
 
 export const Section = styled.section`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > * {
+    padding-left: 2%;
+    margin: 1rem 0;
+  }
 
   &:first-child {
     ${swapColor}
   }
 
+  /* the time line */
   &::before {
     content: "";
     position: absolute;
@@ -30,54 +35,10 @@ export const Title = styled.h2`
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   position: relative;
-`;
+  background-color: var(--background-color);
+  width: min-content;
 
-export const Box = styled.div`
-  position: relative;
-  width: 50%;
-
-  &:nth-child(2n + 1) {
-    left: 50%;
+  @media ${devices.desktop} {
+    font-size: 6vw;
   }
-
-  & > *:not(:first-child) {
-    /* margin-top: calc(var(--gap) * 2); */
-  }
-
-  /* circle left */
-  &::after {
-    --cirlce-size: 25px;
-    content: "";
-    position: absolute;
-    top: 0;
-    right: calc(-1 * (var(--cirlce-size) / 2) - (var(--border-height) / 2));
-
-    width: var(--cirlce-size);
-    height: var(--cirlce-size);
-    border-radius: 50%;
-    background-color: var(--color);
-  }
-
-  /* circle right */
-  &:nth-child(2n + 1)::after {
-    left: calc(-1 * (var(--cirlce-size) / 2) + (var(--border-height) / 2));
-  }
-`;
-
-export const BoxTitle = styled.h3`
-  ${mediumText}
-  text-transform: uppercase;
-`;
-
-export const BoxLocation = styled.h4`
-  ${mediumText}
-  text-transform: capitalize;
-`;
-
-export const BoxText = styled.p`
-  ${smallText}
-`;
-
-export const BoxDate = styled.h5`
-  ${smallText}
 `;

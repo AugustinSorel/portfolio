@@ -17,8 +17,4 @@ export const Paragraph = styled.p`
   ${smallText}
   text-align: center;
   font-weight: var(--font-weight-regular);
-
-  @media ${devices.mobile} {
-    text-align: left;
-  }
 `;
