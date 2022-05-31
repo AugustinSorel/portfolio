@@ -30,25 +30,25 @@ export const Container = styled.div`
 
   /* circle left */
   &::after {
-    --cirlce-size: var(--font-size-extra-small);
+    --circle-size: var(--font-size-extra-small);
 
     content: "";
     position: absolute;
-    top: calc(var(--cirlce-size) * 2);
-    right: calc(-1 * (var(--cirlce-size) / 2) - (var(--border-height) / 2));
+    top: calc(var(--circle-size) * 2);
+    right: calc(-1 * (var(--circle-size) / 2) - (var(--border-height) / 2));
 
-    width: var(--cirlce-size);
-    height: var(--cirlce-size);
+    width: var(--circle-size);
+    height: var(--circle-size);
     border-radius: 50%;
     background-color: var(--color);
   }
 
   /* circle right */
   &:nth-child(2n + 1)::after {
-    left: calc(-1 * (var(--cirlce-size) / 2) + (var(--border-height) / 2));
+    left: calc(-1 * (var(--circle-size) / 2) + (var(--border-height) / 2));
 
     @media ${devices.mobile} {
-      right: calc(-1 * (var(--cirlce-size) / 2) - (var(--border-height) / 2));
+      right: calc(-1 * (var(--circle-size) / 2) - (var(--border-height) / 2));
       left: unset;
     }
   }
