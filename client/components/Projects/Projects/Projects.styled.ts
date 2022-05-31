@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import devices from "../../../styles/devices";
+import swapColor from "../../../styles/swapColor.styled";
+import { largeText } from "../../../styles/texts.styled";
 
 export const Section = styled.section`
   margin-top: var(--gap);
@@ -20,6 +22,9 @@ export const FilterList = styled.ul`
   background-color: var(--background-color);
   display: flex;
 
+  @media ${devices.desktop} {
+    ${swapColor}
+  }
   @media ${devices.mobile} {
     flex-direction: column;
     gap: var(--gap);
@@ -36,13 +41,23 @@ export const FilterListItem = styled.li`
 `;
 
 export const ProjectsList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+
   gap: var(--gap);
 `;
 
 export const ProjectsListItem = styled.li`
   background-color: var(--background-color);
   list-style: none;
-  padding: 1rem;
+
+  width: calc(50% - var(--gap) / 2);
 `;
+
+export const ProjectTitle = styled.h2`
+  ${largeText}
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+`;
+
+export const ProjectDescription = styled.p``;

@@ -27,7 +27,7 @@ export const Section = styled.section`
     width: var(--gap);
     background-color: var(--color);
     height: 100%;
-    left: 50%;
+    left: calc(50% - var(--gap) / 2);
 
     @media ${devices.mobile} {
       left: 90%;

@@ -18,25 +18,42 @@ const Projects = () => {
 
       <Styles.ProjectsList>
         <Styles.ProjectsListItem>
-          <h1>project one</h1>
-          <h2>tech one</h2>
-          <h2>tech one</h2>
-          <h2>tech one</h2>
+          <Styles.ProjectTitle>project one</Styles.ProjectTitle>
+          <Styles.ProjectDescription>
+            tech one <br />
+            tech two <br />
+            tech three <br />
+            tech four <br />
+            tech four <br />
+            tech four <br />
+          </Styles.ProjectDescription>
         </Styles.ProjectsListItem>
         <Styles.ProjectsListItem>
-          <h1>project one</h1>
-          <h2>tech one</h2>
-          <h2>tech one</h2>
+          <Styles.ProjectTitle>project one</Styles.ProjectTitle>
+          <Styles.ProjectDescription>
+            tech one <br />
+            tech two <br />
+            tech three <br />
+            tech three <br />
+            tech four <br />
+          </Styles.ProjectDescription>
         </Styles.ProjectsListItem>
         <Styles.ProjectsListItem>
-          <h1>project one</h1>
-          <h2>tech one</h2>
-          <h2>tech one</h2>
+          <Styles.ProjectTitle>project one</Styles.ProjectTitle>
+          <Styles.ProjectDescription>
+            tech one <br />
+            tech two <br />
+            tech three <br />
+            tech three <br />
+          </Styles.ProjectDescription>
         </Styles.ProjectsListItem>
         <Styles.ProjectsListItem>
-          <h1>project one</h1>
-          <h2>tech one</h2>
-          <h2>tech one</h2>
+          <Styles.ProjectTitle>project one</Styles.ProjectTitle>
+          <Styles.ProjectDescription>
+            tech one <br />
+            tech one <br />
+            tech four <br />
+          </Styles.ProjectDescription>
         </Styles.ProjectsListItem>
       </Styles.ProjectsList>
     </Styles.Section>
