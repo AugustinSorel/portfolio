@@ -39,6 +39,7 @@ declare module "styled-components" {
     sizes: {
       gap: string;
       borderHeight: string;
+      borderRadius: string;
     };
   }
 }

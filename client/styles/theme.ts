@@ -38,6 +38,7 @@ const theme: DefaultTheme = {
   sizes: {
     gap: "6px",
     borderHeight: "4px",
+    borderRadius: "24px",
   },
 };
 

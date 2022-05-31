@@ -1,5 +1,6 @@
-import Button from "../../FormElements/Button";
-import * as Styles from "./LanguageText.styled";
+import React from "react";
+import Button from "../Button";
+import * as Styles from "./Checkbox.styled";
 
 type Props = {
   text: string;
@@ -7,7 +8,7 @@ type Props = {
   clickHandler: () => void;
 };
 
-const LanguageText = ({ clickHandler, isActive, text }: Props) => {
+const Checkbox = ({ text, clickHandler, isActive }: Props) => {
   return (
     <Styles.Text $isActive={isActive}>
       <Button text={text} onClick={clickHandler} />
@@ -15,4 +16,4 @@ const LanguageText = ({ clickHandler, isActive, text }: Props) => {
   );
 };
 
-export default LanguageText;
+export default Checkbox;

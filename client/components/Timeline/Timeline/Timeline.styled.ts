@@ -8,6 +8,8 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex: 1;
+  background-color: var(--background-color);
 
   > * {
     padding-left: calc(var(--gap) * 2);
@@ -22,7 +24,7 @@ export const Section = styled.section`
   &::before {
     content: "";
     position: absolute;
-    width: var(--border-height);
+    width: var(--gap);
     background-color: var(--color);
     height: 100%;
     left: 50%;
@@ -30,6 +32,11 @@ export const Section = styled.section`
     @media ${devices.mobile} {
       left: 90%;
     }
+  }
+
+  /* make the time lines take the full width */
+  @media ${devices.desktop} {
+    flex: 0 1 100%;
   }
 `;
 

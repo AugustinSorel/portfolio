@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
 
         --gap: ${({ theme }) => theme.sizes.gap};
         --border-height: ${({ theme }) => theme.sizes.borderHeight};
+        --border-radius: ${({ theme }) => theme.sizes.borderRadius};
 
         @media ${devices.mobile} {
             --font-size-extra-small: ${({ theme }) =>

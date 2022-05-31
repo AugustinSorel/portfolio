@@ -1,5 +1,5 @@
 import useLanguageStore from "../../../store/useLanguageStore";
-import LanguageText from "../LanguageText";
+import Checkbox from "../../FormElements/Checkbox";
 import * as Styles from "./LanguageBox.styled";
 
 const LanguageBox = () => {
@@ -7,13 +7,13 @@ const LanguageBox = () => {
 
   return (
     <Styles.Container>
-      <LanguageText
+      <Checkbox
         text="fr"
         clickHandler={selectFrench}
         isActive={!isEnglishSelected}
       />
       <Styles.LanguageSeparator>x</Styles.LanguageSeparator>
-      <LanguageText
+      <Checkbox
         text="en"
         clickHandler={selectEnglish}
         isActive={isEnglishSelected}

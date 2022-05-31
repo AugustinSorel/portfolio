@@ -1,6 +1,19 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import styled from "styled-components";
+import Projects from "../components/Projects/Projects";
 import Timelines from "../components/Timeline/Timelines";
+import devices from "../styles/devices";
+
+const Main = styled.main`
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: var(--gap);
+
+  @media ${devices.desktop} {
+    margin-top: 0;
+  }
+`;
 
 const Home: NextPage = () => {
   return (
@@ -23,15 +36,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <Main>
         <Timelines />
-        <section id="projects">
+        <Projects />
+        {/* <section id="skills">
           <h1>projects</h1>
-        </section>
-        <section id="skills">
-          <h1>projects</h1>
-        </section>
-      </main>
+        </section> */}
+      </Main>
     </>
   );
 };

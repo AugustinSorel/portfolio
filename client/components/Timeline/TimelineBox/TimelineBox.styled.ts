@@ -35,7 +35,7 @@ export const Container = styled.div`
     content: "";
     position: absolute;
     top: calc(var(--circle-size) * 2);
-    right: calc(-1 * (var(--circle-size) / 2) - (var(--border-height) / 2));
+    right: calc(-1 * (var(--circle-size) / 2) - (var(--gap) / 2));
 
     width: var(--circle-size);
     height: var(--circle-size);
@@ -45,10 +45,10 @@ export const Container = styled.div`
 
   /* circle right */
   &:nth-child(2n + 1)::after {
-    left: calc(-1 * (var(--circle-size) / 2) + (var(--border-height) / 2));
+    left: calc(-1 * (var(--circle-size) / 2) + (var(--gap) / 2));
 
     @media ${devices.mobile} {
-      right: calc(-1 * (var(--circle-size) / 2) - (var(--border-height) / 2));
+      right: calc(-1 * (var(--circle-size) / 2) - (var(--gap) / 2));
       left: unset;
     }
   }
