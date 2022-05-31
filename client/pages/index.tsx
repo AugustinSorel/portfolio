@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Timelines from "../components/UIElements/Timelines";
+import Timelines from "../components/Timeline/Timelines";
 
 const Home: NextPage = () => {
   return (
