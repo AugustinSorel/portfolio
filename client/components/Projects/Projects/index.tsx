@@ -16,17 +16,29 @@ const Projects = () => {
         </Styles.FilterListItem>
       </Styles.FilterList>
 
-      <Styles.ProjectBox>
-        <h2>project 1</h2>
-      </Styles.ProjectBox>
-
-      <Styles.ProjectBox>
-        <h2>project 2</h2>
-      </Styles.ProjectBox>
-
-      <Styles.ProjectBox>
-        <h2>project 3</h2>
-      </Styles.ProjectBox>
+      <Styles.ProjectsList>
+        <Styles.ProjectsListItem>
+          <h1>project one</h1>
+          <h2>tech one</h2>
+          <h2>tech one</h2>
+          <h2>tech one</h2>
+        </Styles.ProjectsListItem>
+        <Styles.ProjectsListItem>
+          <h1>project one</h1>
+          <h2>tech one</h2>
+          <h2>tech one</h2>
+        </Styles.ProjectsListItem>
+        <Styles.ProjectsListItem>
+          <h1>project one</h1>
+          <h2>tech one</h2>
+          <h2>tech one</h2>
+        </Styles.ProjectsListItem>
+        <Styles.ProjectsListItem>
+          <h1>project one</h1>
+          <h2>tech one</h2>
+          <h2>tech one</h2>
+        </Styles.ProjectsListItem>
+      </Styles.ProjectsList>
     </Styles.Section>
   );
 };

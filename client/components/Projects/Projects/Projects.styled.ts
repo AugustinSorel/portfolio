@@ -11,16 +11,14 @@ export const Section = styled.section`
   width: 100%;
 
   & > * {
-    background-color: var(--background-color);
   }
 `;
 
 export const FilterList = styled.ul`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   list-style: none;
   padding: var(--gap) 0;
+  background-color: var(--background-color);
+  display: flex;
 
   @media ${devices.mobile} {
     flex-direction: column;
@@ -28,6 +26,23 @@ export const FilterList = styled.ul`
   }
 `;
 
-export const FilterListItem = styled.li``;
+export const FilterListItem = styled.li`
+  display: flex;
+  flex: 1;
 
-export const ProjectBox = styled.div``;
+  h2 {
+    margin: auto;
+  }
+`;
+
+export const ProjectsList = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: var(--gap);
+`;
+
+export const ProjectsListItem = styled.li`
+  background-color: var(--background-color);
+  list-style: none;
+  padding: 1rem;
+`;
