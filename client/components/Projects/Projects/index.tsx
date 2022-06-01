@@ -1,60 +1,106 @@
 import Checkbox from "../../FormElements/Checkbox";
 import * as Styles from "./Projects.styled";
 
+enum Categories {
+  Fullstack = "fullstack",
+  Frontend = "frontend",
+  CSharp = "c#",
+}
+
+enum Technologies {
+  react = "react",
+  nodejs = "nodejs",
+  express = "express",
+  mongodb = "mongodb",
+  typescript = "typescript",
+  zustand = "zustand",
+  framerMotion = "framer motion",
+  styledComponents = "styled-components",
+  csharp = "C#",
+  wpf = "WPF",
+  socketio = "socket.io",
+  jwt = "JWT",
+  zod = "ZOD",
+  multer = "multer",
+  reactQuery = "react-query",
+  recharts = "recharts",
+  xaml = "XAML",
+  wpa = "WPA",
+}
+
+type ProjectData = {
+  title: string;
+  description: Technologies[];
+  category: Categories;
+};
+
+const projectsData: ProjectData[] = [
+  {
+    title: "project one",
+    description: [Technologies.csharp, Technologies.wpf],
+    category: Categories.Fullstack,
+  },
+  {
+    title: "project two",
+    description: [
+      Technologies.nodejs,
+      Technologies.express,
+      Technologies.mongodb,
+    ],
+    category: Categories.Frontend,
+  },
+  {
+    title: "project three",
+    description: [
+      Technologies.react,
+      Technologies.reactQuery,
+      Technologies.recharts,
+    ],
+    category: Categories.CSharp,
+  },
+  {
+    title: "project four",
+    description: [
+      Technologies.typescript,
+      Technologies.zustand,
+      Technologies.framerMotion,
+      Technologies.styledComponents,
+    ],
+    category: Categories.Fullstack,
+  },
+];
+
 const Projects = () => {
   return (
     <Styles.Section id="projects">
       <Styles.FilterList>
-        <Styles.FilterListItem>
-          <Checkbox text="fullstack" isActive={false} clickHandler={() => {}} />
-        </Styles.FilterListItem>
-        <Styles.FilterListItem>
-          <Checkbox text="frontend" isActive={false} clickHandler={() => {}} />
-        </Styles.FilterListItem>
-        <Styles.FilterListItem>
-          <Checkbox text="c#" isActive={false} clickHandler={() => {}} />
-        </Styles.FilterListItem>
+        {Object.values(Categories).map((category) => (
+          <Styles.FilterListItem key={category}>
+            <Checkbox
+              text={category}
+              isActive={false}
+              clickHandler={() => {}}
+            />
+          </Styles.FilterListItem>
+        ))}
       </Styles.FilterList>
 
       <Styles.ProjectsList>
-        <Styles.ProjectsListItem>
-          <Styles.ProjectTitle>project one</Styles.ProjectTitle>
-          <Styles.ProjectDescription>
-            tech one <br />
-            tech two <br />
-            tech three <br />
-            tech four <br />
-            tech four <br />
-            tech four <br />
-          </Styles.ProjectDescription>
-        </Styles.ProjectsListItem>
-        <Styles.ProjectsListItem>
-          <Styles.ProjectTitle>project one</Styles.ProjectTitle>
-          <Styles.ProjectDescription>
-            tech one <br />
-            tech two <br />
-            tech three <br />
-            tech three <br />
-            tech four <br />
-          </Styles.ProjectDescription>
-        </Styles.ProjectsListItem>
-        <Styles.ProjectsListItem>
-          <Styles.ProjectTitle>project one</Styles.ProjectTitle>
-          <Styles.ProjectDescription>
-            tech one <br />
-            tech two <br />
-            tech three <br />
-            tech three <br />
-          </Styles.ProjectDescription>
-        </Styles.ProjectsListItem>
-        <Styles.ProjectsListItem>
-          <Styles.ProjectTitle>project one</Styles.ProjectTitle>
-          <Styles.ProjectDescription>
-            tech one <br />
-            tech one <br />
-            tech four <br />
-          </Styles.ProjectDescription>
-        </Styles.ProjectsListItem>
+        {projectsData.map((project) => (
+          <Styles.ProjectsListItem key={project.title}>
+            <Styles.ProjectTitle>{project.title}</Styles.ProjectTitle>
+            <Styles.ProjectCategory>{project.category}</Styles.ProjectCategory>
+            <Styles.ProjectTechList>
+              {project.description.map((tech) => (
+                <Styles.ProjectTechListItem key={tech}>
+                  <Styles.ProjectTechListItemText>
+                    {tech}
+                  </Styles.ProjectTechListItemText>
+                </Styles.ProjectTechListItem>
+              ))}
+            </Styles.ProjectTechList>
+          </Styles.ProjectsListItem>
+        ))}
       </Styles.ProjectsList>
     </Styles.Section>
   );
