@@ -1,6 +1,6 @@
 import { Categories, ProjectData, Technologies } from "../types/ProjectsData";
 
-const projectsData: ProjectData[] = [
+const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
   {
     title: "instagram clone",
     technologies: [
@@ -13,7 +13,9 @@ const projectsData: ProjectData[] = [
     category: Categories.Fullstack,
   },
   {
-    title: "multiplayer tic-tac-toe",
+    title: isEnglishSelected
+      ? "multiplayer tic-tac-toe"
+      : "morpion multijoueur",
     technologies: [
       Technologies.react,
       Technologies.nodejs,
@@ -35,7 +37,7 @@ const projectsData: ProjectData[] = [
     category: Categories.Frontend,
   },
   {
-    title: "gym logger",
+    title: isEnglishSelected ? "gym logger" : "journal de sport",
     technologies: [
       Technologies.wpa,
       Technologies.react,
@@ -46,17 +48,21 @@ const projectsData: ProjectData[] = [
     category: Categories.Fullstack,
   },
   {
-    title: "DFS visualizer",
+    title: isEnglishSelected ? "DFS visualizer" : "visualiseur DFS",
     technologies: [Technologies.csharp, Technologies.wpf, Technologies.xaml],
     category: Categories.Simulation,
   },
   {
-    title: "Sorting Algorithm Visualizer",
+    title: isEnglishSelected
+      ? "Sorting Algorithm Visualizer"
+      : "Visualiseur de tri par algorithme",
     technologies: [Technologies.csharp, Technologies.wpf, Technologies.xaml],
     category: Categories.Simulation,
   },
   {
-    title: "Double Pendulum Simulation",
+    title: isEnglishSelected
+      ? "Double Pendulum Simulation"
+      : "Simulation d'un double pendule",
     technologies: [Technologies.csharp, Technologies.wpf, Technologies.xaml],
     category: Categories.Simulation,
   },
