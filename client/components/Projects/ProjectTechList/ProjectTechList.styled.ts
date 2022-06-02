@@ -10,4 +10,5 @@ export const ListItem = styled.li`
 export const Text = styled.h4`
   ${smallText}
   text-align: center;
+  text-transform: capitalize;
 `;

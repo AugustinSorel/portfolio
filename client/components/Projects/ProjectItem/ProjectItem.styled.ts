@@ -8,6 +8,7 @@ export const ListItem = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   & > *:not(:first-child) {
     margin-top: 2%;
   }
@@ -15,13 +16,14 @@ export const ListItem = styled.li`
 
 export const Title = styled.h2`
   ${mediumText}
-  font-weight: var(--font-weight-bold);
-  text-transform: uppercase;
   text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
 `;
 
 export const Category = styled.h3`
   ${extraSmallText}
+  text-transform: capitalize;
   font-weight: var(--font-weight-bold);
   margin: 0 auto;
   border: var(--border-height) solid var(--color);
