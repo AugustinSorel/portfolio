@@ -1,39 +1,8 @@
-import { motion } from "framer-motion";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-const line = css`
-  content: "";
-  position: absolute;
-  top: calc(50% - var(--border-height) / 2);
-  background-color: var(--color);
-  height: var(--border-height);
-`;
-
-type Props = {
-  $isActive: boolean;
-};
-
-export const Text = styled(motion.h2)<Props>`
+export const Text = styled.h2`
   text-align: center;
   text-transform: uppercase;
   position: relative;
   cursor: pointer;
-
-  button::before {
-    ${line}
-    display: ${({ $isActive }) => ($isActive ? "block" : "none")};
-    top: calc(50% - var(--border-height) / 2);
-    width: 100%;
-  }
-
-  button::after {
-    ${line}
-    left: 0;
-    width: 0;
-    transition: all 0.3s ease-in-out;
-  }
-
-  button:hover::after {
-    width: 100%;
-  }
 `;
