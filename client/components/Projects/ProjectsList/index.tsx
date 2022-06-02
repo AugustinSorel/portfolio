@@ -9,13 +9,26 @@ const ProjectsList = () => {
   const { isEnglishSelected } = useLanguageStore();
 
   return (
-    <Styles.List>
-      {projectsData(isEnglishSelected).map((project) => {
-        if (!categorySelected || categorySelected === project.category) {
-          return <ProjectItem key={project.title} project={project} />;
-        }
-      })}
-    </Styles.List>
+    <Styles.ListContainer>
+      <Styles.List>
+        {projectsData(isEnglishSelected)
+          .slice(0, 3)
+          .map((project) => {
+            if (!categorySelected || categorySelected === project.category) {
+              return <ProjectItem key={project.title} project={project} />;
+            }
+          })}
+      </Styles.List>
+      <Styles.List>
+        {projectsData(isEnglishSelected)
+          .slice(3)
+          .map((project) => {
+            if (!categorySelected || categorySelected === project.category) {
+              return <ProjectItem key={project.title} project={project} />;
+            }
+          })}
+      </Styles.List>
+    </Styles.ListContainer>
   );
 };
 

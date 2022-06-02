@@ -4,13 +4,14 @@ import { extraSmallText, mediumText } from "../../../styles/texts.styled";
 export const ListItem = styled.li`
   cursor: pointer;
   background-color: var(--background-color);
-  padding: calc(var(--gap) * 3) 0;
+  padding: calc(var(--gap) * 8) 0;
 `;
 
 export const Article = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100%;
 
   & > *:not(:first-child) {
     margin-top: 2%;

@@ -13,30 +13,6 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
     category: Categories.Fullstack,
   },
   {
-    title: isEnglishSelected
-      ? "multiplayer tic-tac-toe"
-      : "morpion multijoueur",
-    technologies: [
-      Technologies.react,
-      Technologies.nodejs,
-      Technologies.express,
-      Technologies.socketio,
-      Technologies.typescript,
-    ],
-    category: Categories.Fullstack,
-  },
-  {
-    title: "Portfolio",
-    technologies: [
-      Technologies.next,
-      Technologies.react,
-      Technologies.nodejs,
-      Technologies.express,
-      Technologies.typescript,
-    ],
-    category: Categories.Frontend,
-  },
-  {
     title: isEnglishSelected ? "gym logger" : "journal de sport",
     technologies: [
       Technologies.wpa,
@@ -47,10 +23,33 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
     ],
     category: Categories.Fullstack,
   },
+
   {
     title: isEnglishSelected ? "DFS visualizer" : "visualiseur DFS",
     technologies: [Technologies.csharp, Technologies.wpf, Technologies.xaml],
     category: Categories.Simulation,
+  },
+  {
+    title: isEnglishSelected
+      ? "multiplayer tic-tac-toe"
+      : "morpion multijoueur",
+    technologies: [
+      Technologies.react,
+      Technologies.express,
+      Technologies.socketio,
+      Technologies.typescript,
+    ],
+    category: Categories.Fullstack,
+  },
+  {
+    title: "Portfolio",
+    technologies: [
+      Technologies.next,
+      Technologies.nodejs,
+      Technologies.express,
+      Technologies.typescript,
+    ],
+    category: Categories.Frontend,
   },
   {
     title: isEnglishSelected

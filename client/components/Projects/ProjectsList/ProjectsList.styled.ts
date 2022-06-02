@@ -1,15 +1,23 @@
 import styled from "styled-components";
 import devices from "../../../styles/devices";
 
-export const ListContainer = styled.div``;
-
-export const List = styled.ul`
-  display: grid;
+export const ListContainer = styled.div`
+  display: flex;
   gap: var(--gap);
-  list-style: none;
-  grid-template-columns: repeat(2, 1fr);
 
   @media ${devices.mobile} {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+`;
+
+export const List = styled.ul`
+  flex: 1;
+  display: flex;
+  gap: var(--gap);
+  list-style: none;
+  flex-direction: column;
+
+  & > *:last-child {
+    height: 100%;
   }
 `;
