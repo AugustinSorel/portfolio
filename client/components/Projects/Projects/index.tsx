@@ -26,47 +26,77 @@ enum Technologies {
   recharts = "recharts",
   xaml = "XAML",
   wpa = "WPA",
+  vercel = "vercel",
+  netlify = "netlify",
+  heroku = "heroku",
+  next = "next",
 }
 
 type ProjectData = {
   title: string;
-  description: Technologies[];
+  technologies: Technologies[];
   category: Categories;
 };
 
 const projectsData: ProjectData[] = [
   {
-    title: "project one",
-    description: [Technologies.csharp, Technologies.wpf],
+    title: "instagram clone",
+    technologies: [
+      Technologies.react,
+      Technologies.nodejs,
+      Technologies.express,
+      Technologies.mongodb,
+      Technologies.typescript,
+    ],
     category: Categories.Fullstack,
   },
   {
-    title: "project two",
-    description: [
+    title: "multiplayer tic-tac-toe",
+    technologies: [
+      Technologies.react,
+      Technologies.nodejs,
+      Technologies.express,
+      Technologies.socketio,
+      Technologies.typescript,
+    ],
+    category: Categories.Fullstack,
+  },
+  {
+    title: "Portfolio",
+    technologies: [
+      Technologies.next,
+      Technologies.react,
+      Technologies.nodejs,
+      Technologies.express,
+      Technologies.typescript,
+    ],
+    category: Categories.Fullstack,
+  },
+  {
+    title: "gym logger",
+    technologies: [
+      Technologies.wpa,
+      Technologies.react,
       Technologies.nodejs,
       Technologies.express,
       Technologies.mongodb,
     ],
-    category: Categories.Frontend,
+    category: Categories.Fullstack,
   },
   {
-    title: "project three",
-    description: [
-      Technologies.react,
-      Technologies.reactQuery,
-      Technologies.recharts,
-    ],
+    title: "DFS visualizer",
+    technologies: [Technologies.csharp, Technologies.wpf, Technologies.xaml],
     category: Categories.CSharp,
   },
   {
-    title: "project four",
-    description: [
-      Technologies.typescript,
-      Technologies.zustand,
-      Technologies.framerMotion,
-      Technologies.styledComponents,
-    ],
-    category: Categories.Fullstack,
+    title: "Sorting Algorithm Visualizer",
+    technologies: [Technologies.csharp, Technologies.wpf, Technologies.xaml],
+    category: Categories.CSharp,
+  },
+  {
+    title: "Double Pendulum Simulation",
+    technologies: [Technologies.csharp, Technologies.wpf, Technologies.xaml],
+    category: Categories.CSharp,
   },
 ];
 
@@ -91,7 +121,7 @@ const Projects = () => {
             <Styles.ProjectTitle>{project.title}</Styles.ProjectTitle>
             <Styles.ProjectCategory>{project.category}</Styles.ProjectCategory>
             <Styles.ProjectTechList>
-              {project.description.map((tech) => (
+              {project.technologies.map((tech) => (
                 <Styles.ProjectTechListItem key={tech}>
                   <Styles.ProjectTechListItemText>
                     {tech}

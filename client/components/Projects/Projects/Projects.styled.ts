@@ -1,7 +1,12 @@
 import styled from "styled-components";
 import devices from "../../../styles/devices";
 import swapColor from "../../../styles/swapColor.styled";
-import { largeText, mediumText, smallText } from "../../../styles/texts.styled";
+import {
+  extraSmallText,
+  largeText,
+  mediumText,
+  smallText,
+} from "../../../styles/texts.styled";
 
 export const Section = styled.section`
   margin-top: var(--gap);
@@ -43,45 +48,46 @@ export const ProjectsList = styled.ul`
   list-style: none;
   grid-template-columns: repeat(2, 1fr);
 
-  @media ${devices.desktop} {
+  @media ${devices.mobile} {
     grid-template-columns: 1fr;
   }
 `;
 
 export const ProjectsListItem = styled.li`
+  cursor: pointer;
   background-color: var(--background-color);
-
+  padding: calc(var(--gap) * 3) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   & > *:not(:first-child) {
     margin-top: 2%;
   }
 `;
 
 export const ProjectTitle = styled.h2`
-  ${largeText}
+  ${mediumText}
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
+  text-align: center;
 `;
 
 export const ProjectCategory = styled.h3`
-  ${smallText}
+  ${extraSmallText}
   font-weight: var(--font-weight-bold);
   margin: 0 auto;
-  min-width: 200px;
   border: var(--border-height) solid var(--color);
-  width: min-content;
   padding: var(--gap) calc(var(--gap) * 10);
   border-radius: calc(var(--border-radius) * 2);
-  text-align: center;
 `;
 
 export const ProjectTechList = styled.ul``;
 
 export const ProjectTechListItem = styled.li`
   list-style: none;
-  display: flex;
-  justify-content: center;
 `;
 
-export const ProjectTechListItemText = styled.h5`
+export const ProjectTechListItemText = styled.h4`
   ${smallText}
+  text-align: center;
 `;
