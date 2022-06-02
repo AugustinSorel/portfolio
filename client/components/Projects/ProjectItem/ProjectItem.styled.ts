@@ -1,9 +1,5 @@
 import styled from "styled-components";
-import {
-  extraSmallText,
-  mediumText,
-  smallText,
-} from "../../../styles/texts.styled";
+import { extraSmallText, mediumText } from "../../../styles/texts.styled";
 
 export const ListItem = styled.li`
   cursor: pointer;
@@ -31,15 +27,4 @@ export const Category = styled.h3`
   border: var(--border-height) solid var(--color);
   padding: var(--gap) calc(var(--gap) * 10);
   border-radius: calc(var(--border-radius) * 2);
-`;
-
-export const ProjectTechList = styled.ul``;
-
-export const ProjectTechListItem = styled.li`
-  list-style: none;
-`;
-
-export const ProjectTechListItemText = styled.h4`
-  ${smallText}
-  text-align: center;
 `;
