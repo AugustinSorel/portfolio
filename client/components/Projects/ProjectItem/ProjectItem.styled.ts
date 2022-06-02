@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { extraSmallText, mediumText } from "../../../styles/texts.styled";
 
-export const ListItem = styled.li`
+export const ListItem = styled(motion.li)`
   cursor: pointer;
   background-color: var(--background-color);
   padding: calc(var(--gap) * 8) 0;

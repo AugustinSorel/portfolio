@@ -1,16 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
-import devices from "../../../styles/devices";
 
-export const ListContainer = styled.div`
-  display: flex;
-  gap: var(--gap);
-
-  @media ${devices.mobile} {
-    flex-direction: column;
-  }
-`;
-
-export const List = styled.ul`
+export const List = styled(motion.ul)`
   flex: 1;
   display: flex;
   gap: var(--gap);
