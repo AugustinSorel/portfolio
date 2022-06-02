@@ -1,10 +1,7 @@
 import styled from "styled-components";
 import devices from "../../../styles/devices";
-import {
-  extraSmallText,
-  mediumText,
-  smallText,
-} from "../../../styles/texts.styled";
+
+export const ListContainer = styled.div``;
 
 export const List = styled.ul`
   display: grid;
