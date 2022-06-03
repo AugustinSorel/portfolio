@@ -8,16 +8,7 @@ export const ListItem = styled(motion.li)`
   padding: calc(var(--gap) * 8) 0;
 `;
 
-export const Article = styled.article`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-
-  & > *:not(:first-child) {
-    margin-top: 2%;
-  }
-`;
+export const Article = styled.article``;
 
 export const Title = styled.h2`
   ${mediumText}
@@ -34,4 +25,17 @@ export const Category = styled.h3`
   border: var(--border-height) solid var(--color);
   padding: var(--gap) calc(var(--gap) * 10);
   border-radius: calc(var(--border-radius) * 2);
+`;
+
+export const Anchor = styled.a`
+  color: inherit;
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & > *:not(:first-child) {
+    margin-top: 2%;
+  }
 `;

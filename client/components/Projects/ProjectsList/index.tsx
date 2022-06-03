@@ -18,13 +18,13 @@ const ProjectsList = () => {
   }, [isEnglishSelected, categorySelected]);
 
   return (
-    <Styles.Container layout>
+    <Styles.List layout>
       <AnimatePresence initial={false}>
         {projects.map((project) => (
           <ProjectItem project={project} key={project.title} />
         ))}
       </AnimatePresence>
-    </Styles.Container>
+    </Styles.List>
   );
 };
 
