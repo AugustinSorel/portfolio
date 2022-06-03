@@ -1,4 +1,5 @@
 import { AnimatePresence } from "framer-motion";
+import UnderlineVariants from "../../../framerMotion/underlineVariants";
 import * as Styles from "./Underline.styled";
 
 type Props = {
@@ -10,10 +11,10 @@ const Underline = ({ isActive }: Props) => {
     <AnimatePresence exitBeforeEnter initial={false}>
       {isActive && (
         <Styles.Underline
-          initial={{ width: 0 }}
-          animate={{ width: "100%" }}
-          exit={{ width: 0 }}
-          transition={{ ease: "easeInOut" }}
+          variants={UnderlineVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
         />
       )}
     </AnimatePresence>

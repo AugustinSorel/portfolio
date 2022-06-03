@@ -1,26 +1,30 @@
 import { AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import useFilterStore from "../../../store/useFilterStore";
-import { ProjectData } from "../../../types/ProjectsData";
+import useLanguageStore from "../../../store/useLanguageStore";
+import projectsData from "../../../utils/ProjectsData";
 import ProjectItem from "../ProjectItem";
 import * as Styles from "./ProjectsList.styled";
 
-type Props = {
-  projects: ProjectData[];
-};
+const ProjectsList = () => {
+  const { getProjectFiltered, categorySelected } = useFilterStore();
 
-const ProjectsList = ({ projects }: Props) => {
-  const { categorySelected } = useFilterStore();
+  const { isEnglishSelected } = useLanguageStore();
+
+  const [projects, setProjects] = useState(projectsData(true));
+
+  useEffect(() => {
+    setProjects(getProjectFiltered(isEnglishSelected));
+  }, [isEnglishSelected, categorySelected]);
 
   return (
-    <Styles.List>
-      {projects.map((project) => (
-        <AnimatePresence exitBeforeEnter key={project.title}>
-          {(!categorySelected || categorySelected === project.category) && (
-            <ProjectItem project={project} />
-          )}
-        </AnimatePresence>
-      ))}
-    </Styles.List>
+    <Styles.Container layout>
+      <AnimatePresence initial={false}>
+        {projects.map((project) => (
+          <ProjectItem project={project} key={project.title} />
+        ))}
+      </AnimatePresence>
+    </Styles.Container>
   );
 };
 
