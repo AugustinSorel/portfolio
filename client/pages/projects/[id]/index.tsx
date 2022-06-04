@@ -1,11 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import Button from "../../../components/FormElements/Button";
+import ProjectArticle from "../../../components/Project/ProjectArticle";
 import ProjectAside from "../../../components/Project/ProjectAside";
-import SvgIcon from "../../../components/UIElements/SvgIcon";
 import * as Styles from "../../../styles/ProjectPage.styled";
 import { ProjectData } from "../../../types/ProjectsData";
-import paths from "../../../utils/paths";
 import projectsData from "../../../utils/ProjectsData";
 
 type Props = {
@@ -34,9 +32,7 @@ const ProjectPage = ({ project }: Props) => {
       <Styles.Main>
         <ProjectAside project={project} />
 
-        <Styles.Article>
-          <h1>{project.title}</h1>
-        </Styles.Article>
+        <ProjectArticle project={project} />
       </Styles.Main>
     </>
   );

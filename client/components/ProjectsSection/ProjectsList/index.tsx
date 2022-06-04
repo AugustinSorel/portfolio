@@ -2,7 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import useFilterStore from "../../../store/useFilterStore";
 import useLanguageStore from "../../../store/useLanguageStore";
-import projectsData from "../../../utils/ProjectsData";
+import { ProjectData } from "../../../types/ProjectsData";
 import ProjectItem from "../ProjectItem";
 import * as Styles from "./ProjectsList.styled";
 
@@ -11,7 +11,7 @@ const ProjectsList = () => {
 
   const { isEnglishSelected } = useLanguageStore();
 
-  const [projects, setProjects] = useState(projectsData(true));
+  const [projects, setProjects] = useState<ProjectData[]>([]);
 
   useEffect(() => {
     setProjects(getProjectFiltered(isEnglishSelected));

@@ -17,7 +17,3 @@ export const Main = styled.main`
 `;
 
 export const Description = styled.p``;
-
-export const Article = styled.article`
-  flex: 1;
-`;
