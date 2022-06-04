@@ -23,7 +23,7 @@ const ProjectPage = ({ project }: Props) => {
         <meta property="og:description" content={project.description} />
         <meta
           property="og:url"
-          content={`https://augustin-sorel.com/projects/${project.id}`}
+          content={`https://augustin-sorel.com/projects/${project.title}`}
         />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
@@ -39,13 +39,23 @@ const ProjectPage = ({ project }: Props) => {
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const paths = projectsData(true).map((project) => {
+  const pathsEnglish = projectsData(true).map((project) => {
     return {
       params: {
-        id: project.id,
+        id: project.title,
       },
     };
   });
+
+  const pathsFrench = projectsData(false).map((project) => {
+    return {
+      params: {
+        id: project.title,
+      },
+    };
+  });
+
+  const paths = [...pathsEnglish, ...pathsFrench];
 
   return {
     paths,
@@ -54,8 +64,12 @@ export const getStaticPaths: GetStaticPaths = () => {
 };
 
 export const getStaticProps: GetStaticProps = (context) => {
-  const { id } = context.params!;
-  const project = projectsData(true).find((project) => project.id === id);
+  const { id: title } = context.params!;
+  const allProjects = Array.from(
+    new Set([...projectsData(true), ...projectsData(false)])
+  );
+
+  const project = allProjects.find((project) => project.title === title);
 
   return {
     props: {

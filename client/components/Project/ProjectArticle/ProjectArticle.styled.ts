@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { largeText, mediumText } from "../../../styles/texts.styled";
+import devices from "../../../styles/devices";
+import { largeText, mediumText, smallText } from "../../../styles/texts.styled";
 
 export const Article = styled.article`
   flex: 1;
@@ -19,4 +20,22 @@ export const Title = styled.h1`
 
 export const Description = styled.p`
   ${mediumText}
+`;
+
+export const List = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media ${devices.mobile} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
+
+export const ListItem = styled.li`
+  list-style: none;
+`;
+
+export const Text = styled.h2`
+  ${smallText}
+  text-align:center
 `;

@@ -19,7 +19,7 @@ const ProjectItem = ({ project }: Props) => {
       layout
     >
       <Styles.Article>
-        <Link href={`/projects/${project.id}`} passHref>
+        <Link href={`/projects/${project.title}`} passHref>
           <Styles.Anchor>
             <Styles.Title>{project.title}</Styles.Title>
             <ProjectDetails category={project.category} date={project.date} />
