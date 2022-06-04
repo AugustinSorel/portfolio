@@ -46,7 +46,7 @@ const ProjectPage = ({ project }: Props) => {
 
           <Styles.ListTwo>
             {Object.values(project.links).map((link, index) => (
-              <Styles.Anchor href={link} key={link}>
+              <Styles.Anchor href={link} key={link} target={"_blank"}>
                 <SvgIcon
                   path={Object.keys(project.links)[index] as keyof typeof paths}
                 />

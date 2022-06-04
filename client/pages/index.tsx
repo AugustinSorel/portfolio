@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
-import Projects from "../components/Projects/Projects";
+import ProjectsSection from "../components/ProjectsSection/ProjectsSection";
 import Timelines from "../components/Timeline/Timelines";
 import devices from "../styles/devices";
 
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
 
       <Main>
         <Timelines />
-        <Projects />
+        <ProjectsSection />
         {/* <section id="skills">
           <h1>projects</h1>
         </section> */}

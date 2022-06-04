@@ -2,7 +2,7 @@ import ProjectsFilters from "../ProjectsFilters";
 import ProjectsList from "../ProjectsList";
 import * as Styles from "./Projects.styled";
 
-const Projects = () => {
+const ProjectsSection = () => {
   return (
     <Styles.Section id="projects">
       <ProjectsFilters />
@@ -10,4 +10,4 @@ const Projects = () => {
     </Styles.Section>
   );
 };
-export default Projects;
+export default ProjectsSection;
