@@ -18,7 +18,7 @@ const ProjectsList = () => {
   }, [isEnglishSelected, categorySelected, getProjectFiltered]);
 
   return (
-    <Styles.List layout>
+    <Styles.List>
       <AnimatePresence initial={false}>
         {projects.map((project) => (
           <ProjectItem project={project} key={project.id} />
