@@ -29,7 +29,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
     githubLink: "",
     youtubeLink: "",
     liveLink: "https://augustin-sorel.com/",
-    date: "1.1.1111",
+    date: "01.01.1111",
   },
 
   {
