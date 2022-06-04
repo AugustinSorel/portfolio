@@ -1,6 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import Button from "../../../components/FormElements/Button";
+import SvgIcon from "../../../components/UIElements/SvgIcon";
+import * as Styles from "../../../styles/ProjectPage.styled";
 import { ProjectData } from "../../../types/ProjectsData";
+import paths from "../../../utils/paths";
 import projectsData from "../../../utils/ProjectsData";
 
 type Props = {
@@ -12,36 +16,49 @@ const ProjectPage = ({ project }: Props) => {
     <>
       <Head>
         <title>{`Augustin Sorel - ${project.title}`}</title>
-        <meta
-          name="description"
-          content="View my portfolio, qualifications, experiences, skills and projects !"
-        />
-
+        <meta name="description" content={project.description} />
         <meta
           property="og:title"
           content={`Augustin Sorel - ${project.title}`}
         />
-        <meta
-          property="og:description"
-          content="View my portfolio, qualifications, experiences, skills and projects !"
-        />
+        <meta property="og:description" content={project.description} />
         <meta
           property="og:url"
           content={`https://augustin-sorel.com/projects/${project.id}`}
         />
         <meta property="og:type" content="website" />
-
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
-        <h1 style={{ color: "red" }}>{project.title}</h1>
-        <h1 style={{ color: "red" }}>{project.id}</h1>
-        <h1 style={{ color: "red" }}>{project.description}</h1>
-        <h1 style={{ color: "red" }}>{project.id}</h1>
-        <h1 style={{ color: "red" }}>{project.id}</h1>
-        <h1 style={{ color: "red" }}>{project.id}</h1>
-      </div>
+      <Styles.Main>
+        <Styles.Aside>
+          <Styles.Container>
+            <Styles.Category>{project.category}</Styles.Category>
+            <Styles.Date>{project.date}</Styles.Date>
+          </Styles.Container>
+          <Styles.List>
+            {project.technologies.map((tech) => (
+              <Styles.ListItem key={tech}>
+                <Styles.Tech>{tech}</Styles.Tech>
+              </Styles.ListItem>
+            ))}
+          </Styles.List>
+
+          <Styles.ListTwo>
+            {Object.values(project.links).map((link, index) => (
+              <Styles.Anchor href={link} key={link}>
+                <SvgIcon
+                  path={Object.keys(project.links)[index] as keyof typeof paths}
+                />
+              </Styles.Anchor>
+            ))}
+          </Styles.ListTwo>
+        </Styles.Aside>
+
+        <Styles.Article>
+          <h1>{project.title}</h1>
+        </Styles.Article>
+      </Styles.Main>
     </>
   );
 };

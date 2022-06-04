@@ -26,9 +26,9 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       Technologies.zustand,
       Technologies.typescript,
     ].sort((a, b) => a.localeCompare(b)),
-    githubLink: "",
-    youtubeLink: "",
-    liveLink: "https://augustin-sorel.com/",
+    links: {
+      live: "https://augustin-sorel.com/",
+    },
     date: "01.01.1111",
   },
 
@@ -65,9 +65,11 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       Technologies.multer,
       Technologies.reactQuery,
     ].sort((a, b) => a.localeCompare(b)),
-    githubLink: "https://github.com/AugustinSorel/instagram-imitation",
-    liveLink: "https://instagram-imitation.herokuapp.com/",
-    youtubeLink: "https://www.youtube.com/watch?v=UG7HS1lDw5w",
+    links: {
+      github: "https://github.com/AugustinSorel/instagram-imitation",
+      live: "https://instagram-imitation.herokuapp.com/",
+      youtube: "https://www.youtube.com/watch?v=UG7HS1lDw5w",
+    },
     date: "08.05.2022",
   },
 
@@ -103,9 +105,11 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       Technologies.framerMotion,
       Technologies.styledComponents,
     ].sort((a, b) => a.localeCompare(b)),
-    githubLink: "https://github.com/AugustinSorel/mutiplayer-tic-tac-toe",
-    liveLink: "https://multiplayer-tic-tac-toe-typescript.netlify.app/",
-    youtubeLink: "https://www.youtube.com/watch?v=pUSwFlEO0tE",
+    links: {
+      github: "https://github.com/AugustinSorel/mutiplayer-tic-tac-toe",
+      live: "https://multiplayer-tic-tac-toe-typescript.netlify.app/",
+      youtube: "https://www.youtube.com/watch?v=pUSwFlEO0tE",
+    },
     date: "05.04.2022",
   },
 
@@ -144,9 +148,11 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       Technologies.styledComponents,
       Technologies.framerMotion,
     ].sort((a, b) => a.localeCompare(b)),
-    githubLink: "https://github.com/AugustinSorel/gym-logger",
-    liveLink: "https://gym-logger.netlify.app/welcome",
-    youtubeLink: "https://www.youtube.com/watch?v=ABEkooGSEXc&t=4s",
+    links: {
+      github: "https://github.com/AugustinSorel/gym-logger",
+      live: "https://gym-logger.netlify.app/welcome",
+      youtube: "https://www.youtube.com/watch?v=ABEkooGSEXc&t=4s",
+    },
     date: "26.01.2022",
   },
 
@@ -171,8 +177,10 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       Technologies.wpf,
       Technologies.xaml,
     ].sort((a, b) => a.localeCompare(b)),
-    githubLink: "https://github.com/AugustinSorel/DfsVisualization",
-    youtubeLink: "https://www.youtube.com/watch?v=yaT4j0oeoiw",
+    links: {
+      github: "https://github.com/AugustinSorel/DfsVisualization",
+      youtube: "https://www.youtube.com/watch?v=yaT4j0oeoiw",
+    },
     date: "27.10.2021",
   },
 
@@ -192,8 +200,10 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
         "Le programme va exécuter l'algorithme et afficher les étapes de l'algorithme. ",
 
     allTechnologies: [Technologies.csharp, Technologies.wpf, Technologies.xaml],
-    githubLink: "https://github.com/AugustinSorel/SortingAlgorithmVisualizer",
-    youtubeLink: "https://www.youtube.com/watch?v=CuGiLVoadqc",
+    links: {
+      github: "https://github.com/AugustinSorel/SortingAlgorithmVisualizer",
+      youtube: "https://www.youtube.com/watch?v=CuGiLVoadqc",
+    },
     date: "02.05.2021",
   },
 
@@ -212,8 +222,10 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
         "L'utilisateur peut sélectionner la longueur et la masse de chaque pendules, la gravité et la vitesse de la simulation. " +
         "La simulation montrera la vitesse de chaque pendules. ",
     allTechnologies: [Technologies.csharp, Technologies.wpf, Technologies.xaml],
-    githubLink: "https://github.com/AugustinSorel/DoublePendulum",
-    youtubeLink: "https://www.youtube.com/watch?v=K_Rlfm4sDlg",
+    links: {
+      github: "https://github.com/AugustinSorel/DoublePendulum",
+      youtube: "https://www.youtube.com/watch?v=K_Rlfm4sDlg",
+    },
     date: "01.04.2021",
   },
 ];

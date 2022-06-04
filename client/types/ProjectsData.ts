@@ -29,6 +29,12 @@ export enum Technologies {
   next = "next",
 }
 
+export type Links = {
+  github?: string;
+  live?: string;
+  youtube?: string;
+};
+
 export type ProjectData = {
   id: string;
   title: string;
@@ -36,8 +42,6 @@ export type ProjectData = {
   category: Categories;
   description: string;
   allTechnologies: Technologies[];
-  githubLink: string;
-  liveLink?: string;
-  youtubeLink: string;
+  links: Links;
   date: string;
 };

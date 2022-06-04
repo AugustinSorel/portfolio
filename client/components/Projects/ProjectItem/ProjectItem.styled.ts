@@ -54,7 +54,7 @@ export const Date = styled.h3`
   ${swapColor}
   text-transform: capitalize;
   font-weight: var(--font-weight-bold);
-  border: var(--border-height) solid var(--color);
+  border: var(--border-height) solid var(--background-color);
   padding: var(--gap) calc(var(--gap) * 4);
   border-radius: calc(var(--border-radius) * 2);
   background-color: var(--background-color);
