@@ -1,6 +1,7 @@
 import Link from "next/link";
 import projectItemVariants from "../../../framerMotion/projectItemVariants";
 import { ProjectData } from "../../../types/ProjectsData";
+import ProjectDetails from "../ProjectDetails";
 import ProjectTechList from "../ProjectTechList";
 import * as Styles from "./ProjectItem.styled";
 
@@ -21,10 +22,7 @@ const ProjectItem = ({ project }: Props) => {
         <Link href={`/projects/${project.id}`} passHref>
           <Styles.Anchor>
             <Styles.Title>{project.title}</Styles.Title>
-            <Styles.Container>
-              <Styles.Category>{project.category}</Styles.Category>
-              <Styles.Date>{project.date}</Styles.Date>
-            </Styles.Container>
+            <ProjectDetails category={project.category} date={project.date} />
             <ProjectTechList technologies={project.technologies} />
           </Styles.Anchor>
         </Link>

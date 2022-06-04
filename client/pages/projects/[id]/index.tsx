@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Button from "../../../components/FormElements/Button";
+import ProjectAside from "../../../components/Project/ProjectAside";
 import SvgIcon from "../../../components/UIElements/SvgIcon";
 import * as Styles from "../../../styles/ProjectPage.styled";
 import { ProjectData } from "../../../types/ProjectsData";
@@ -31,29 +32,7 @@ const ProjectPage = ({ project }: Props) => {
       </Head>
 
       <Styles.Main>
-        <Styles.Aside>
-          <Styles.Container>
-            <Styles.Category>{project.category}</Styles.Category>
-            <Styles.Date>{project.date}</Styles.Date>
-          </Styles.Container>
-          <Styles.List>
-            {project.technologies.map((tech) => (
-              <Styles.ListItem key={tech}>
-                <Styles.Tech>{tech}</Styles.Tech>
-              </Styles.ListItem>
-            ))}
-          </Styles.List>
-
-          <Styles.ListTwo>
-            {Object.values(project.links).map((link, index) => (
-              <Styles.Anchor href={link} key={link} target={"_blank"}>
-                <SvgIcon
-                  path={Object.keys(project.links)[index] as keyof typeof paths}
-                />
-              </Styles.Anchor>
-            ))}
-          </Styles.ListTwo>
-        </Styles.Aside>
+        <ProjectAside project={project} />
 
         <Styles.Article>
           <h1>{project.title}</h1>
