@@ -1,8 +1,4 @@
-import { useEffect, useState } from "react";
-import useLanguageStore from "../../../store/useLanguageStore";
 import { ProjectData } from "../../../types/ProjectsData";
-import projectsData from "../../../utils/ProjectsData";
-import ProjectTechList from "../../ProjectsSection/ProjectTechList";
 import * as Styles from "./ProjectArticle.styled";
 
 type Props = {
@@ -10,24 +6,13 @@ type Props = {
 };
 
 const ProjectArticle = ({ project }: Props) => {
-  const { isEnglishSelected } = useLanguageStore();
-  const [translatedProject, setTranslatedProject] = useState(project);
-
-  useEffect(() => {
-    setTranslatedProject(
-      projectsData(isEnglishSelected).find(
-        (project) => project.id === translatedProject.id
-      )!
-    );
-  }, [isEnglishSelected]);
-
   return (
     <Styles.Article>
-      <Styles.Title>{translatedProject.title}</Styles.Title>
-      <Styles.Description>{translatedProject.description}</Styles.Description>
+      <Styles.Title>{project.title}</Styles.Title>
+      <Styles.Description>{project.description}</Styles.Description>
 
       <Styles.List>
-        {translatedProject.allTechnologies.map((technology) => (
+        {project.allTechnologies.map((technology) => (
           <Styles.ListItem key={technology}>
             <Styles.Text>{technology}</Styles.Text>
           </Styles.ListItem>

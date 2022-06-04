@@ -1,7 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import ProjectArticle from "../../../components/Project/ProjectArticle";
 import ProjectAside from "../../../components/Project/ProjectAside";
+import useLanguageStore from "../../../store/useLanguageStore";
 import * as Styles from "../../../styles/ProjectPage.styled";
 import { ProjectData } from "../../../types/ProjectsData";
 import projectsData from "../../../utils/ProjectsData";
@@ -11,10 +13,22 @@ type Props = {
 };
 
 const ProjectPage = ({ project }: Props) => {
+  const { isEnglishSelected } = useLanguageStore();
+
+  const [translatedProject, setTranslatedProject] = useState(project);
+
+  useEffect(() => {
+    setTranslatedProject(
+      projectsData(isEnglishSelected).find(
+        (projectddd) => projectddd.id === project.id
+      )!
+    );
+  }, [isEnglishSelected, project.id]);
+
   return (
     <>
       <Head>
-        <title>{`Augustin Sorel - ${project.title}`}</title>
+        <title>{`Augustin Sorel - ${translatedProject.title}`}</title>
         <meta name="description" content={project.description} />
         <meta
           property="og:title"
@@ -30,32 +44,22 @@ const ProjectPage = ({ project }: Props) => {
       </Head>
 
       <Styles.Main>
-        <ProjectAside project={project} />
+        <ProjectAside project={translatedProject} />
 
-        <ProjectArticle project={project} />
+        <ProjectArticle project={translatedProject} />
       </Styles.Main>
     </>
   );
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const pathsEnglish = projectsData(true).map((project) => {
+  const paths = projectsData(true).map((project) => {
     return {
       params: {
-        id: project.title,
+        id: project.id,
       },
     };
   });
-
-  const pathsFrench = projectsData(false).map((project) => {
-    return {
-      params: {
-        id: project.title,
-      },
-    };
-  });
-
-  const paths = [...pathsEnglish, ...pathsFrench];
 
   return {
     paths,
@@ -64,12 +68,9 @@ export const getStaticPaths: GetStaticPaths = () => {
 };
 
 export const getStaticProps: GetStaticProps = (context) => {
-  const { id: title } = context.params!;
-  const allProjects = Array.from(
-    new Set([...projectsData(true), ...projectsData(false)])
-  );
+  const { id } = context.params!;
 
-  const project = allProjects.find((project) => project.title === title);
+  const project = projectsData(true).find((project) => project.id === id);
 
   return {
     props: {
