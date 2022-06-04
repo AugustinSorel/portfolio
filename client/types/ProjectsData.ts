@@ -30,7 +30,14 @@ export enum Technologies {
 }
 
 export type ProjectData = {
+  id: string;
   title: string;
   technologies: Technologies[];
   category: Categories;
+  description: string;
+  allTechnologies: Technologies[];
+  githubLink: string;
+  liveLink?: string;
+  youtubeLink: string;
+  date: string;
 };

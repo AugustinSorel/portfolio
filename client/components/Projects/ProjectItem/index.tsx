@@ -18,10 +18,13 @@ const ProjectItem = ({ project }: Props) => {
       layout
     >
       <Styles.Article>
-        <Link href={`/projects/${project.title}`} passHref>
+        <Link href={`/projects/${project.id}`} passHref>
           <Styles.Anchor>
             <Styles.Title>{project.title}</Styles.Title>
-            <Styles.Category>{project.category}</Styles.Category>
+            <Styles.Container>
+              <Styles.Category>{project.category}</Styles.Category>
+              <Styles.Date>{project.date}</Styles.Date>
+            </Styles.Container>
             <ProjectTechList technologies={project.technologies} />
           </Styles.Anchor>
         </Link>

@@ -15,13 +15,13 @@ const ProjectsList = () => {
 
   useEffect(() => {
     setProjects(getProjectFiltered(isEnglishSelected));
-  }, [isEnglishSelected, categorySelected]);
+  }, [isEnglishSelected, categorySelected, getProjectFiltered]);
 
   return (
     <Styles.List layout>
       <AnimatePresence initial={false}>
         {projects.map((project) => (
-          <ProjectItem project={project} key={project.title} />
+          <ProjectItem project={project} key={project.id} />
         ))}
       </AnimatePresence>
     </Styles.List>

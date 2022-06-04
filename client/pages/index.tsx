@@ -30,7 +30,7 @@ const Home: NextPage = () => {
           property="og:description"
           content="View my portfolio, qualifications, experiences, skills and projects !"
         />
-        <meta property="og:url" content="https://augustinsorel.com/" />
+        <meta property="og:url" content="https://augustin-sorel.com/" />
         <meta property="og:type" content="website" />
 
         <link rel="icon" href="/favicon.ico" />
