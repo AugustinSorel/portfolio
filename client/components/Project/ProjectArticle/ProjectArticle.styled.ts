@@ -124,3 +124,15 @@ export const Image = styled(motion.img)`
 
   object-fit: contain;
 `;
+
+export const ListTwo = styled.ul``;
+
+export const ListItemTwo = styled.li`
+  ${smallText} /* margin-left: calc(var(--gap) *4); */
+  list-style-position: inside;
+`;
+
+export const TextTwo = styled.h2`
+  ${smallText}
+  text-transform: capitalize;
+`;

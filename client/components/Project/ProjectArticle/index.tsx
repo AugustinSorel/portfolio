@@ -93,6 +93,13 @@ const ProjectArticle = ({ project }: Props) => {
       <Styles.SmallText>description:</Styles.SmallText>
       <Styles.Description>{project.description}</Styles.Description>
 
+      <Styles.SmallText>what i have learned:</Styles.SmallText>
+      <Styles.ListTwo>
+        {project.whatIHaveLearned.map((phrase) => (
+          <Styles.ListItemTwo key={phrase}>{phrase}</Styles.ListItemTwo>
+        ))}
+      </Styles.ListTwo>
+
       <Styles.SmallText>all technologies:</Styles.SmallText>
       <Styles.List>
         {project.allTechnologies.map((technology) => (

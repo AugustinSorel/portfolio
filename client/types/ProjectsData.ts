@@ -45,4 +45,5 @@ export type ProjectData = {
   links: Links;
   date: string;
   images?: string[];
+  whatIHaveLearned: string[];
 };

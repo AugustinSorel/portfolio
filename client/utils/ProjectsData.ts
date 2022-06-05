@@ -30,6 +30,15 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       live: "https://augustin-sorel.com/",
     },
     date: "01.01.1111",
+    whatIHaveLearned: [
+      isEnglishSelected
+        ? "next js with static site generation"
+        : "next js avec la génération de sites statiques",
+      isEnglishSelected ? "responsive design" : "design responsif",
+      isEnglishSelected
+        ? "sending emails with express"
+        : "envoi d'emails avec express",
+    ],
   },
 
   {
@@ -81,6 +90,39 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       "https://raw.githubusercontent.com/AugustinSorel/instagram-imitation/master/images/signUpPage.jpeg",
       "https://raw.githubusercontent.com/AugustinSorel/instagram-imitation/master/images/profileModal.jpeg",
     ],
+    whatIHaveLearned: [
+      isEnglishSelected
+        ? "store images with cloudinary"
+        : "stocker des images avec cloudinary",
+      isEnglishSelected
+        ? "multer for file uploads"
+        : "multer pour les uploads de fichiers",
+      isEnglishSelected
+        ? "advenced jwt authentication"
+        : "authentification jwt avancée",
+      isEnglishSelected
+        ? "refresh and access tokens"
+        : "tokens de rafraichissement et d'accès",
+      isEnglishSelected
+        ? "restrict access to routes"
+        : "restreindre l'accès aux routes",
+      isEnglishSelected
+        ? "use of zod for validation"
+        : "utilisation de zod pour la validation",
+      isEnglishSelected
+        ? "use of react query for data fetching and mutations"
+        : "utilisation de react query pour le fetching et les mutations de données",
+      isEnglishSelected
+        ? "use of zustand for state management"
+        : "utilisation de zustand pour le management de state",
+      isEnglishSelected ? "mongoose reference" : "référence mongoose",
+      isEnglishSelected
+        ? "animations with framer motion"
+        : "animations avec framer motion",
+      isEnglishSelected
+        ? "styled components for styling"
+        : "utilisation de styled components pour le styling",
+    ],
   },
 
   {
@@ -125,6 +167,18 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       "https://raw.githubusercontent.com/AugustinSorel/mutiplayer-tic-tac-toe/master/images/gamePage.jpeg",
       "https://raw.githubusercontent.com/AugustinSorel/mutiplayer-tic-tac-toe/master/images/homePage.jpeg",
       "https://raw.githubusercontent.com/AugustinSorel/mutiplayer-tic-tac-toe/master/images/waitingPage.jpeg",
+    ],
+    whatIHaveLearned: [
+      isEnglishSelected
+        ? "use of socket io for communication"
+        : "utilisation de socket io pour la communication",
+      isEnglishSelected ? "typescript" : "typescript",
+      isEnglishSelected
+        ? "zustand for state management"
+        : "utilisation de zustand pour le management de state",
+      isEnglishSelected
+        ? "framer motion for animations"
+        : "utilisation de framer motion pour les animations",
     ],
   },
 
@@ -179,6 +233,27 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       "https://raw.githubusercontent.com/AugustinSorel/gym-logger/master/Images/MobileHomePage.png",
       "https://raw.githubusercontent.com/AugustinSorel/gym-logger/master/Images/MobileAddValuePage.png",
     ],
+    whatIHaveLearned: [
+      isEnglishSelected
+        ? 'use of "wpa" for mobile support'
+        : 'utilisation de "wpa" pour le support mobile',
+      isEnglishSelected ? "use of react query" : "utilisation de react query",
+      isEnglishSelected
+        ? "basic use of jwt authentication"
+        : "utilisation basic de l'authentification jwt",
+      isEnglishSelected
+        ? "use of recharts for drawing graphs"
+        : "utilisation de recharts pour dessiner des graphiques",
+      isEnglishSelected
+        ? "use of framer motion for animations"
+        : "utilisation de framer motion pour les animations",
+      isEnglishSelected
+        ? "use of styled components"
+        : "utilisation de styled components",
+      isEnglishSelected
+        ? "react query for fetching data and mutation"
+        : "react query pour récupérer les données et la mutation",
+    ],
   },
 
   {
@@ -213,6 +288,17 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       "https://raw.githubusercontent.com/AugustinSorel/DfsVisualization/master/Images/starttwo.png",
       "https://raw.githubusercontent.com/AugustinSorel/DfsVisualization/master/Images/endtwo.png",
     ],
+    whatIHaveLearned: [
+      isEnglishSelected
+        ? "the dfs algorithm and how to use it for solving and generating a maze"
+        : "l'algorithme dfs et comment l'utiliser pour résoudre et générer un labyrinthe",
+      isEnglishSelected
+        ? "the use of wpf for the visualisation"
+        : "l'utilisation de wpf pour la visualisation",
+      isEnglishSelected
+        ? "the use of xaml for styling"
+        : "l'utilisation de xaml pour le style",
+    ],
   },
 
   {
@@ -246,6 +332,15 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       "https://raw.githubusercontent.com/AugustinSorel/SortingAlgorithmVisualizer/master/Images/QuickSort.PNG",
       "https://raw.githubusercontent.com/AugustinSorel/SortingAlgorithmVisualizer/master/Images/RadixSort.PNG",
     ],
+    whatIHaveLearned: [
+      isEnglishSelected ? "bubble sort algorithm" : "algorithme bubble sort",
+      isEnglishSelected
+        ? "insertion sort algorithm"
+        : "algorithme insertion sort",
+      isEnglishSelected ? "quick sort algorithm" : "algorithme quick sort",
+      isEnglishSelected ? "radix sort algorithm" : "algorithme radix sort",
+      isEnglishSelected ? "merge sort algorithm" : "algorithme merge sort",
+    ],
   },
 
   {
@@ -276,6 +371,15 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       "https://github.com/AugustinSorel/DoublePendulum/blob/master/TestingImages/Capture%20d%E2%80%99%C3%A9cran%202021-04-01%20213444.png?raw=true",
       "https://github.com/AugustinSorel/DoublePendulum/blob/master/TestingImages/Capture%20d%E2%80%99%C3%A9cran%202021-04-01%20213512.png?raw=true",
       "https://github.com/AugustinSorel/DoublePendulum/blob/master/TestingImages/Capture%20d%E2%80%99%C3%A9cran%202021-04-01%20213240.png?raw=true",
+    ],
+    whatIHaveLearned: [
+      isEnglishSelected
+        ? "simulation of a double pendulum"
+        : "simulation d'un double pendule",
+      isEnglishSelected
+        ? "dymanic animation with wpf and c#"
+        : "animation dynamique avec wpf et c#",
+      isEnglishSelected ? "xaml for styling" : "xaml pour le style",
     ],
   },
 ];
