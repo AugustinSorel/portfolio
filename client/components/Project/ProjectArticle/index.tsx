@@ -9,8 +9,10 @@ const ProjectArticle = ({ project }: Props) => {
   return (
     <Styles.Article>
       <Styles.Title>{project.title}</Styles.Title>
+      <Styles.SmallText>description:</Styles.SmallText>
       <Styles.Description>{project.description}</Styles.Description>
 
+      <Styles.SmallText>all technologies:</Styles.SmallText>
       <Styles.List>
         {project.allTechnologies.map((technology) => (
           <Styles.ListItem key={technology}>

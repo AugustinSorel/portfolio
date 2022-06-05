@@ -25,7 +25,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       Technologies.styledComponents,
       Technologies.zustand,
       Technologies.typescript,
-    ].sort((a, b) => a.localeCompare(b)),
+    ].sort((a, b) => a.length - b.length),
     links: {
       live: "https://augustin-sorel.com/",
     },
@@ -64,7 +64,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       Technologies.zod,
       Technologies.multer,
       Technologies.reactQuery,
-    ].sort((a, b) => a.localeCompare(b)),
+    ].sort((a, b) => a.length - b.length),
     links: {
       github: "https://github.com/AugustinSorel/instagram-imitation",
       live: "https://instagram-imitation.herokuapp.com/",
@@ -104,7 +104,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       Technologies.reactQuery,
       Technologies.framerMotion,
       Technologies.styledComponents,
-    ].sort((a, b) => a.localeCompare(b)),
+    ].sort((a, b) => a.length - b.length),
     links: {
       github: "https://github.com/AugustinSorel/mutiplayer-tic-tac-toe",
       live: "https://multiplayer-tic-tac-toe-typescript.netlify.app/",
@@ -147,7 +147,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       Technologies.wpa,
       Technologies.styledComponents,
       Technologies.framerMotion,
-    ].sort((a, b) => a.localeCompare(b)),
+    ].sort((a, b) => a.length - b.length),
     links: {
       github: "https://github.com/AugustinSorel/gym-logger",
       live: "https://gym-logger.netlify.app/welcome",
@@ -176,7 +176,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       Technologies.csharp,
       Technologies.wpf,
       Technologies.xaml,
-    ].sort((a, b) => a.localeCompare(b)),
+    ].sort((a, b) => a.length - b.length),
     links: {
       github: "https://github.com/AugustinSorel/DfsVisualization",
       youtube: "https://www.youtube.com/watch?v=yaT4j0oeoiw",
@@ -199,7 +199,11 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
         "L'utilisateur peut sélectionner l'algorithme, la taille de tableau et la vitesse de l'algorithme. " +
         "Le programme va exécuter l'algorithme et afficher les étapes de l'algorithme. ",
 
-    allTechnologies: [Technologies.csharp, Technologies.wpf, Technologies.xaml],
+    allTechnologies: [
+      Technologies.csharp,
+      Technologies.wpf,
+      Technologies.xaml,
+    ].sort((a, b) => a.length - b.length),
     links: {
       github: "https://github.com/AugustinSorel/SortingAlgorithmVisualizer",
       youtube: "https://www.youtube.com/watch?v=CuGiLVoadqc",
@@ -221,7 +225,11 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       : "Une simulation de double pendule fait avec c#. " +
         "L'utilisateur peut sélectionner la longueur et la masse de chaque pendules, la gravité et la vitesse de la simulation. " +
         "La simulation montrera la vitesse de chaque pendules. ",
-    allTechnologies: [Technologies.csharp, Technologies.wpf, Technologies.xaml],
+    allTechnologies: [
+      Technologies.csharp,
+      Technologies.wpf,
+      Technologies.xaml,
+    ].sort((a, b) => a.length - b.length),
     links: {
       github: "https://github.com/AugustinSorel/DoublePendulum",
       youtube: "https://www.youtube.com/watch?v=K_Rlfm4sDlg",

@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import devices from "../../../styles/devices";
-import { largeText, mediumText, smallText } from "../../../styles/texts.styled";
+import {
+  extraSmallText,
+  largeText,
+  mediumText,
+  smallText,
+} from "../../../styles/texts.styled";
 
 export const Article = styled.article`
   flex: 1;
   padding: calc(var(--gap) * 5) calc(var(--gap) * 3);
-
-  > *:not(:first-child) {
-    margin-top: calc(var(--gap) * 5);
-  }
 `;
 
 export const Title = styled.h1`
@@ -18,24 +19,58 @@ export const Title = styled.h1`
   text-align: center;
 `;
 
+export const SmallText = styled.h3`
+  ${smallText}
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  margin-top: calc(var(--gap) * 5);
+  margin-bottom: calc(var(--gap) * 2);
+  position: relative;
+
+  ::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color);
+    left: 0;
+    bottom: 0;
+    height: var(--border-height);
+    width: 100px;
+  }
+`;
+
 export const Description = styled.p`
-  ${mediumText}
+  ${smallText}
 `;
 
 export const List = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+
+  li + li::before {
+    content: "|";
+    ${smallText}
+    padding: 0 0.5vw;
+    font-weight: var(--font-weight-regular);
+
+    @media ${devices.mobile} {
+      content: "";
+    }
+  }
 
   @media ${devices.mobile} {
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
 export const ListItem = styled.li`
   list-style: none;
+  display: flex;
+  align-items: center;
 `;
 
 export const Text = styled.h2`
   ${smallText}
-  text-align:center
+  text-align:center;
+  text-transform: capitalize;
 `;

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Aside = styled.aside`
-  padding: calc(var(--gap) * 3) var(--gap);
+  padding: calc(var(--gap) * 5) calc(var(--gap) * 3);
 
   > *:not(:first-child) {
-    margin-top: calc(var(--gap) * 3);
+    margin-top: 3vh;
   }
 
   > div:first-child {
