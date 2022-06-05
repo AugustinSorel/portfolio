@@ -30,6 +30,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       live: "https://augustin-sorel.com/",
     },
     date: "01.01.1111",
+    images: [],
   },
 
   {
@@ -71,6 +72,16 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       youtube: "https://www.youtube.com/watch?v=UG7HS1lDw5w",
     },
     date: "08.05.2022",
+    images: [
+      "https://raw.githubusercontent.com/AugustinSorel/instagram-imitation/master/images/homePage.jpeg",
+      "https://raw.githubusercontent.com/AugustinSorel/instagram-imitation/master/images/addNewPost.jpeg",
+      "https://raw.githubusercontent.com/AugustinSorel/instagram-imitation/master/images/explorePage.jpeg",
+      "https://raw.githubusercontent.com/AugustinSorel/instagram-imitation/master/images/postsLiked.jpeg",
+      "https://raw.githubusercontent.com/AugustinSorel/instagram-imitation/master/images/profilePage.jpeg",
+      "https://raw.githubusercontent.com/AugustinSorel/instagram-imitation/master/images/loginPage.jpeg",
+      "https://raw.githubusercontent.com/AugustinSorel/instagram-imitation/master/images/signUpPage.jpeg",
+      "https://raw.githubusercontent.com/AugustinSorel/instagram-imitation/master/images/profileModal.jpeg",
+    ],
   },
 
   {
@@ -111,6 +122,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       youtube: "https://www.youtube.com/watch?v=pUSwFlEO0tE",
     },
     date: "05.04.2022",
+    images: [],
   },
 
   {
@@ -154,6 +166,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       youtube: "https://www.youtube.com/watch?v=ABEkooGSEXc&t=4s",
     },
     date: "26.01.2022",
+    images: [],
   },
 
   {
@@ -182,6 +195,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       youtube: "https://www.youtube.com/watch?v=yaT4j0oeoiw",
     },
     date: "27.10.2021",
+    images: [],
   },
 
   {
@@ -209,6 +223,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       youtube: "https://www.youtube.com/watch?v=CuGiLVoadqc",
     },
     date: "02.05.2021",
+    images: [],
   },
 
   {
@@ -235,6 +250,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       youtube: "https://www.youtube.com/watch?v=K_Rlfm4sDlg",
     },
     date: "01.04.2021",
+    images: [],
   },
 ];
 

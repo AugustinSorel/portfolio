@@ -37,7 +37,7 @@ const theme: DefaultTheme = {
 
   sizes: {
     gap: "6px",
-    borderHeight: "4px",
+    borderHeight: "max(3px, 0.2vw)",
     borderRadius: "24px",
   },
 };

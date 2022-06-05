@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import { motion } from "framer-motion";
+import styled, { css } from "styled-components";
 import devices from "../../../styles/devices";
 import {
   extraSmallText,
@@ -73,4 +74,53 @@ export const Text = styled.h2`
   ${smallText}
   text-align:center;
   text-transform: capitalize;
+`;
+
+export const Container = styled.div`
+  user-select: none;
+  overflow: hidden;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 50%;
+  aspect-ratio: 1/1;
+
+  margin: auto;
+`;
+
+const buttonShared = css`
+  top: calc(50% - var(--font-size-small) / 2);
+  position: absolute;
+  background: var(--background-color);
+  border-radius: 50%;
+  padding: var(--gap);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+
+  svg {
+    width: var(--font-size-small);
+    height: var(--font-size-small);
+  }
+`;
+
+export const PreviousButton = styled.div`
+  ${buttonShared}
+  left: var(--gap);
+`;
+
+export const NextButton = styled.div`
+  ${buttonShared}
+  right: var(--gap);
+`;
+
+export const Image = styled(motion.img)`
+  position: absolute;
+  width: 100%;
+  height: auto;
 `;

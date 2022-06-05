@@ -44,4 +44,5 @@ export type ProjectData = {
   allTechnologies: Technologies[];
   links: Links;
   date: string;
+  images: string[];
 };
