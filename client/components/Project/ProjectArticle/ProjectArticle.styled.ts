@@ -85,10 +85,11 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  height: 50%;
-  aspect-ratio: 1/1;
+  height: max(300px, 50vw);
+  /* aspect-ratio: 1/1; */
 
-  margin: auto;
+  margin: 0 auto;
+  margin-top: calc(var(--gap) * 5);
 `;
 
 const buttonShared = css`
@@ -97,9 +98,6 @@ const buttonShared = css`
   background: var(--background-color);
   border-radius: 50%;
   padding: var(--gap);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   z-index: 2;
 
@@ -122,5 +120,7 @@ export const NextButton = styled.div`
 export const Image = styled(motion.img)`
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 100%;
+
+  object-fit: contain;
 `;

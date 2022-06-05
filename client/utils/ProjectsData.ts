@@ -30,7 +30,6 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       live: "https://augustin-sorel.com/",
     },
     date: "01.01.1111",
-    images: [],
   },
 
   {
@@ -122,7 +121,11 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       youtube: "https://www.youtube.com/watch?v=pUSwFlEO0tE",
     },
     date: "05.04.2022",
-    images: [],
+    images: [
+      "https://raw.githubusercontent.com/AugustinSorel/mutiplayer-tic-tac-toe/master/images/gamePage.jpeg",
+      "https://raw.githubusercontent.com/AugustinSorel/mutiplayer-tic-tac-toe/master/images/homePage.jpeg",
+      "https://raw.githubusercontent.com/AugustinSorel/mutiplayer-tic-tac-toe/master/images/waitingPage.jpeg",
+    ],
   },
 
   {
@@ -166,7 +169,16 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       youtube: "https://www.youtube.com/watch?v=ABEkooGSEXc&t=4s",
     },
     date: "26.01.2022",
-    images: [],
+    images: [
+      "https://raw.githubusercontent.com/AugustinSorel/gym-logger/master/Images/HomePage.png",
+      "https://raw.githubusercontent.com/AugustinSorel/gym-logger/master/Images/ListOfExercises.png",
+      "https://raw.githubusercontent.com/AugustinSorel/gym-logger/master/Images/AddValuePage.png",
+      "https://raw.githubusercontent.com/AugustinSorel/gym-logger/master/Images/AccountPage.png",
+      "https://raw.githubusercontent.com/AugustinSorel/gym-logger/master/Images/LoginPage.png",
+      "https://raw.githubusercontent.com/AugustinSorel/gym-logger/master/Images/SignUpPage.png",
+      "https://raw.githubusercontent.com/AugustinSorel/gym-logger/master/Images/MobileHomePage.png",
+      "https://raw.githubusercontent.com/AugustinSorel/gym-logger/master/Images/MobileAddValuePage.png",
+    ],
   },
 
   {
@@ -195,7 +207,12 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       youtube: "https://www.youtube.com/watch?v=yaT4j0oeoiw",
     },
     date: "27.10.2021",
-    images: [],
+    images: [
+      "https://raw.githubusercontent.com/AugustinSorel/DfsVisualization/master/Images/start.png",
+      "https://raw.githubusercontent.com/AugustinSorel/DfsVisualization/master/Images/end.png",
+      "https://raw.githubusercontent.com/AugustinSorel/DfsVisualization/master/Images/starttwo.png",
+      "https://raw.githubusercontent.com/AugustinSorel/DfsVisualization/master/Images/endtwo.png",
+    ],
   },
 
   {
@@ -223,7 +240,12 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       youtube: "https://www.youtube.com/watch?v=CuGiLVoadqc",
     },
     date: "02.05.2021",
-    images: [],
+    images: [
+      "https://raw.githubusercontent.com/AugustinSorel/SortingAlgorithmVisualizer/master/Images/BubbleSort.PNG",
+      "https://github.com/AugustinSorel/SortingAlgorithmVisualizer/blob/master/Images/InsertionSort.PNG?raw=true",
+      "https://raw.githubusercontent.com/AugustinSorel/SortingAlgorithmVisualizer/master/Images/QuickSort.PNG",
+      "https://raw.githubusercontent.com/AugustinSorel/SortingAlgorithmVisualizer/master/Images/RadixSort.PNG",
+    ],
   },
 
   {
@@ -250,7 +272,11 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       youtube: "https://www.youtube.com/watch?v=K_Rlfm4sDlg",
     },
     date: "01.04.2021",
-    images: [],
+    images: [
+      "https://github.com/AugustinSorel/DoublePendulum/blob/master/TestingImages/Capture%20d%E2%80%99%C3%A9cran%202021-04-01%20213444.png?raw=true",
+      "https://github.com/AugustinSorel/DoublePendulum/blob/master/TestingImages/Capture%20d%E2%80%99%C3%A9cran%202021-04-01%20213512.png?raw=true",
+      "https://github.com/AugustinSorel/DoublePendulum/blob/master/TestingImages/Capture%20d%E2%80%99%C3%A9cran%202021-04-01%20213240.png?raw=true",
+    ],
   },
 ];
 
