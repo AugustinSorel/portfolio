@@ -103,9 +103,7 @@ const ProjectArticle = ({ project }: Props) => {
       <Styles.SmallText>all technologies:</Styles.SmallText>
       <Styles.List>
         {project.allTechnologies.map((technology) => (
-          <Styles.ListItem key={technology}>
-            <Styles.Text>{technology}</Styles.Text>
-          </Styles.ListItem>
+          <Styles.ListItem key={technology}>{technology}</Styles.ListItem>
         ))}
       </Styles.List>
     </Styles.Article>

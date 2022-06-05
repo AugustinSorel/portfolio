@@ -43,36 +43,11 @@ export const Description = styled.p`
   ${smallText}
 `;
 
-export const List = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-
-  li + li::before {
-    content: "|";
-    ${smallText}
-    padding: 0 0.5vw;
-    font-weight: var(--font-weight-regular);
-
-    @media ${devices.mobile} {
-      content: "";
-    }
-  }
-
-  @media ${devices.mobile} {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
+export const List = styled.ul``;
 
 export const ListItem = styled.li`
-  list-style: none;
-  display: flex;
-  align-items: center;
-`;
-
-export const Text = styled.h2`
+  list-style-position: inside;
   ${smallText}
-  text-align:center;
   text-transform: capitalize;
 `;
 
@@ -85,7 +60,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  height: max(300px, 50vw);
+  height: min(600px, 50vw);
   /* aspect-ratio: 1/1; */
 
   margin: 0 auto;
