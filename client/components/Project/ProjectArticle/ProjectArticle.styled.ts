@@ -13,7 +13,7 @@ export const Article = styled.article`
   padding: calc(var(--gap) * 5) calc(var(--gap) * 3);
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   ${largeText}
   text-transform: uppercase;
   font-weight: var(--font-weight-bold);

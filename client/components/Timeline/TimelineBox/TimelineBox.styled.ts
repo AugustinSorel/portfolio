@@ -35,7 +35,7 @@ export const Container = styled.div`
     content: "";
     position: absolute;
     top: calc(var(--circle-size) * 2);
-    right: calc(-1 * (var(--circle-size) / 2));
+    right: calc(-1 * var(--circle-size) / 2);
 
     @media ${devices.mobile} {
       right: calc(-1 * (var(--circle-size) / 2) - (var(--gap) / 2));
