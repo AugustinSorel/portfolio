@@ -22,7 +22,7 @@ export const ListItem = styled.li`
   display: flex;
   flex: 1;
 
-  h2 {
+  div {
     margin: auto;
   }
 `;

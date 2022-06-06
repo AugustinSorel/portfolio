@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const Text = styled.h2`
-  text-align: center;
+export const Container = styled.div`
   text-transform: uppercase;
   position: relative;
-  cursor: pointer;
 `;

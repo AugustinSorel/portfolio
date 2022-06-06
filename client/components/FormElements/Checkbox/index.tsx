@@ -13,14 +13,14 @@ const Checkbox = ({ text, clickHandler, isActive }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Styles.Text
+    <Styles.Container
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <Button text={text} onClick={clickHandler} />
       <Underline isActive={isHovered} />
       <Underline isActive={isActive} />
-    </Styles.Text>
+    </Styles.Container>
   );
 };
 
