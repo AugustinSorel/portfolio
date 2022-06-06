@@ -2,11 +2,15 @@ import styled from "styled-components";
 import devices from "../../../styles/devices";
 import swapColor from "../../../styles/swapColor.styled";
 
-export const List = styled.ul`
-  list-style: none;
+export const Container = styled.div`
   padding: var(--gap) 0;
   background-color: var(--background-color);
   display: flex;
+  flex: 1;
+
+  div {
+    margin: auto;
+  }
 
   @media ${devices.desktop} {
     ${swapColor}
@@ -15,14 +19,5 @@ export const List = styled.ul`
   @media ${devices.mobile} {
     flex-direction: column;
     gap: var(--gap);
-  }
-`;
-
-export const ListItem = styled.li`
-  display: flex;
-  flex: 1;
-
-  div {
-    margin: auto;
   }
 `;
