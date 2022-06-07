@@ -44,8 +44,9 @@ export const NextButton = styled.div`
 
 export const Image = styled(motion.img)`
   position: absolute;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
 
-  object-fit: contain;
+  /* object-fit: contain; */
+  width: min-content;
 `;

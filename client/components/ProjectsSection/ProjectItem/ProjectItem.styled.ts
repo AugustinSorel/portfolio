@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import devices from "../../../styles/devices";
 import { mediumText } from "../../../styles/texts.styled";
 
 export const ListItem = styled(motion.li)`
@@ -9,6 +10,10 @@ export const ListItem = styled(motion.li)`
 
   :last-child {
     grid-column: 1 / 3;
+
+    @media ${devices.mobile} {
+      grid-column: 1;
+    }
   }
 `;
 
