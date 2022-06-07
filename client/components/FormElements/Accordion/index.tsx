@@ -1,33 +1,34 @@
-import { useState } from "react";
+import { scaleDown, scaleUp } from "../../../framerMotion/whileVariants";
 import SvgIcon from "../../UIElements/SvgIcon";
-import Button from "../Button";
 import * as Styles from "./Accordion.styled";
 
 type Props = {
   children: React.ReactNode;
   title: string;
+  isContentOpen: boolean;
+  toggleShowContent: () => void;
 };
 
-const Accordion = ({ children, title }: Props) => {
-  const [showContent, setShowContent] = useState(false);
-
+const Accordion = ({
+  children,
+  title,
+  isContentOpen,
+  toggleShowContent,
+}: Props) => {
   return (
     <Styles.Container>
-      <Styles.Header>
+      <Styles.Header onClick={toggleShowContent}>
         <Styles.Title>{title}</Styles.Title>
-        <Button
-          text={`${title} chevron`}
-          onClick={() => {
-            setShowContent((prevState) => !prevState);
-          }}
+        <Styles.SvgIconContainer
+          whileHover={{ ...scaleUp }}
+          whileTap={{ ...scaleDown }}
+          animate={{ rotate: isContentOpen ? 180 : 0 }}
         >
-          <Styles.SvgIconContainer animate={{ rotate: showContent ? 180 : 0 }}>
-            <SvgIcon path="chevron" />
-          </Styles.SvgIconContainer>
-        </Button>
+          <SvgIcon path="chevron" />
+        </Styles.SvgIconContainer>
       </Styles.Header>
 
-      {showContent && children}
+      {isContentOpen && children}
     </Styles.Container>
   );
 };
