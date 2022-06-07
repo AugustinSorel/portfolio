@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import swapColor from "../../../styles/swapColor.styled";
 import { extraSmallText } from "../../../styles/texts.styled";
@@ -7,7 +8,7 @@ export const Container = styled.div`
   gap: var(--gap);
 `;
 
-export const Category = styled.h3`
+export const Category = styled(motion.h3)`
   ${extraSmallText}
   text-transform: capitalize;
   font-weight: var(--font-weight-bold);
@@ -16,7 +17,7 @@ export const Category = styled.h3`
   border-radius: calc(var(--border-radius) * 2);
 `;
 
-export const Date = styled.h3`
+export const Date = styled(motion.h3)`
   ${extraSmallText}
   ${swapColor}
   text-transform: capitalize;

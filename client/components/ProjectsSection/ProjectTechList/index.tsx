@@ -10,7 +10,7 @@ const ProjectTechList = ({ technologies }: Props) => {
     <Styles.List>
       {technologies.map((tech) => (
         <Styles.ListItem key={tech}>
-          <Styles.Text>{tech}</Styles.Text>
+          <Styles.Text layout>{tech}</Styles.Text>
         </Styles.ListItem>
       ))}
     </Styles.List>

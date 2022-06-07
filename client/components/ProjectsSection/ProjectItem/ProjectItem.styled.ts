@@ -6,6 +6,10 @@ export const ListItem = styled(motion.li)`
   cursor: pointer;
   background-color: var(--background-color);
   padding: calc(var(--gap) * 5) 0;
+
+  :last-child {
+    grid-column: 1 / 3;
+  }
 `;
 
 export const Article = styled.article`
@@ -27,7 +31,7 @@ export const Anchor = styled.a`
   }
 `;
 
-export const Title = styled.h2`
+export const Title = styled(motion.h2)`
   ${mediumText}
   text-align: center;
   text-transform: uppercase;
