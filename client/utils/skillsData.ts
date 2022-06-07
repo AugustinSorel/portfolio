@@ -3,20 +3,19 @@ import Skill from "../types/Skill";
 const skillsData: Skill[] = [
   {
     title: "frontend",
-    skills: ["HTML5", "CSS3", "JavaScript", "React"],
+    skills: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "nextjs"],
   },
   {
     title: "backend",
-    skills: ["Node.js", "Express", "MongoDB", "GraphQL"],
+    skills: ["Node.js", "Express", "MongoDB", "SQL", "JWT"],
   },
   {
     title: "devops",
-
-    skills: ["Git", "GitHub", "GitLab", "Docker", "AWS", "Heroku"],
+    skills: ["Git", "GitHub", "Heroku", "netlify", "vercel"],
   },
   {
     title: "design",
-    skills: ["UX", "UI", "Sketch", "Figma", "Adobe XD"],
+    skills: ["Figma", "photoshop"],
   },
 ];
 
