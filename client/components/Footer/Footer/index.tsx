@@ -1,13 +1,10 @@
+import FooterAside from "../FooterAside";
 import * as Styles from "./Footer.styled";
 
-type Props = {};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <Styles.Footer>
-      <Styles.Aside>
-        <h3>hello</h3>
-      </Styles.Aside>
+      <FooterAside />
       <Styles.Form>world</Styles.Form>
     </Styles.Footer>
   );

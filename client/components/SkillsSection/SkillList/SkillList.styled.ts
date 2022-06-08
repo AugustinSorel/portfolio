@@ -1,12 +1,17 @@
 import styled from "styled-components";
-import { mediumText } from "../../../styles/texts.styled";
+import { smallText } from "../../../styles/texts.styled";
 
 export const List = styled.ul`
   margin-top: calc(var(--gap) * 3);
 `;
 
 export const ListItem = styled.li`
-  list-style-position: inside;
-  ${mediumText}
+  ${smallText}
+  list-style: none;
+  margin-left: calc(var(--gap) * 3);
   text-transform: capitalize;
+
+  :not(:first-child) {
+    margin-top: calc(var(--gap));
+  }
 `;
