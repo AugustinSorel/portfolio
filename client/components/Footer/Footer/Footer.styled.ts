@@ -9,8 +9,3 @@ export const Footer = styled.footer`
     flex-direction: column;
   }
 `;
-
-export const Form = styled.form`
-  flex: 4;
-  background-color: var(--background-color);
-`;
