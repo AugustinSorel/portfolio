@@ -4,7 +4,7 @@ import * as Styles from "./Footer.styled";
 
 const Footer = () => {
   return (
-    <Styles.Footer>
+    <Styles.Footer id="contact">
       <FooterAside />
       <FooterForm />
     </Styles.Footer>

@@ -6,14 +6,27 @@ export const Container = styled.div`
   background-color: var(--background-color);
 
   display: flex;
+  padding: calc(var(--gap) * 5);
+  gap: calc(var(--gap) * 2);
 `;
 
 export const Text = styled.h2`
   ${mediumText}
-  color: red;
   white-space: nowrap;
+  text-transform: capitalize;
+  height: min-content;
+
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  display: flex;
+  align-items: center;
+  margin: auto;
 `;
 
 export const Form = styled.form`
   flex: 1;
+
+  display: flex;
+  flex-direction: column;
 `;
