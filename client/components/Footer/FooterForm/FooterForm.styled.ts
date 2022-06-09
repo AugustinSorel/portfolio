@@ -7,7 +7,7 @@ export const Container = styled.div`
 
   display: flex;
   padding: calc(var(--gap) * 5);
-  gap: calc(var(--gap) * 2);
+  gap: calc(var(--gap) * 8);
 `;
 
 export const Text = styled.h2`
@@ -26,7 +26,13 @@ export const Text = styled.h2`
 
 export const Form = styled.form`
   flex: 1;
-
   display: flex;
   flex-direction: column;
+  gap: calc(var(--gap) * 5);
+
+  button {
+    align-self: flex-end;
+    padding: calc(var(--gap) * 2);
+    text-transform: capitalize;
+  }
 `;

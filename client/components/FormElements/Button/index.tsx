@@ -6,9 +6,16 @@ type Props = {
   type?: "button" | "submit" | "reset";
   text: string;
   onClick?: () => void;
+  inverted?: boolean;
 };
 
-const Button = ({ children, type = "button", text, ...rest }: Props) => {
+const Button = ({
+  children,
+  type = "button",
+  text,
+  inverted,
+  ...rest
+}: Props) => {
   if (children) {
     return (
       <Styles.Button
@@ -17,6 +24,7 @@ const Button = ({ children, type = "button", text, ...rest }: Props) => {
         whileTap={{ ...scaleDown }}
         type={type}
         aria-label={text}
+        $inverted={inverted}
         {...rest}
       >
         {children}
@@ -25,7 +33,7 @@ const Button = ({ children, type = "button", text, ...rest }: Props) => {
   }
 
   return (
-    <Styles.Button aria-label={text} type={type} {...rest}>
+    <Styles.Button aria-label={text} $inverted={inverted} type={type} {...rest}>
       {text}
     </Styles.Button>
   );
