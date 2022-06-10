@@ -24,7 +24,7 @@ const buttonShared = css`
   border-radius: 50%;
   padding: var(--gap);
   cursor: pointer;
-  z-index: 2;
+  z-index: 1;
 
   svg {
     width: var(--font-size-small);
