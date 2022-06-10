@@ -1,11 +1,11 @@
-import * as Styles from "./TextArea.styled";
+import * as Styles from './TextArea.styled';
 
 type Props = {
   placeholder: string;
 };
 
 const TextArea = ({ ...rest }: Props) => {
-  return <Styles.TextArea {...rest} />;
+  return <Styles.TextArea rows={4} {...rest} />;
 };
 
 export default TextArea;
