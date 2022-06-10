@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import sendMessage from "../../../api/contact";
 import Button from "../../FormElements/Button";
 import Input from "../../FormElements/Input";
 import TextArea from "../TextArea";
@@ -11,6 +12,8 @@ const FooterForm = () => {
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
+
+    sendMessage();
   };
 
   return (
