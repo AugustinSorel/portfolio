@@ -1,10 +1,14 @@
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import Button from "../../FormElements/Button";
 import Input from "../../FormElements/Input";
 import TextArea from "../TextArea";
 import * as Styles from "./FooterForm.styled";
 
 const FooterForm = () => {
+  const [email, setEmail] = useState("");
+  const [title, setTitle] = useState("");
+  const [message, setMessage] = useState("");
+
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
   };
@@ -13,9 +17,23 @@ const FooterForm = () => {
     <Styles.Container>
       <Styles.Text>contact me</Styles.Text>
       <Styles.Form onSubmit={submitHandler}>
-        <Input type="email" placeholder="Your email" />
-        <Input type="text" placeholder="Title" />
-        <TextArea placeholder="Message" />
+        <Input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          placeholder="Your email"
+        />
+        <Input
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          type="text"
+          placeholder="Title"
+        />
+        <TextArea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Message"
+        />
         <Button type="submit" text="send" inverted />
       </Styles.Form>
     </Styles.Container>

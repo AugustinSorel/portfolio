@@ -1,6 +1,8 @@
-import * as Styles from './TextArea.styled';
+import * as Styles from "./TextArea.styled";
 
 type Props = {
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   placeholder: string;
 };
 
