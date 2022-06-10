@@ -10,10 +10,25 @@ const FooterForm = () => {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
 
-  const submitHandler = (e: FormEvent) => {
+  const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
 
-    sendMessage();
+    try {
+      await sendMessage(email, title, message);
+    } catch (error: any) {
+      console.log(error);
+      if (error.response.data.field === "email") {
+        console.log("email");
+      }
+
+      if (error.response.data.field === "title") {
+        console.log("title");
+      }
+
+      if (error.response.data.field === "message") {
+        console.log("message");
+      }
+    }
   };
 
   return (
