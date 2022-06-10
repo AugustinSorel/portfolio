@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import devices from '../../../styles/devices';
-import { mediumText } from '../../../styles/texts.styled';
+import styled from "styled-components";
+import devices from "../../../styles/devices";
+import { mediumText } from "../../../styles/texts.styled";
 
 export const Container = styled.div`
-  flex: 4;
+  flex: 3;
   background-color: var(--background-color);
 
   display: flex;
@@ -42,7 +42,7 @@ export const Form = styled.form`
 
   button {
     align-self: flex-end;
-    padding: calc(var(--gap) * 2);
+    padding: calc(var(--gap) * 2) calc(var(--gap) * 5);
     text-transform: capitalize;
   }
 `;

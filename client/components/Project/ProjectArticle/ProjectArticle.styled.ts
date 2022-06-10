@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { largeText, smallText } from "../../../styles/texts.styled";
 
 export const Article = styled.article`
-  flex: 1;
+  flex: 4;
   padding: calc(var(--gap) * 5) calc(var(--gap) * 3);
 `;
 
