@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import ContactError from "../errors/contact.error";
+import EmailError from "../errors/email.error";
 import ZodError from "../errors/zod.error";
 
 const apiError = (
@@ -16,7 +16,7 @@ const apiError = (
       .json({ message: err.message, field: err.field });
   }
 
-  if (err instanceof ContactError) {
+  if (err instanceof EmailError) {
     console.log({ message: err.message, field: err.field });
 
     return res

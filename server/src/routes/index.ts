@@ -1,9 +1,9 @@
 import express from "express";
-import contactRoutes from "./contact.routes";
+import emailRoutes from "./email.routes";
 
 const router = express.Router();
 
 router.get("/health-check", (req, res) => res.sendStatus(200));
-router.use("/contact", contactRoutes);
+router.use("/email", emailRoutes);
 
 export default router;

@@ -1,9 +1,9 @@
 import { NextFunction } from "connect";
 import { Request, Response } from "express";
-import { ContactSchema } from "../schemas/contact.schema";
+import { EmailSchema } from "../schemas/email.schema";
 
 export const newMessage = (
-  req: Request<{}, {}, ContactSchema>,
+  req: Request<{}, {}, EmailSchema>,
   res: Response,
   next: NextFunction
 ) => {

@@ -1,6 +1,6 @@
 import { object, string, TypeOf } from "zod";
 
-export const contactSchema = object({
+export const emailSchema = object({
   body: object({
     email: string({
       required_error: "Email is required",
@@ -23,4 +23,4 @@ export const contactSchema = object({
   }),
 });
 
-export type ContactSchema = TypeOf<typeof contactSchema>["body"];
+export type EmailSchema = TypeOf<typeof emailSchema>["body"];

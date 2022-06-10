@@ -1,6 +1,6 @@
 import { EmailSchema } from "../schemas/email.schema";
 
-class ZodError {
+class EmailError {
   public code: number;
   public message: string;
   public field: EmailSchema;
@@ -10,13 +10,6 @@ class ZodError {
     this.message = message;
     this.field = field;
   }
-
-  public static invalidInputError(
-    message: string,
-    field: EmailSchema
-  ): ZodError {
-    return new ZodError(400, message, field);
-  }
 }
 
-export default ZodError;
+export default EmailError;
