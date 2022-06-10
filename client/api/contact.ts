@@ -1,11 +1,9 @@
 import axios from "axios";
-
-const uri =
-  process.env.NODE_ENV === "development" ? "http://localhost:5000" : "";
+import backendUri from "../utils/backendUri";
 
 const sendMessage = async () => {
   try {
-    const res = await axios.post(`${uri}/api/email`, {
+    const res = await axios.post(`${backendUri}/contact/new-message`, {
       name: "John Doe",
       email: "",
       message: "This is a test message",
