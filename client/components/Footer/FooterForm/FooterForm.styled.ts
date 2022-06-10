@@ -38,7 +38,7 @@ export const Form = styled.form`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: calc(var(--gap) * 5);
+  gap: calc(var(--gap) * 7);
 
   button {
     align-self: flex-end;
