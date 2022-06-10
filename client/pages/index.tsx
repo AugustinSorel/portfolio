@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Welcome</title>
+        <title>Augustin Sorel - Portfolio</title>
         <meta
           name="description"
           content="View my portfolio, qualifications, experiences, skills and projects !"
