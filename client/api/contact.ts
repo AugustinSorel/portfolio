@@ -1,12 +1,11 @@
 import axios from "axios";
 
 const uri =
-  process.env.NEXT_PUBLIC_BACKEND_URI ||
-  "http://localhost:5000/api/contact/new-message";
+  process.env.NODE_ENV === "development" ? "http://localhost:5000" : "";
 
 const sendMessage = async () => {
   try {
-    const res = await axios.post(uri, {
+    const res = await axios.post(`${uri}/api/email`, {
       name: "John Doe",
       email: "",
       message: "This is a test message",
