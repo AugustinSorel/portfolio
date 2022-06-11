@@ -1,5 +1,5 @@
 import { useAnimation } from "framer-motion";
-import { HTMLInputTypeAttribute, useEffect } from "react";
+import React, { HTMLInputTypeAttribute } from "react";
 import errorVariants from "../../../framerMotion/errorVariants";
 import * as Styles from "./Input.styled";
 
@@ -8,17 +8,20 @@ type Props = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type: HTMLInputTypeAttribute;
   placeholder: string;
-  isInputWrong: boolean;
 };
 
-const Input = ({ isInputWrong, ...rest }: Props) => {
+type InputRefProps = {
+  startErrorAnimation: () => void;
+};
+
+const Input = ({ ...rest }: Props, ref: React.Ref<InputRefProps>) => {
   const animation = useAnimation();
 
-  useEffect(() => {
-    if (isInputWrong) {
+  React.useImperativeHandle(ref, () => ({
+    startErrorAnimation() {
       animation.start("animate");
-    }
-  }, [isInputWrong]);
+    },
+  }));
 
   return (
     <Styles.Input
@@ -30,4 +33,4 @@ const Input = ({ isInputWrong, ...rest }: Props) => {
   );
 };
 
-export default Input;
+export default React.forwardRef(Input);

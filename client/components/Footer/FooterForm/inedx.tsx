@@ -1,4 +1,5 @@
-import { FormEvent, useReducer, useState } from "react";
+import { AnimationControls } from "framer-motion";
+import { FormEvent, useReducer, useRef, useState } from "react";
 import sendMessage from "../../../api/contact";
 import { FooterFormActionType } from "../../../types/footerForm";
 import defaultEmailMessage from "../../../utils/defaultEmailMessage";
@@ -14,31 +15,27 @@ const FooterForm = () => {
     defaultEmailMessage
   );
 
-  const [isEmailWrong, setIsEmailWrong] = useState(false);
-  const [isTitleWrong, setIsTitleWrong] = useState(false);
-  const [isMessageWrong, setIsMessageWrong] = useState(false);
+  type InputHandler = React.ElementRef<typeof Input>;
+  const emailInputRef = useRef<InputHandler>(null);
+  const titleInputRef = useRef<InputHandler>(null);
 
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
-
-    setIsEmailWrong(false);
-    setIsTitleWrong(false);
-    setIsMessageWrong(false);
 
     try {
       await sendMessage(footerFormState);
       dispatch({ type: FooterFormActionType.RESET, payload: "" });
     } catch (error: any) {
       if (error.response.data.field === "email") {
-        setIsEmailWrong(true);
+        emailInputRef.current?.startErrorAnimation();
       }
 
       if (error.response.data.field === "title") {
-        setIsTitleWrong(true);
+        titleInputRef.current?.startErrorAnimation();
       }
 
       if (error.response.data.field === "message") {
-        setIsMessageWrong(true);
+        // setIsMessageWrong(true);
       }
     }
   };
@@ -61,10 +58,11 @@ const FooterForm = () => {
           }
           type="text"
           placeholder="Your email"
-          isInputWrong={isEmailWrong}
+          ref={emailInputRef}
         />
         <Input
           value={footerFormState.title}
+          ref={titleInputRef}
           onChange={(e) =>
             ChangeInputHandler(
               FooterFormActionType.CHANGE_TITLE,
@@ -73,7 +71,6 @@ const FooterForm = () => {
           }
           type="text"
           placeholder="Title"
-          isInputWrong={isTitleWrong}
         />
         <TextArea
           value={footerFormState.message}
@@ -84,7 +81,7 @@ const FooterForm = () => {
             )
           }
           placeholder="Message"
-          isInputWrong={isMessageWrong}
+          isInputWrong={false}
         />
         <Button type="submit" text="send" inverted />
       </Styles.Form>
