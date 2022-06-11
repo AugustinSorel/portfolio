@@ -1,12 +1,11 @@
-import { AnimationControls } from "framer-motion";
-import { FormEvent, useReducer, useRef, useState } from "react";
+import { FormEvent, useReducer, useRef } from "react";
 import sendMessage from "../../../api/contact";
 import { FooterFormActionType } from "../../../types/footerForm";
 import defaultEmailMessage from "../../../utils/defaultEmailMessage";
 import Button from "../../FormElements/Button";
 import Input from "../../FormElements/Input";
-import TextArea from "../TextArea";
-import footerFormReducer from "./dewjideiowj";
+import TextArea from "../../FormElements/TextArea";
+import footerFormReducer from "./footerFormReducer";
 import * as Styles from "./FooterForm.styled";
 
 const FooterForm = () => {
@@ -16,8 +15,10 @@ const FooterForm = () => {
   );
 
   type InputHandler = React.ElementRef<typeof Input>;
+  type InputHandler2 = React.ElementRef<typeof TextArea>;
   const emailInputRef = useRef<InputHandler>(null);
   const titleInputRef = useRef<InputHandler>(null);
+  const messageInputRef = useRef<InputHandler2>(null);
 
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
@@ -35,7 +36,7 @@ const FooterForm = () => {
       }
 
       if (error.response.data.field === "message") {
-        // setIsMessageWrong(true);
+        messageInputRef.current?.startErrorAnimation();
       }
     }
   };
@@ -74,6 +75,7 @@ const FooterForm = () => {
         />
         <TextArea
           value={footerFormState.message}
+          ref={messageInputRef}
           onChange={(e) =>
             ChangeInputHandler(
               FooterFormActionType.CHANGE_MESSAGE,
@@ -81,7 +83,6 @@ const FooterForm = () => {
             )
           }
           placeholder="Message"
-          isInputWrong={false}
         />
         <Button type="submit" text="send" inverted />
       </Styles.Form>

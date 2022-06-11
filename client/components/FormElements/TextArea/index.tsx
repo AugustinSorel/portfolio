@@ -1,5 +1,5 @@
 import { useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import React from "react";
 import errorVariants from "../../../framerMotion/errorVariants";
 import * as Styles from "./TextArea.styled";
 
@@ -7,17 +7,20 @@ type Props = {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   placeholder: string;
-  isInputWrong: boolean;
 };
 
-const TextArea = ({ isInputWrong, ...rest }: Props) => {
+type InputRefProps = {
+  startErrorAnimation: () => void;
+};
+
+const TextArea = ({ ...rest }: Props, ref: React.Ref<InputRefProps>) => {
   const animation = useAnimation();
 
-  useEffect(() => {
-    if (isInputWrong) {
+  React.useImperativeHandle(ref, () => ({
+    startErrorAnimation() {
       animation.start("animate");
-    }
-  }, [isInputWrong]);
+    },
+  }));
 
   return (
     <Styles.TextArea
@@ -29,4 +32,4 @@ const TextArea = ({ isInputWrong, ...rest }: Props) => {
   );
 };
 
-export default TextArea;
+export default React.forwardRef(TextArea);
