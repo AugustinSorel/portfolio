@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
         --background-color: ${({ theme }) => theme.colors.background};
         --color: ${({ theme }) => theme.colors.color};
         --success-color: ${({ theme }) => theme.colors.success};
+        --error-color: ${({ theme }) => theme.colors.error};
 
         --font-size-extra-small: ${({ theme }) => theme.fontSizes.extraSmall};
         --font-size-small: ${({ theme }) => theme.fontSizes.small};

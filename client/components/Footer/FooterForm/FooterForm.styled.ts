@@ -9,6 +9,7 @@ export const Container = styled.div`
   display: flex;
   padding: calc(var(--gap) * 10) calc(var(--gap) * 5);
   gap: calc(var(--gap) * 10);
+  overflow: hidden;
 
   @media ${devices.mobile} {
     flex-direction: column;

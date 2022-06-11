@@ -6,6 +6,7 @@ declare module "styled-components" {
       background: string;
       color: string;
       success: string;
+      error: string;
     };
 
     fontSizes: {

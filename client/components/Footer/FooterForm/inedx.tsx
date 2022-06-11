@@ -10,23 +10,30 @@ const FooterForm = () => {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
 
+  const [isEmailWrong, setIsEmailWrong] = useState(false);
+  const [isTitleWrong, setIsTitleWrong] = useState(false);
+  const [isMessageWrong, setIsMessageWrong] = useState(false);
+
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
+
+    setIsEmailWrong(false);
+    setIsTitleWrong(false);
+    setIsMessageWrong(false);
 
     try {
       await sendMessage(email, title, message);
     } catch (error: any) {
-      console.log(error);
       if (error.response.data.field === "email") {
-        console.log("email");
+        setIsEmailWrong(true);
       }
 
       if (error.response.data.field === "title") {
-        console.log("title");
+        setIsTitleWrong(true);
       }
 
       if (error.response.data.field === "message") {
-        console.log("message");
+        setIsMessageWrong(true);
       }
     }
   };
@@ -40,17 +47,20 @@ const FooterForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           type="email"
           placeholder="Your email"
+          isInputWrong={isEmailWrong}
         />
         <Input
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           type="text"
           placeholder="Title"
+          isInputWrong={isTitleWrong}
         />
         <TextArea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Message"
+          isInputWrong={isMessageWrong}
         />
         <Button type="submit" text="send" inverted />
       </Styles.Form>

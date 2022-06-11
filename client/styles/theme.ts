@@ -5,6 +5,7 @@ const theme: DefaultTheme = {
     background: "#fff",
     color: "#000",
     success: "#10ac84",
+    error: "#e74c3c",
   },
 
   fontSizes: {
