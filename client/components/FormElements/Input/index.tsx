@@ -1,6 +1,7 @@
 import { useAnimation } from "framer-motion";
 import React, { HTMLInputTypeAttribute } from "react";
 import errorVariants from "../../../framerMotion/errorVariants";
+import InputRefProps from "../../../types/ErrorAnimationRef";
 import * as Styles from "./Input.styled";
 
 type Props = {
@@ -10,11 +11,7 @@ type Props = {
   placeholder: string;
 };
 
-type InputRefProps = {
-  startErrorAnimation: () => void;
-};
-
-const Input = ({ ...rest }: Props, ref: React.Ref<InputRefProps>) => {
+const Input = ({ ...rest }: Props, ref: InputRefProps) => {
   const animation = useAnimation();
 
   React.useImperativeHandle(ref, () => ({

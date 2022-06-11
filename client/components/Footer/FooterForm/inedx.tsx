@@ -1,4 +1,4 @@
-import { FormEvent, useReducer, useRef } from "react";
+import { FormEvent, useReducer, useRef, useState } from "react";
 import sendMessage from "../../../api/contact";
 import { FooterFormActionType } from "../../../types/footerForm";
 import defaultEmailMessage from "../../../utils/defaultEmailMessage";
@@ -7,6 +7,7 @@ import Input from "../../FormElements/Input";
 import TextArea from "../../FormElements/TextArea";
 import footerFormReducer from "./footerFormReducer";
 import * as Styles from "./FooterForm.styled";
+import Loader from "../../UIElements/Loader";
 
 const FooterForm = () => {
   const [footerFormState, dispatch] = useReducer(
@@ -15,13 +16,15 @@ const FooterForm = () => {
   );
 
   type InputHandler = React.ElementRef<typeof Input>;
-  type InputHandler2 = React.ElementRef<typeof TextArea>;
+  type TextAreaHandler = React.ElementRef<typeof TextArea>;
   const emailInputRef = useRef<InputHandler>(null);
   const titleInputRef = useRef<InputHandler>(null);
-  const messageInputRef = useRef<InputHandler2>(null);
+  const messageInputRef = useRef<TextAreaHandler>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
 
     try {
       await sendMessage(footerFormState);
@@ -39,6 +42,8 @@ const FooterForm = () => {
         messageInputRef.current?.startErrorAnimation();
       }
     }
+
+    setIsLoading(false);
   };
 
   const ChangeInputHandler = (type: FooterFormActionType, payload: string) => {
@@ -84,7 +89,9 @@ const FooterForm = () => {
           }
           placeholder="Message"
         />
-        <Button type="submit" text="send" inverted />
+        <Button type="submit" text="send" inverted>
+          send {isLoading && <Loader />}
+        </Button>
       </Styles.Form>
     </Styles.Container>
   );
