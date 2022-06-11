@@ -1,12 +1,9 @@
 import axios from "axios";
+import EmailMessage from "../types/EmailMessage";
 import backendUri from "../utils/backendUri";
 
-const sendMessage = (email: string, title: string, message: string) => {
-  return axios.post(`${backendUri}/email`, {
-    email,
-    title,
-    message,
-  });
+const sendMessage = (emailMessage: EmailMessage) => {
+  return axios.post(`${backendUri}/email`, emailMessage);
 };
 
 export default sendMessage;
