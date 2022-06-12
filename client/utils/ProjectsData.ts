@@ -29,7 +29,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
     links: {
       live: "https://augustin-sorel.com/",
     },
-    date: "01.01.1111",
+    date: "15.06.2022",
     whatIHaveLearned: [
       isEnglishSelected
         ? "next js with static site generation"
