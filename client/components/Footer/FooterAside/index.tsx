@@ -1,3 +1,4 @@
+import backendUri from "../../../utils/backendUri";
 import * as Styles from "./FooterAside.styled";
 
 const FooterAside = () => {
@@ -12,7 +13,7 @@ const FooterAside = () => {
       >
         youtube
       </Styles.Anchor>
-      <Styles.Anchor href="https://bzh.com" target={"_blank"}>
+      <Styles.Anchor href={`${backendUri}/cv.pdf`} target={"_blank"}>
         <strong>
           <em>cv</em>
         </strong>
