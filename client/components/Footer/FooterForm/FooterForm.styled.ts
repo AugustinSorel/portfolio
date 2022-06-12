@@ -56,6 +56,7 @@ export const BottomContainer = styled.div`
   button {
     padding: calc(var(--gap) * 2) calc(var(--gap) * 5);
     text-transform: capitalize;
+    margin-left: auto;
   }
 
   @media ${devices.mobile} {

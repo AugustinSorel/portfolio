@@ -1,4 +1,4 @@
-import { FormEvent, useReducer, useRef, useState } from "react";
+import { FormEvent, useEffect, useReducer, useRef, useState } from "react";
 import sendMessage from "../../../api/contact";
 import { FooterFormActionType } from "../../../types/footerForm";
 import defaultEmailMessage from "../../../utils/defaultEmailMessage";
@@ -8,6 +8,7 @@ import TextArea from "../../FormElements/TextArea";
 import footerFormReducer from "./footerFormReducer";
 import * as Styles from "./FooterForm.styled";
 import Loader from "../../UIElements/Loader";
+import { AnimatePresence } from "framer-motion";
 
 const FooterForm = () => {
   const [errorText, setErrorText] = useState("");

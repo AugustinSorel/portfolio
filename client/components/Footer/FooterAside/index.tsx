@@ -1,4 +1,3 @@
-import backendUri from "../../../utils/backendUri";
 import * as Styles from "./FooterAside.styled";
 
 const FooterAside = () => {
