@@ -17,6 +17,10 @@ const FooterAside = () => {
           <em>cv</em>
         </strong>
       </Styles.Anchor>
+
+      <Styles.Copyright>
+        Augustin Sorel | 2022 | All rights reserved
+      </Styles.Copyright>
     </Styles.Aside>
   );
 };

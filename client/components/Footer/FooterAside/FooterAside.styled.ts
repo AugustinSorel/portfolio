@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import swapColor from "../../../styles/swapColor.styled";
-import { mediumText } from "../../../styles/texts.styled";
+import { extraSmallText, mediumText } from "../../../styles/texts.styled";
 
 export const Aside = styled.aside`
   ${swapColor}
@@ -37,4 +37,10 @@ export const Anchor = styled.a`
   :hover::after {
     width: 100%;
   }
+`;
+
+export const Copyright = styled.p`
+  ${extraSmallText}
+  font-weight: var(--font-weight-bold);
+  margin-top: auto;
 `;

@@ -10,6 +10,7 @@ import * as Styles from "./FooterForm.styled";
 import Loader from "../../UIElements/Loader";
 
 const FooterForm = () => {
+  const [errorText, setErrorText] = useState("");
   const [footerFormState, dispatch] = useReducer(
     footerFormReducer,
     defaultEmailMessage
@@ -25,11 +26,13 @@ const FooterForm = () => {
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setErrorText("");
 
     try {
       await sendMessage(footerFormState);
       dispatch({ type: FooterFormActionType.RESET, payload: "" });
     } catch (error: any) {
+      setErrorText(error.response.data.message);
       if (error.response.data.field === "email") {
         emailInputRef.current?.startErrorAnimation();
       }
@@ -89,9 +92,13 @@ const FooterForm = () => {
           }
           placeholder="Message"
         />
-        <Button type="submit" text="send" inverted>
-          send {isLoading && <Loader />}
-        </Button>
+
+        <Styles.BottomContainer>
+          <Styles.ErrorText>{errorText}</Styles.ErrorText>
+          <Button type="submit" text="send" inverted>
+            send {isLoading && <Loader />}
+          </Button>
+        </Styles.BottomContainer>
       </Styles.Form>
     </Styles.Container>
   );

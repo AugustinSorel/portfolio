@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import devices from "../../../styles/devices";
-import { mediumText } from "../../../styles/texts.styled";
+import { mediumText, smallText } from "../../../styles/texts.styled";
 
 export const Container = styled.div`
   flex: 3;
@@ -40,10 +40,26 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: calc(var(--gap) * 7);
+`;
+
+export const ErrorText = styled.p`
+  ${smallText}
+  color: var(--error-color);
+  flex: 1;
+`;
+
+export const BottomContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   button {
-    align-self: flex-end;
     padding: calc(var(--gap) * 2) calc(var(--gap) * 5);
     text-transform: capitalize;
+  }
+
+  @media ${devices.mobile} {
+    flex-direction: column;
+    gap: calc(var(--gap) * 5);
   }
 `;
