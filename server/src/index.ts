@@ -11,6 +11,6 @@ app.use(cors({ origin: true }));
 app.use(express.json());
 app.use("/api", router);
 app.use(apiError);
-app.use("/api", express.static(path.join(__dirname, "public")));
+app.use("/api", express.static(path.join(__dirname, "../public")));
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
