@@ -1,17 +1,31 @@
 import { NextFunction } from "connect";
 import { Request, Response } from "express";
 import { EmailSchema } from "../schemas/email.schema";
+import {
+  sendConfirmationEmail,
+  sendUserEmailToMe,
+} from "../services/email.service";
 
-export const newMessage = (
+export const newMessage = async (
   req: Request<{}, {}, EmailSchema>,
   res: Response,
   next: NextFunction
 ) => {
-  const { email, message, title } = req.body;
+  const { email, title, message } = req.body;
 
-  // send me an email
+  try {
+    await sendUserEmailToMe(email, title, message);
+  } catch (error) {
+    console.log(error);
+    return res.sendStatus(500);
+  }
 
-  // send a confirmation email to the user
+  try {
+    await sendConfirmationEmail(email);
+  } catch (error) {
+    console.log(error);
+    return res.sendStatus(500);
+  }
 
   res.sendStatus(200);
 };
