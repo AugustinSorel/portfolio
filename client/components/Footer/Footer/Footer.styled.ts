@@ -7,6 +7,6 @@ export const Footer = styled.footer`
   gap: var(--gap);
 
   @media ${devices.mobile} {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `;

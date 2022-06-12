@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import devices from "../../../styles/devices";
 import swapColor from "../../../styles/swapColor.styled";
 import { extraSmallText, mediumText } from "../../../styles/texts.styled";
 
@@ -43,4 +44,8 @@ export const Copyright = styled.p`
   ${extraSmallText}
   font-weight: var(--font-weight-bold);
   margin-top: auto;
+
+  @media ${devices.mobile} {
+    text-align: center;
+  }
 `;
