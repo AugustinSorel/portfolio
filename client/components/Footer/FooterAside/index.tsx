@@ -13,7 +13,7 @@ const FooterAside = () => {
       >
         youtube
       </Styles.Anchor>
-      <Styles.Anchor href={`${backendUri}/cv.pdf`} target={"_blank"}>
+      <Styles.Anchor href={`${backendUri}/CV.pdf`} target={"_blank"}>
         <strong>
           <em>cv</em>
         </strong>
