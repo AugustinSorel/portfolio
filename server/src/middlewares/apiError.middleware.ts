@@ -17,11 +17,9 @@ const apiError = (
   }
 
   if (err instanceof EmailError) {
-    console.log({ message: err.message, field: err.field });
+    console.log({ message: err.message });
 
-    return res
-      .status(err.code)
-      .json({ message: err.message, field: err.field });
+    return res.status(err.code).json({ message: err.message });
   }
 
   return res.status(500).send("Internal server error");

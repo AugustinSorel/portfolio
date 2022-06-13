@@ -1,14 +1,14 @@
-import { EmailSchema } from "../schemas/email.schema";
-
 class EmailError {
   public code: number;
   public message: string;
-  public field: EmailSchema;
 
-  constructor(code: number, message: string, field: EmailSchema) {
+  constructor(code: number, message: string) {
     this.code = code;
     this.message = message;
-    this.field = field;
+  }
+
+  public static unableToSendEmail(): EmailError {
+    return new EmailError(500, "Unable to send email");
   }
 }
 

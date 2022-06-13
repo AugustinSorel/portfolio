@@ -32,6 +32,10 @@ const FooterForm = () => {
       await sendMessage(footerFormState);
       dispatch({ type: FooterFormActionType.RESET, payload: "" });
     } catch (error: any) {
+      if (!error.response) {
+        return setErrorText("Something went wrong. Please try again later.");
+      }
+
       setErrorText(error.response.data.message);
       if (error.response.data.field === "email") {
         emailInputRef.current?.startErrorAnimation();

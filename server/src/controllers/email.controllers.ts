@@ -1,5 +1,6 @@
 import { NextFunction } from "connect";
 import { Request, Response } from "express";
+import EmailError from "../errors/email.error";
 import { EmailSchema } from "../schemas/email.schema";
 import {
   sendConfirmationEmail,
@@ -17,14 +18,14 @@ export const newMessage = async (
     await sendUserEmailToMe(email, title, message);
   } catch (error) {
     console.log(error);
-    return res.sendStatus(500);
+    return next(EmailError.unableToSendEmail());
   }
 
   try {
     await sendConfirmationEmail(email);
   } catch (error) {
     console.log(error);
-    return res.sendStatus(500);
+    return next(EmailError.unableToSendEmail());
   }
 
   res.sendStatus(200);
