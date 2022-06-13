@@ -25,6 +25,7 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       Technologies.styledComponents,
       Technologies.zustand,
       Technologies.typescript,
+      Technologies.nodemailer,
     ].sort((a, b) => a.length - b.length),
     links: {
       live: "https://augustin-sorel.com/",

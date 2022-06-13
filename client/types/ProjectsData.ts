@@ -27,6 +27,7 @@ export enum Technologies {
   netlify = "netlify",
   heroku = "heroku",
   next = "next",
+  nodemailer = "nodemailer",
 }
 
 export type Links = {
