@@ -12,9 +12,9 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
     ],
     category: Categories.Frontend,
     description: isEnglishSelected
-      ? "Portfolio website built with the mern stack, typescript and framer motion. " +
+      ? "Portfolio website built with the mern stack, typescript, nextjs and framer motion. " +
         "This website showcase my projects and skills. As well as being able to contact me and see my resume."
-      : "Site de portfolio fait avec le stack mern, typescript et framer motion. " +
+      : "Site de portfolio fait avec le stack mern, typescript, nextjs et framer motion. " +
         "Ce site montre mes projets et mes compétences. Ainsi que pouvoir me contacter et voir mon CV.",
     allTechnologies: [
       Technologies.react,
@@ -37,8 +37,8 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
         : "next js avec la génération de sites statiques",
       isEnglishSelected ? "responsive design" : "design responsif",
       isEnglishSelected
-        ? "sending emails with express"
-        : "envoi d'emails avec express",
+        ? "sending emails with nodemailer"
+        : "envoi d'emails avec nodemailer",
     ],
   },
 
@@ -56,11 +56,11 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
     description: isEnglishSelected
       ? "An instagram clone build with the mern stack and typescript. " +
         "Users can sign up and upload pictures. As well as being able to browse through other users content and leave comments and likes. " +
-        "The project is fully hosted  on heroku. "
-      : "Un clone d'instagram fait avec le stack mern et typescript. " +
-        " Les utilisateurs peuvent s'inscrire et uploader des photos. " +
+        "The backend project is hosted on heroku and the frontend on Netlify."
+      : "Un clone d'instagram fait avec le stack mern et typescript." +
+        "Les utilisateurs peuvent s'inscrire et uploader des photos. " +
         "Ainsi qu'être capable de parcourir les contenus d'autres utilisateurs et de laisser des commentaires et des likes. " +
-        "Le projet est entièrement hébergé sur heroku. ",
+        "Le projet backend est hébergé sur heroku et ke frontend sur Netlify.",
     allTechnologies: [
       Technologies.react,
       Technologies.nodejs,
@@ -142,11 +142,11 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
       ? "A multiplayer tic-tac-toe game built with the mern stack, typescript and socket io. " +
         "Users are first required to enter their room code to join a game. " +
         "The user can then play against another user with the same room code. " +
-        "The project is fully hosted  on heroku."
+        "The backend project is hosted on heroku and the frontend on Netlify."
       : "Un jeu de tic-tac-toe multijoueur fait avec le stack mern, typescript et socket io. " +
         "Les utilisateurs doivent d'abord entrer un code pour rejoindre une partie. " +
         "L'utilisateur peut ensuite jouer contre un autre utilisateur avec le même code. " +
-        "Le projet est entièrement hébergé sur heroku.",
+        "Le projet backend est hébergé sur heroku et ke frontend sur Netlify.",
     allTechnologies: [
       Technologies.react,
       Technologies.nodejs,
@@ -199,12 +199,12 @@ const projectsData = (isEnglishSelected: boolean): ProjectData[] => [
         "Users can sign up and start entering their gym progress. " +
         "An algorithm will calculate their best perfomance and store them in the database. " +
         "The user will be able to see his progress on a graph and sorted by categories. " +
-        "The project is fully hosted  on heroku."
+        "The backend project is hosted on heroku and the frontend on Netlify."
       : "Une application web PWA fait avec le stack mern et javascript. " +
         "Les utilisateurs peuvent s'inscrire et commencer à entrer leur progrès dans leur gym. " +
         "Un algorithme va calculer leur meilleur résultat et les enregistrer dans la base de données. " +
         "L'utilisateur pourra voir son progrès sur un graphique et trié par catégories. " +
-        "Le projet est entièrement hébergé sur heroku.",
+        "Le projet backend est hébergé sur heroku et ke frontend sur Netlify.",
 
     allTechnologies: [
       Technologies.react,

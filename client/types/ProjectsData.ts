@@ -5,7 +5,7 @@ export enum Categories {
 }
 
 export enum Technologies {
-  react = "react",
+  react = "reactjs",
   nodejs = "nodejs",
   express = "express",
   mongodb = "mongodb",
@@ -26,7 +26,7 @@ export enum Technologies {
   vercel = "vercel",
   netlify = "netlify",
   heroku = "heroku",
-  next = "next",
+  next = "nextjs",
   nodemailer = "nodemailer",
 }
 
