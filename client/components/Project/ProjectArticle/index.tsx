@@ -1,3 +1,4 @@
+import useLanguageStore from "../../../store/useLanguageStore";
 import { ProjectData } from "../../../types/ProjectsData";
 import Carousel from "../../UIElements/carousel";
 import ProjectLabelDescription from "../ProjectLabelDescription";
@@ -9,6 +10,7 @@ type Props = {
 };
 
 const ProjectArticle = ({ project }: Props) => {
+  const { isEnglishSelected } = useLanguageStore();
   return (
     <Styles.Article>
       <Styles.Title>{project.title}</Styles.Title>
@@ -18,10 +20,16 @@ const ProjectArticle = ({ project }: Props) => {
       <ProjectLabelDescription text="description" />
       <Styles.Description>{project.description}</Styles.Description>
 
-      <ProjectLabelDescription text="what i have learned" />
+      <ProjectLabelDescription
+        text={isEnglishSelected ? "what i have learned" : "ce que j'ai appris"}
+      />
       <ProjectList iterator={project.whatIHaveLearned} />
 
-      <ProjectLabelDescription text="all technologies" />
+      <ProjectLabelDescription
+        text={
+          isEnglishSelected ? "all technologies" : "toutes les technologies"
+        }
+      />
       <ProjectList iterator={project.allTechnologies} />
     </Styles.Article>
   );

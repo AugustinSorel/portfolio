@@ -1,5 +1,6 @@
 import { FormEvent, useReducer, useRef, useState } from "react";
 import sendMessage from "../../../api/contact";
+import useLanguageStore from "../../../store/useLanguageStore";
 import { FooterFormActionType } from "../../../types/footerForm";
 import defaultEmailMessage from "../../../utils/defaultEmailMessage";
 import Button from "../../FormElements/Button";
@@ -22,6 +23,7 @@ const FooterForm = () => {
   const titleInputRef = useRef<InputHandler>(null);
   const messageInputRef = useRef<TextAreaHandler>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const { isEnglishSelected } = useLanguageStore();
 
   const submitHandler = async (e: FormEvent) => {
     e.preventDefault();
@@ -59,7 +61,9 @@ const FooterForm = () => {
 
   return (
     <Styles.Container>
-      <Styles.Text>contact me</Styles.Text>
+      <Styles.Text>
+        {isEnglishSelected ? "contact me" : "contactez moi"}
+      </Styles.Text>
       <Styles.Form onSubmit={submitHandler}>
         <Input
           value={footerFormState.email}
@@ -70,7 +74,7 @@ const FooterForm = () => {
             )
           }
           type="text"
-          placeholder="Your email"
+          placeholder={isEnglishSelected ? "Your email" : "Votre mail"}
           ref={emailInputRef}
         />
         <Input
@@ -83,7 +87,7 @@ const FooterForm = () => {
             )
           }
           type="text"
-          placeholder="Title"
+          placeholder={isEnglishSelected ? "Title" : "Titre"}
         />
         <TextArea
           value={footerFormState.message}
