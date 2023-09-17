@@ -1,0 +1,38 @@
+---
+import { type VariantProps, cva } from "class-variance-authority";
+import { cn } from "../../utils/style";
+import type { HTMLAttributes } from "astro/types";
+
+const path = {
+  moon: "M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z",
+} as const;
+
+type Props = HTMLAttributes<"svg"> &
+  VariantProps<typeof iconVariants> & {
+    icon: keyof typeof path;
+  };
+
+const { icon, size, class: className, ...rest } = Astro.props;
+
+const iconVariants = cva("fill-none stroke-current stroke-2", {
+  variants: {
+    size: {
+      default: "h-5 w-5",
+      sm: "h-3 w-3",
+      lg: "h-8 w-8",
+    },
+  },
+  defaultVariants: {
+    size: "default",
+  },
+});
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  class={cn(iconVariants({ size, class: className }))}
+  {...rest}
+>
+  <path d={path[icon]}></path>
+</svg>

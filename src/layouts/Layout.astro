@@ -1,5 +1,6 @@
 ---
-import GridBackground from "../components/GridBackground.astro";
+import GridBackground from "../components/gridBackground.astro";
+import Header from "../components/header.astro";
 interface Props {
   title: string;
 }
@@ -8,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -18,21 +19,37 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="min-h-screen text-foreground bg-gradient-to-bl from-primary to-transparent bg-background"
+    class="dark min-h-screen text-foreground bg-gradient-to-bl from-accent to-transparent bg-background"
   >
+    <Header />
     <slot />
     <GridBackground />
   </body>
 </html>
 <style is:global>
   :root {
+    --background: 0 0% 80%;
+    --foreground: 0 0% 10%;
+
+    --primary: 0 0% 0% / 0.05;
+
+    --border: 0 0% 0% / 0.1;
+
+    --accent: 165 100% 90%;
+    --accent-foreground: 165 100% 30%;
+
+    --max-width-container: 1000px;
   }
 
   .dark {
     --background: 0 0% 7%;
     --foreground: 0 0% 93%;
 
-    --primary: 165 100% 6%;
-    --primary-foreground: 165 100% 50%;
+    --primary: 0 0% 100% / 0.05;
+
+    --accent: 165 100% 6%;
+    --accent-foreground: 165 100% 50%;
+
+    --border: 0 0% 100% / 0.1;
   }
 </style>
