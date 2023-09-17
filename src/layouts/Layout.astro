@@ -1,0 +1,38 @@
+---
+import GridBackground from "../components/GridBackground.astro";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="min-h-screen text-foreground bg-gradient-to-bl from-primary to-transparent bg-background"
+  >
+    <slot />
+    <GridBackground />
+  </body>
+</html>
+<style is:global>
+  :root {
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 93%;
+
+    --primary: 165 100% 6%;
+    --primary-foreground: 165 100% 50%;
+  }
+</style>
