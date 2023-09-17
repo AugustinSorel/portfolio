@@ -19,8 +19,8 @@ module.exports = {
         "max-width":
           "max(calc((100vw - var(--max-width-container)) / 2), 1.25rem)",
       },
-      fontFamily: {
-        hello: ["oleo script"],
+      height: {
+        header: "var(--header-height)",
       },
     },
   },

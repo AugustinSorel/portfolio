@@ -2,8 +2,29 @@
 import Button from "./ui/button.astro";
 ---
 
-<header class="flex items-center justify-between px-max-width py-4">
-  <span class="">AS</span>
+<header
+  class="flex items-center justify-between px-max-width z-20 fixed top-0 left-0 right-0 h-header"
+>
+  <nav
+    class="border capitalize text-sm border-border px-2 py-1.5 rounded-full flex gap-1 items-center backdrop-blur-md"
+    id="main-nav"
+  >
+    <a
+      href="#about"
+      class="px-5 py-2 rounded-full w-24 text-center aria-[current=true]:bg-primary aria-[current=true]:backdrop-blur-md hover:text-foreground/80"
+      >about</a
+    >
+    <a
+      href="#projects"
+      class="px-5 py-2 rounded-full w-24 text-center aria-[current=true]:bg-primary aria-[current=true]:backdrop-blur-md hover:text-foreground/80"
+      >projects</a
+    >
+    <a
+      href="#stack"
+      class="px-5 py-2 rounded-full w-24 text-center aria-[current=true]:bg-primary aria-[current=true]:backdrop-blur-md hover:text-foreground/80"
+      >stack</a
+    >
+  </nav>
   <Button
     variant="icon"
     size="icon"
@@ -11,6 +32,30 @@ import Button from "./ui/button.astro";
     id="theme-switcher"
   />
 </header>
+
+<script>
+  const mainNav = document.querySelector("#main-nav");
+
+  if (!mainNav) {
+    throw new Error("Main nav not found");
+  }
+
+  const allAnchors = mainNav.querySelectorAll("a");
+
+  const selectCurrentAnchor = () => {
+    const currentPath = window.location.href.split("#")[1] || "about";
+    allAnchors.forEach((anchor) => {
+      anchor.setAttribute("aria-current", "false");
+      if (anchor.getAttribute("href") === `#${currentPath}`) {
+        anchor.setAttribute("aria-current", "true");
+      }
+    });
+  };
+
+  window.addEventListener("hashchange", selectCurrentAnchor);
+
+  selectCurrentAnchor();
+</script>
 
 <script>
   const themeSwitcher = document.getElementById("theme-switcher");
