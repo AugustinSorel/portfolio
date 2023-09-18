@@ -10,6 +10,8 @@ module.exports = {
         primary: "hsl(var(--primary))",
         border: "hsl(var(--border))",
 
+        muted: "hsl(var(--muted))",
+
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
@@ -21,6 +23,9 @@ module.exports = {
       },
       height: {
         header: "var(--header-height)",
+      },
+      margin: {
+        "header-height": "var(--header-height)",
       },
     },
   },

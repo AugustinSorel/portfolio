@@ -1,0 +1,29 @@
+---
+import { type VariantProps, cva } from "class-variance-authority";
+import { cn } from "../../utils/style";
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a"> & VariantProps<typeof anchorVariants>;
+
+const { size, variant, class: className, ...rest } = Astro.props;
+
+const anchorVariants = cva("", {
+  variants: {
+    variant: {
+      default:
+        "decoration-wavy underline decoration-accent-foreground/20 hover:decoration-accent-foreground/50 hover:text-foreground transition-colors",
+    },
+    size: {
+      default: "",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+    size: "default",
+  },
+});
+---
+
+<a class={cn(anchorVariants({ variant, size, class: className }))} {...rest}>
+  <slot />
+</a>
