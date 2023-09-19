@@ -15,9 +15,9 @@ import Layout from "../layouts/Layout.astro";
           augustin
           <Strong>sorel</Strong>,
           <br />
-          software engineer
+           software engineer
         </h1>
-        <p class="text-muted text-lg">
+        <p class="text-muted-foreground text-lg">
           I am a software engineer student from the University of
           <Link href="https://le.ac.uk/" target="_blank">Leicester.</Link>
           <br />
@@ -28,6 +28,33 @@ import Layout from "../layouts/Layout.astro";
         </p>
       </div>
       <img width={156} src="./memoji.png" alt="a memoji of me" />
+    </section>
+
+    <section id="projects">
+      <h2 class="uppercase text-muted text-lg font-light">selected projects</h2>
+      <hr class="border-primary mb-5 mt-2" />
+      <nav class="grid grid-cols-2 gap-5">
+        <a
+          href=""
+          class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
+          >hello</a
+        >
+        <a
+          href=""
+          class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
+          >hello</a
+        >
+        <a
+          href=""
+          class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
+          >hello</a
+        >
+        <a
+          href=""
+          class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
+          >hello</a
+        >
+      </nav>
     </section>
   </main>
 </Layout>
