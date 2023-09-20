@@ -2,7 +2,6 @@
 import Link from "../components/ui/link.astro";
 import Strong from "../components/ui/strong.astro";
 import Layout from "../layouts/Layout.astro";
-//TODO: add ring
 ---
 
 <Layout title="Augustin Sorel">
@@ -20,7 +19,9 @@ import Layout from "../layouts/Layout.astro";
         </h1>
         <p class="text-muted-foreground text-lg">
           I am a software engineer student from the University of
-          <Link href="https://le.ac.uk/" target="_blank">Leicester.</Link>
+          <Link variant="wavy" href="https://le.ac.uk/" target="_blank">
+            Leicester.
+          </Link>
           <br />
            Passionate about
           <Strong>web development</Strong>
@@ -35,48 +36,48 @@ import Layout from "../layouts/Layout.astro";
       <h2 class="uppercase text-muted text-lg font-light">selected projects</h2>
       <hr class="border-primary mb-5 mt-2" />
       <nav class="grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-5">
-        <a
+        <Link
           href="https://github.com/augustinsorel/gym-graphs"
           class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
           target="_blank"
         >
           <h3 class="capitalize text-lg">gym graphs</h3>
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://github.com/augustinsorel/ts-interpreter"
           class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
           target="_blank"
         >
           <h3 class="capitalize text-lg">typescript interpreter</h3>
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://github.com/augustinsorel/instagram-imitation"
           class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
           target="_blank"
         >
           <h3 class="capitalize text-lg">instagram imitation</h3>
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://github.com/AugustinSorel/ecommerce-jewelry"
           class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
           target="_blank"
         >
           <h3 class="capitalize text-lg">jewelry ecommerce</h3>
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://github.com/AugustinSorel/DoublePendulum"
           class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
           target="_blank"
         >
           <h3 class="capitalize text-lg">sorting algorithm visualizer</h3>
-        </a>
-        <a
+        </Link>
+        <Link
           href='https://github.com/AugustinSorel/DfsVisualization""'
           class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
           target="_blank"
         >
           <h3 class="capitalize text-lg">DFS visualizer</h3>
-        </a>
+        </Link>
       </nav>
     </section>
   </main>

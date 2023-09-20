@@ -1,5 +1,6 @@
 ---
 import ThemeToggler from "./themeToggler.astro";
+import Link from "./ui/link.astro";
 ---
 
 <header
@@ -9,21 +10,24 @@ import ThemeToggler from "./themeToggler.astro";
     class="border capitalize text-xs md:text-sm border-border px-2 py-1.5 rounded-full flex gap-1 items-center backdrop-blur-md"
     id="main-nav"
   >
-    <a
+    <Link
       href="#about"
       class="md:px-5 px-2 py-2 rounded-full w-16 text-center aria-[current=true]:bg-primary transition-colors md:w-24 aria-[current=true]:backdrop-blur-md hover:text-muted-foreground"
-      >about</a
     >
-    <a
+      about
+    </Link>
+    <Link
       href="#projects"
       class="md:px-5 px-2 py-2 rounded-full w-16 text-center aria-[current=true]:bg-primary transition-colors md:w-24 aria-[current=true]:backdrop-blur-md hover:text-muted-foreground"
-      >projects</a
     >
-    <a
+      projects
+    </Link>
+    <Link
       href="#stack"
       class="md:px-5 px-2 py-2 rounded-full w-16 text-center aria-[current=true]:bg-primary transition-colors md:w-24 aria-[current=true]:backdrop-blur-md hover:text-muted-foreground"
-      >stack</a
     >
+      stack
+    </Link>
   </nav>
   <ThemeToggler />
 </header>

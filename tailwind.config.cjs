@@ -10,6 +10,8 @@ module.exports = {
         primary: "hsl(var(--primary))",
         border: "hsl(var(--border))",
 
+        ring: "hsl(var(--ring))",
+
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
