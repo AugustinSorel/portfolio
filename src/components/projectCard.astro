@@ -1,0 +1,22 @@
+---
+import Link from "./ui/link.astro";
+
+type Props = {
+  title: string;
+  description: string;
+  href: string;
+};
+
+const { description, href, title } = Astro.props;
+---
+
+<Link
+  href={href}
+  class="rounded-md space-y-2 p-4 backdrop-blur-md bg-primary border border-border hover:bg-border transition-colors"
+  target="_blank"
+>
+  <h3 class="capitalize text-lg">{title}</h3>
+  <p class="text-muted-foreground first-letter:capitalize font-light">
+    {description}
+  </p>
+</Link>

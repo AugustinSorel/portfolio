@@ -1,14 +1,15 @@
 ---
+import ProjectCard from "../components/projectCard.astro";
 import Link from "../components/ui/link.astro";
 import Strong from "../components/ui/strong.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Augustin Sorel">
-  <main class="pt-20 px-max-width">
+  <main class="px-max-width">
     <section
       id="about"
-      class="py-16 flex justify-between flex-col-reverse gap-3 md:flex-row"
+      class="pt-[calc(var(--header-height)+4rem)] pb-4 flex justify-between flex-col-reverse gap-3 md:flex-row"
     >
       <div class="space-y-3">
         <h1 class="capitalize text-4xl leading-tight">
@@ -35,49 +36,44 @@ import Layout from "../layouts/Layout.astro";
     <section id="projects">
       <h2 class="uppercase text-muted text-lg font-light">selected projects</h2>
       <hr class="border-primary mb-5 mt-2" />
-      <nav class="grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-5">
-        <Link
+      <nav
+        class="grid grid-cols-[repeat(auto-fill,minmax(min(400px,100%),1fr))] gap-3"
+      >
+        <ProjectCard
           href="https://github.com/augustinsorel/gym-graphs"
-          class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
-          target="_blank"
-        >
-          <h3 class="capitalize text-lg">gym graphs</h3>
-        </Link>
-        <Link
+          title="gym graphs"
+          description="a gym application to track your progress"
+        />
+
+        <ProjectCard
           href="https://github.com/augustinsorel/ts-interpreter"
-          class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
-          target="_blank"
-        >
-          <h3 class="capitalize text-lg">typescript interpreter</h3>
-        </Link>
-        <Link
+          title="typescript interpreter"
+          description="A programming language made from scratch"
+        />
+
+        <ProjectCard
           href="https://github.com/augustinsorel/instagram-imitation"
-          class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
-          target="_blank"
-        >
-          <h3 class="capitalize text-lg">instagram imitation</h3>
-        </Link>
-        <Link
+          title="instagram imitation"
+          description="A clone of instagram made"
+        />
+
+        <ProjectCard
           href="https://github.com/AugustinSorel/ecommerce-jewelry"
-          class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
-          target="_blank"
-        >
-          <h3 class="capitalize text-lg">jewelry ecommerce</h3>
-        </Link>
-        <Link
+          title="jewelry ecommerce"
+          description="A perfetly working ecommerce app"
+        />
+
+        <ProjectCard
           href="https://github.com/AugustinSorel/DoublePendulum"
-          class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
-          target="_blank"
-        >
-          <h3 class="capitalize text-lg">sorting algorithm visualizer</h3>
-        </Link>
-        <Link
-          href='https://github.com/AugustinSorel/DfsVisualization""'
-          class="rounded-md p-5 backdrop-blur-md bg-primary border border-border"
-          target="_blank"
-        >
-          <h3 class="capitalize text-lg">DFS visualizer</h3>
-        </Link>
+          title="double pendulum"
+          description="A double pendulum simulation"
+        />
+
+        <ProjectCard
+          href="https://github.com/AugustinSorel/DoublePendulum"
+          title="DFS visualizer"
+          description="A maze generator and solver using DFS"
+        />
       </nav>
     </section>
   </main>
