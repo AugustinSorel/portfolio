@@ -33,8 +33,19 @@
 
   themeSwitcher.addEventListener("change", () => {
     localStorage.setItem("theme", themeSwitcher.checked ? "dark" : "light");
+
+    if (themeSwitcher.checked) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   });
 
   const theme = localStorage.getItem("theme") ?? "dark";
+
+  if (theme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+
   themeSwitcher.checked = theme === "dark";
 </script>
