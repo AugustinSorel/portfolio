@@ -6,7 +6,6 @@ import Link from "../components/ui/link.astro";
 import Strong from "../components/ui/strong.astro";
 import Layout from "../layouts/Layout.astro";
 //TODO: try to add circle effect like windows
-//TODO: view cv button
 //TODO: fix bg flickering
 //TODO: browser compatibility
 ---
@@ -1140,16 +1139,24 @@ import Layout from "../layouts/Layout.astro";
   </main>
 
   <footer class="px-max-width mt-16">
-    <div class="flex items-center justify-between py-5 border-border border-t">
-      <p class="text-sm font-light text-muted-foreground capitalize">
-        2023 - augustin sorel
-      </p>
-      <p class="text-sm font-light text-muted-foreground">
-        Made with
-        <Link href="https://astro.build/" variant="wavy" target="_blank">
-          Astro
+    <div
+      class="flex items-center text-sm font-light text-muted-foreground justify-between py-5 border-border border-t"
+    >
+      <p class="capitalize">2023 - augustin sorel</p>
+
+      <nav class="space-x-2">
+        <Link href="./CV-2023-EN.pdf" variant="underline" target="_blank">
+          {"view CV"}
         </Link>
-      </p>
+
+        <Link
+          href="https://github.com/augustinsorel"
+          variant="underline"
+          target="_blank"
+        >
+          {"Gtihub"}
+        </Link>
+      </nav>
     </div>
   </footer>
 </Layout>
