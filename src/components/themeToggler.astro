@@ -13,7 +13,7 @@
     viewBox="0 0 24 24"
     stroke-linecap="round"
     stroke-linejoin="round"
-    class="fill-none stroke-current stroke-2 pointer-events-none absolute inset-1.5 [input:checked+&_path]:[d:path('M12_3v1m0_16v1m9-9h-1M4_12H3m15.364_6.364l-.707-.707M6.343_6.343l-.707-.707m12.728_0l-.707.707M6.343_17.657l-.707.707M16_12a4_4_0_11-8_0_4_4_0_018_0z')]"
+    class="fill-none stroke-current stroke-2 pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 [input:checked+&_path]:[d:path('M12_3v1m0_16v1m9-9h-1M4_12H3m15.364_6.364l-.707-.707M6.343_6.343l-.707-.707m12.728_0l-.707.707M6.343_17.657l-.707.707M16_12a4_4_0_11-8_0_4_4_0_018_0z')]"
   >
     <path
       d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
@@ -41,7 +41,7 @@
     }
   });
 
-  const theme = localStorage.getItem("theme") ?? "dark";
+  const theme = localStorage.getItem("theme") || "dark";
 
   if (theme === "dark") {
     document.documentElement.classList.add("dark");

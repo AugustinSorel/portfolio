@@ -1,4 +1,5 @@
 ---
+import ProfessionalExpCard from "../components/professionalExpCard.astro";
 import ProjectCard from "../components/projectCard.astro";
 import TechCard from "../components/techCard.astro";
 import Link from "../components/ui/link.astro";
@@ -6,8 +7,8 @@ import Strong from "../components/ui/strong.astro";
 import Layout from "../layouts/Layout.astro";
 //TODO: try to add circle effect like windows
 //TODO: view cv button
-//TODO: work experience
 //TODO: fix bg flickering
+//TODO: browser compatibility
 ---
 
 <Layout title="Augustin Sorel">
@@ -39,7 +40,7 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section id="projects">
-      <h2 class="uppercase text-muted text-lg font-light">selected projects</h2>
+      <h2 class="uppercase text-muted text-lg font-light">personal projects</h2>
       <hr class="border-border mb-5 mt-2" />
       <nav
         class="grid grid-cols-[repeat(auto-fill,minmax(min(400px,100%),1fr))] gap-3"
@@ -1064,6 +1065,76 @@ import Layout from "../layouts/Layout.astro";
 
           <span class="capitalize" slot="text">vercel</span>
         </TechCard>
+      </nav>
+    </section>
+
+    <section>
+      <h2 class="uppercase text-muted text-lg font-light">
+        professional experiences
+      </h2>
+      <hr class="border-border mb-5 mt-2" />
+      <nav
+        class="grid grid-cols-[repeat(auto-fill,minmax(min(400px,100%),1fr))] gap-3"
+      >
+        <ProfessionalExpCard
+          companyLink="https://squaredup.com/"
+          companyName="SquaredUp"
+          jobTitle="front end engineer"
+        >
+          <div class="bg-[#FF3E5120] p-2 rounded-md" slot="icon">
+            <svg
+              viewBox="0 0 30 30"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+            >
+              <path
+                d="M11.6131 19.7015V21.8815L21.8815 18.8458V2.20038L0 0V28.8902L3.91178 29.2773V4.33964L17.8068 5.74543L17.929 15.9527L11.6131 17.8068V19.7015Z"
+                fill="#FF3E51"></path>
+              <path
+                d="M23.7763 2.38397V20.2315L9.71836 24.3674V6.82548L5.80658 6.418V29.4609L27.7085 23.0023V2.79145L23.7763 2.38397Z"
+                fill="#FF3E51"></path>
+            </svg>
+          </div>
+        </ProfessionalExpCard>
+
+        <ProfessionalExpCard
+          companyLink="https://www.tarmactechnologies.com/"
+          companyName="tarmac technologies"
+          jobTitle="front end engineer"
+        >
+          <div class="bg-[#01CBB120] p-2 rounded-md" slot="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 25 25"
+              class="h-8 w-8"
+            >
+              <path
+                fill="currentColor"
+                d="M9.907 18.247h3.995v-.644l-1.129-.381a.374.374 0 0 1-.254-.371l.122-2.862a.375.375 0 0 1 .375-.36h4.464v-.606l-4.452-1.168a.374.374 0 0 1-.279-.378l.158-3.696a.993.993 0 0 0-.278-.737 1.024 1.024 0 0 0-1.45 0 .996.996 0 0 0-.277.737l.158 3.696a.374.374 0 0 1-.279.378L6.33 13.023v.607h4.464c.2 0 .366.158.374.359l.123 2.862a.375.375 0 0 1-.255.37l-1.128.382v.644zm4.37.75H9.532a.375.375 0 0 1-.375-.375v-1.287c0-.161.103-.304.255-.356l1.117-.378-.096-2.221H5.954a.375.375 0 0 1-.375-.375v-1.271c0-.171.115-.32.28-.362l4.44-1.165-.146-3.395a1.738 1.738 0 0 1 .485-1.288c.668-.696 1.865-.694 2.533 0 .334.349.506.807.485 1.288l-.145 3.395 4.44 1.165c.164.043.28.19.28.362v1.27a.375.375 0 0 1-.376.376h-4.48l-.095 2.22 1.117.379a.377.377 0 0 1 .255.356v1.287a.375.375 0 0 1-.375.375z"
+              ></path>
+              <path
+                fill="#01CBB1"
+                d="M11.922 22.977c-.477 0-.956-.032-1.437-.099-4.972-.675-8.781-4.797-9.058-9.799a.375.375 0 0 1 .354-.395c.194-.035.384.146.395.354.257 4.643 3.794 8.47 8.41 9.098a9.684 9.684 0 0 0 7.207-1.897 9.675 9.675 0 0 0 3.754-6.438.368.368 0 0 1 .423-.32.375.375 0 0 1 .32.422 10.416 10.416 0 0 1-4.043 6.932 10.402 10.402 0 0 1-6.325 2.142"
+              ></path>
+              <path
+                fill="#01D997"
+                stroke-width=".25"
+                stroke="#01CBB1"
+                d="M3.835 14.598a.244.244 0 0 1-.344.031l-1.659-1.38-1.256 1.754a.244.244 0 0 1-.341.057.244.244 0 0 1-.057-.34l1.563-2.182 2.062 1.716c.104.087.118.24.032.344z"
+              ></path>
+              <path
+                fill="#01CBB1"
+                stroke-width=".25"
+                stroke="#01CBB1"
+                d="M20.06 10.602a.244.244 0 0 1 .345-.008l1.56 1.494 1.375-1.666a.244.244 0 0 1 .343-.032c.104.086.118.24.032.344l-1.708 2.068-1.94-1.854a.245.245 0 0 1-.007-.346z"
+              ></path>
+              <path
+                fill="#01CBB1"
+                d="M22.01 12.648a.375.375 0 0 1-.375-.367c-.095-4.819-3.638-8.789-8.423-9.441-5.31-.713-10.237 3.015-10.96 8.335a.375.375 0 0 1-.743-.101c.78-5.73 6.075-9.76 11.805-8.977 5.152.702 8.967 4.98 9.071 10.168a.376.376 0 0 1-.368.383h-.007z"
+              ></path>
+            </svg>
+          </div>
+        </ProfessionalExpCard>
       </nav>
     </section>
   </main>
