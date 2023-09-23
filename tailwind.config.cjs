@@ -23,14 +23,17 @@ module.exports = {
           foreground: "hsl(var(--accent-foreground))",
         },
       },
+
       padding: {
         "max-width":
           "max(calc((100vw - var(--max-width-container)) / 2), 1.25rem)",
         "header-height": "var(--header-height)",
       },
+
       height: {
         header: "var(--header-height)",
       },
+
       margin: {
         "header-height": "var(--header-height)",
       },

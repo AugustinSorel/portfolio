@@ -5,7 +5,6 @@ import Link from "../components/ui/link.astro";
 import Strong from "../components/ui/strong.astro";
 import Layout from "../layouts/Layout.astro";
 //TODO: fix color icons
-//TODO: footer
 //TODO: try to add circle effect like windows
 //TODO: view cv button
 //TODO: work experience
@@ -43,7 +42,7 @@ import Layout from "../layouts/Layout.astro";
 
     <section id="projects">
       <h2 class="uppercase text-muted text-lg font-light">selected projects</h2>
-      <hr class="border-primary mb-5 mt-2" />
+      <hr class="border-border mb-5 mt-2" />
       <nav
         class="grid grid-cols-[repeat(auto-fill,minmax(min(400px,100%),1fr))] gap-3"
       >
@@ -87,7 +86,7 @@ import Layout from "../layouts/Layout.astro";
 
     <section id="stack" class="my-16">
       <h2 class="uppercase text-muted text-lg font-light">tech stack</h2>
-      <hr class="border-primary mb-5 mt-2" />
+      <hr class="border-border mb-5 mt-2" />
       <h3 class="capitalize text-muted font-light mb-2">frontend</h3>
       <nav
         class="grid grid-cols-[repeat(auto-fill,minmax(min(200px,100%),1fr))] gap-3"
@@ -791,4 +790,21 @@ import Layout from "../layouts/Layout.astro";
       </nav>
     </section>
   </main>
+
+  <footer class="px-max-width">
+    <div class="flex items-center justify-between py-5 border-border border-t">
+      <p class="text-sm font-light text-muted-foreground capitalize">
+        2023 - augustin sorel
+      </p>
+      <p class="text-sm font-light text-muted-foreground">
+        Made with <Link
+          href="https://astro.build/"
+          variant="wavy"
+          target="_blank"
+        >
+          Astro
+        </Link>
+      </p>
+    </div>
+  </footer>
 </Layout>
