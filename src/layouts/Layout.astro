@@ -13,9 +13,10 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-
     <meta name="viewport" content="width=device-width" />
-
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
     <script is:inline>
       const theme = localStorage.getItem("theme") || "dark";
 
@@ -25,14 +26,9 @@ const { title } = Astro.props;
         document.documentElement.classList.remove("dark");
       }
     </script>
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
   </head>
   <body
-    class="relative min-h-screen text-foreground bg-gradient-to-bl from-accent to-transparent bg-background"
+    class="relative min-h-screen text-foreground bg-gradient-to-bl from-accent/75 to-transparent bg-background"
   >
     <Header />
     <slot />
