@@ -1,6 +1,4 @@
 ---
-import GridBackground from "../components/gridBackground.astro";
-import Header from "../components/header.astro";
 interface Props {
   title: string;
 }
@@ -9,75 +7,107 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <script is:inline>
-      const theme = localStorage.getItem("theme") || "dark";
+    <title>A.S.</title>
+    <script>
+      const THEME_OWNER = document.documentElement;
+      const THEME_STORAGE_KEY = "theme";
 
-      if (theme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
+      const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+      if (cachedTheme) {
+        THEME_OWNER.dataset[THEME_STORAGE_KEY] = cachedTheme;
       }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const initialTheme = cachedTheme ?? "system";
+
+        for (const container of document.querySelectorAll(
+          "[data-theme-togglers]",
+        )) {
+          container.querySelector("input[checked]")?.removeAttribute("checked");
+          container
+            .querySelector(`input[value="${initialTheme}"]`)
+            ?.setAttribute("checked", "");
+
+          container.addEventListener("change", (e) => {
+            const theme = (e.target as HTMLInputElement)?.value;
+            if (theme === "system") {
+              delete THEME_OWNER.dataset[THEME_STORAGE_KEY];
+              localStorage.removeItem(THEME_STORAGE_KEY);
+            } else {
+              THEME_OWNER.dataset[THEME_STORAGE_KEY] = theme;
+              localStorage.setItem(THEME_STORAGE_KEY, theme);
+            }
+          });
+        }
+      });
     </script>
-    <script defer data-domain="augustin-sorel.com" src="https://analytics.augustin-sorel.com/js/script.js"></script>
+    <script
+      defer
+      data-domain="augustin-sorel.com"
+      src="https://analytics.augustin-sorel.com/js/script.js"></script>
+    <noscript>
+      <style>
+        [data-theme-togglers] {
+          display: none;
+        }
+      </style>
+    </noscript>
   </head>
   <body
-    class="relative min-h-screen text-foreground bg-gradient-to-bl from-accent/75 to-transparent bg-background"
+    class="bg-background text-foreground py-4 px-max-width transition-colors space-y-20"
   >
-    <Header />
     <slot />
-    <GridBackground />
   </body>
 </html>
 <style is:global>
+  html,
+  html[data-theme="light"] {
+    color-scheme: light;
+
+    --foreground: 0 0 0%;
+    --background: 0 0 100%;
+
+    --muted: 0 0 95%;
+    --muted-foreground: 0 0 40%;
+
+    --ring: 0 0 0%;
+  }
+
+  html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --foreground: 0 0 100%;
+    --background: 0 0 0%;
+
+    --muted: 0 0 5%;
+    --muted-foreground: 0 0 60%;
+
+    --ring: 0 0 100%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme]) {
+      color-scheme: dark;
+
+      --foreground: 0 0 100%;
+      --background: 0 0 0%;
+
+      --muted: 0 0 5%;
+      --muted-foreground: 0 0 60%;
+
+      --ring: 0 0 100%;
+    }
+  }
+
   :root {
-    --background: 0 0% 80%;
-    --foreground: 0 0% 10%;
-
-    --primary: 0 0% 0% / 0.05;
-
-    --border: 0 0% 0% / 0.1;
-
-    --muted: 0 0% 30% / 0.75;
-    --muted-foreground: 0 0% 20%;
-
-    --accent: 165 100% 90%;
-    --accent-foreground: 165 100% 30%;
-
-    --ring: 165 100% 30%;
-
-    --max-width-container: 1000px;
-    --header-height: 100px;
-  }
-
-  .dark {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 93%;
-
-    --primary: 0 0% 100% / 0.05;
-
-    --accent: 165 100% 6%;
-    --accent-foreground: 165 100% 50%;
-
-    --border: 0 0% 100% / 0.1;
-
-    --ring: 165 100% 50%;
-
-    --muted: 0 0% 50% / 0.75;
-    --muted-foreground: 0 0% 70%;
-  }
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  html {
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    --max-width: 40rem;
+    --padding-max-width: max(calc((100vw - var(--max-width)) / 2), 1rem);
   }
 </style>

@@ -1,1182 +1,139 @@
 ---
-import ProfessionalExpCard from "../components/professionalExpCard.astro";
-import ProjectCard from "../components/projectCard.astro";
-import TechCard from "../components/techCard.astro";
-import Link from "../components/ui/link.astro";
-import Strong from "../components/ui/strong.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Augustin Sorel">
-  <main class="px-max-width space-y-16">
-    <section
-      id="about"
-      class="pt-[calc(var(--header-height)+4rem)] flex justify-between flex-col-reverse gap-3 md:flex-row"
-    >
-      <div class="space-y-3">
-        <h1 class="capitalize text-4xl leading-tight">
-          augustin
-          <Strong>sorel</Strong>,
-          <br />
-          software engineer
-        </h1>
-        <p class="text-muted-foreground text-lg">
-          I am a software engineer student from the University of
-          <Link variant="wavy" href="https://le.ac.uk/" target="_blank">
-            Leicester.
-          </Link>
-          <br />
-          Passionate about
-          <Strong>web development</Strong>
-          and
-          <Strong>design.</Strong>
-        </p>
+<Layout>
+  <header class="flex items-center justify-between">
+    <h1 class="capitalize text-muted-foreground">augustin sorel</h1>
+    <fieldset class="text-muted-foreground text-xs" data-theme-togglers>
+      <legend class="sr-only">change color theme</legend>
+      <label
+        class="cursor-pointer checked:text-foreground transition-colors hover:text-foreground [&:has(input:checked)]:text-foreground ring-offset-background [&:has(input:focus-visible)]:outline-none [&:has(input:focus-visible)]:ring-2 [&:has(input:focus-visible)]:ring-ring [&:has(input:focus-visible)]:ring-offset-2"
+      >
+        <input
+          name="theme"
+          type="radio"
+          value="system"
+          class="sr-only"
+          checked
+        />
+        system
+      </label>
+      <span>/</span>
+      <label
+        class="cursor-pointer checked:text-foreground transition-colors hover:text-foreground [&:has(input:checked)]:text-foreground ring-offset-background [&:has(input:focus-visible)]:outline-none [&:has(input:focus-visible)]:ring-2 [&:has(input:focus-visible)]:ring-ring [&:has(input:focus-visible)]:ring-offset-2"
+      >
+        <input name="theme" type="radio" class="sr-only" value="light" />
+        light
+      </label>
+      <span>/</span>
+      <label
+        class="cursor-pointer checked:text-foreground transition-colors hover:text-foreground [&:has(input:checked)]:text-foreground ring-offset-background [&:has(input:focus-visible)]:outline-none [&:has(input:focus-visible)]:ring-2 [&:has(input:focus-visible)]:ring-ring [&:has(input:focus-visible)]:ring-offset-2"
+      >
+        <input name="theme" type="radio" class="sr-only" value="dark" />
+        dark
+      </label>
+    </fieldset>
+  </header>
+
+  <main class="space-y-20">
+    <section class="space-y-3">
+      <div
+        class="relative bg-muted rounded-full w-max flex items-center justify-center after:h-8 after:w-8 after:bg-background after:absolute after:bottom-0 after:-right-2 after:rounded-full after:content-['🎉'] after:flex after:items-center after:justify-center after:shadow-lg transition-colors after:transition-colors"
+      >
+        <img
+          src="/avatar.png"
+          width="78"
+          height="78"
+          alt="my profile picture"
+          class="translate-y-0.5"
+        />
       </div>
-      <img width={156} height={195} src="./memoji.png" alt="a memoji of me" />
+      <h2 class="first-letter:capitalize text-2xl">i craft interfaces</h2>
+      <p class="text-muted-foreground">
+        I’m a passionate full-stack developer with a strong focus on crafting
+        efficient, scalable, and user-friendly applications. My journey in tech
+        has taken me through front-end magic, back-end logic, and everything in
+        between, ensuring seamless experiences for users.
+      </p>
     </section>
 
-    <section>
-      <h2 class="uppercase text-muted text-lg font-light">personal projects</h2>
-      <hr class="border-border mb-5 mt-2" />
-      <nav
-        class="grid grid-cols-[repeat(auto-fill,minmax(min(400px,100%),1fr))] gap-3"
-      >
-        <ProjectCard
-          href="https://github.com/augustinsorel/gym-graphs"
-          title="gym graphs"
-          description="a gym application to track your progress"
-        />
-
-        <ProjectCard
-          href="https://github.com/AugustinSorel/SerendipJS"
-          title="Serendip JS"
-          description="a fully working front end framework from scratch"
-        />
-
-        <ProjectCard
-          href="https://github.com/augustinsorel/ts-interpreter"
-          title="typescript interpreter"
-          description="A programming language made from scratch"
-        />
-
-        <ProjectCard
-          href="https://github.com/AugustinSorel/ecommerce-jewelry"
-          title="jewelry ecommerce"
-          description="A perfetly working ecommerce app"
-        />
-
-        <ProjectCard
-          href="https://github.com/AugustinSorel/DoublePendulum"
-          title="double pendulum"
-          description="A double pendulum simulation"
-        />
-
-        <ProjectCard
-          href="https://github.com/AugustinSorel/DfsVisualization"
-          title="DFS visualizer"
-          description="A maze generator and solver using DFS"
-        />
-      </nav>
-    </section>
-
-    <section id="stack">
-      <h2 class="uppercase text-muted text-lg font-light">tech stack</h2>
-      <hr class="border-border mb-5 mt-2" />
-      <h3 class="capitalize text-muted font-light mb-2">frontend</h3>
-      <nav
-        class="grid grid-cols-[repeat(auto-fill,minmax(min(200px,100%),1fr))] gap-3"
-      >
-        <TechCard
-          docsLink="https://react.dev/"
-          iconBackgroundColor="bg-[#7ee1fc26]"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            slot="icon"
+    <section class="space-y-3">
+      <h2 class="capitalize">current projects</h2>
+      <ol class="space-y-10">
+        <li>
+          <a
+            href="https://github.com/AugustinSorel/gym-graphs"
+            target="_blank"
+            class="relative flex flex-col bg-background hover:bg-background/90 focus-visible:bg-background/90 transition-colors rounded-md p-3 before:-inset-1 before:absolute before:bg-red-500 before:-z-10 before:rounded-[10px] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:bg-[linear-gradient(to_right,theme(colors.purple.400),theme(colors.pink.300),theme(colors.orange.400),theme(colors.pink.300),theme(colors.purple.400))] before:bg-[length:200%_auto] before:animate-gradient ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            <path
-              d="M23.866 12.448c0-1.474-1.886-2.871-4.776-3.737.667-2.885.37-5.18-.936-5.915a2.065 2.065 0 00-1.038-.254v1.012c.213 0 .385.04.528.118.63.353.904 1.7.69 3.433-.05.426-.134.875-.236 1.334a22.89 22.89 0 00-2.941-.495 22.239 22.239 0 00-1.928-2.268c1.51-1.374 2.928-2.127 3.892-2.127V2.538c-1.274 0-2.942.889-4.628 2.43-1.686-1.532-3.354-2.412-4.628-2.412v1.011c.96 0 2.381.749 3.891 2.114a21.536 21.536 0 00-1.913 2.263 22.053 22.053 0 00-2.946.5 13.426 13.426 0 01-.24-1.316c-.219-1.733.05-3.08.676-3.438.138-.082.32-.118.532-.118V2.56a2.1 2.1 0 00-1.047.254c-1.301.734-1.593 3.025-.922 5.9-2.88.871-4.757 2.264-4.757 3.733 0 1.474 1.885 2.871 4.776 3.737-.667 2.885-.37 5.18.936 5.915.3.172.653.254 1.042.254 1.274 0 2.942-.89 4.628-2.431 1.686 1.533 3.354 2.412 4.627 2.412a2.1 2.1 0 001.047-.254c1.302-.734 1.594-3.025.922-5.9 2.872-.867 4.748-2.264 4.748-3.733zm-6.032-3.025a20.154 20.154 0 01-.625 1.791 24.54 24.54 0 00-1.274-2.15c.658.096 1.292.214 1.9.359zm-2.121 4.83a24.076 24.076 0 01-1.117 1.733 24.64 24.64 0 01-4.178.004 23.454 23.454 0 01-2.085-3.529 24.092 24.092 0 012.075-3.542 24.617 24.617 0 014.179-.004c.384.54.76 1.116 1.12 1.723.353.595.673 1.198.964 1.805a25.182 25.182 0 01-.958 1.81zm1.496-.59c.25.608.463 1.216.639 1.806a21.18 21.18 0 01-1.908.363 25.047 25.047 0 001.269-2.168zm-4.697 4.84c-.431-.436-.862-.92-1.288-1.451.417.018.843.031 1.274.031.435 0 .866-.009 1.287-.031-.417.53-.847 1.015-1.274 1.45zm-3.447-2.671a21.334 21.334 0 01-1.9-.359c.172-.585.385-1.188.626-1.791.19.362.39.725.607 1.088.218.363.44.717.667 1.062zm3.423-9.439c.431.435.862.92 1.288 1.451a29.29 29.29 0 00-1.274-.031c-.435 0-.866.009-1.288.031.417-.53.848-1.016 1.274-1.451zM9.06 9.064a24.949 24.949 0 00-1.269 2.164 19.156 19.156 0 01-.64-1.805c.608-.14 1.247-.263 1.91-.359zm-4.192 5.679c-1.64-.685-2.7-1.583-2.7-2.295s1.06-1.615 2.7-2.295a14.47 14.47 0 011.283-.458c.264.889.612 1.814 1.043 2.762a21.186 21.186 0 00-1.029 2.749c-.458-.141-.894-.295-1.297-.463zm2.492 6.481c-.63-.354-.903-1.7-.69-3.433.051-.427.134-.875.236-1.334.908.218 1.9.386 2.942.495a22.242 22.242 0 001.927 2.267c-1.51 1.375-2.928 2.128-3.891 2.128a1.125 1.125 0 01-.524-.123zm10.988-3.456c.218 1.733-.05 3.08-.676 3.438-.139.082-.32.118-.533.118-.959 0-2.38-.748-3.89-2.114a21.527 21.527 0 001.912-2.263 22.048 22.048 0 002.946-.499c.107.458.19.898.241 1.32zm1.784-3.025a14.44 14.44 0 01-1.283.458 21.491 21.491 0 00-1.043-2.762c.427-.944.77-1.864 1.029-2.749.458.141.894.295 1.301.463 1.64.685 2.701 1.583 2.701 2.295-.005.712-1.065 1.615-2.705 2.295z"
-              fill="#007ACC"
+            <time datetime="2024-08-01" class="text-muted-foreground text-sm"
+              >aug 2024</time
             >
-            </path>
-            <path
-              d="M12.498 14.52c1.169 0 2.117-.927 2.117-2.072s-.948-2.073-2.117-2.073c-1.17 0-2.117.928-2.117 2.073s.947 2.073 2.117 2.073z"
-              fill="#007ACC"
-            >
-            </path>
-          </svg>
-
-          <span class="capitalize" slot="text">react</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://www.typescriptlang.org/"
-          iconBackgroundColor="bg-[#007acc26]"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            slot="icon"
+            <h3 class="capitalize text-xl">gym graphs</h3>
+            <p class="text-muted-foreground max-w-xs">
+              Gym Graphs allows users to track their gym progress with the help
+              of graphs.
+            </p>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/AugustinSorel/serendipjs"
+            target="_blank"
+            class="relative flex flex-col bg-background hover:bg-background/90 focus-visible:bg-background/90 transition-colors rounded-md p-3 before:-inset-1 before:absolute before:bg-red-500 before:-z-10 before:rounded-[10px] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:bg-[linear-gradient(to_right,theme(colors.purple.400),theme(colors.pink.300),theme(colors.orange.400),theme(colors.pink.300),theme(colors.purple.400))] before:bg-[length:200%_auto] before:animate-gradient ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            <path d="M0 0h24v24H0V0z" fill="#fff"></path>
-            <path
-              d="M0 12v12h24V0H0v12zm19.34-.956c.61.152 1.075.423 1.502.865.221.236.549.667.575.77.008.03-1.036.73-1.669 1.123-.022.015-.114-.083-.217-.236-.309-.45-.632-.644-1.128-.678-.727-.05-1.2.332-1.192.967a.88.88 0 00.103.45c.16.332.457.53 1.39.934 1.718.739 2.453 1.226 2.91 1.92.51.773.625 2.008.278 2.926-.38.998-1.325 1.676-2.655 1.9-.411.073-1.386.062-1.828-.018-.964-.171-1.878-.647-2.442-1.272-.221-.244-.651-.88-.625-.926.011-.015.11-.076.221-.141l.892-.514.69-.4.145.213c.201.31.643.732.91.873.766.404 1.817.346 2.335-.118.221-.202.312-.412.312-.72 0-.279-.033-.4-.178-.61-.187-.266-.568-.49-1.65-.96-1.239-.533-1.772-.864-2.26-1.39a3.167 3.167 0 01-.659-1.2c-.091-.34-.114-1.189-.042-1.531.255-1.2 1.158-2.031 2.462-2.279.422-.08 1.406-.05 1.82.054v-.002zm-5.633 1.001l.007.983H10.59v8.876H8.381v-8.876H5.257v-.964l.027-.99c.01-.015 1.912-.022 4.217-.019l4.194.012.012.978z"
-              fill="#007ACC"
+            <time datetime="2024-02-01" class="text-muted-foreground text-sm"
+              >feb 2024</time
             >
-            </path>
-          </svg>
-
-          <span class="capitalize" slot="text">typescript</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://astro.build/"
-          iconBackgroundColor="bg-[#ee46e020]"
-        >
-          <svg
-            viewBox="0 0 150 150"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            slot="icon"
+            <h3 class="capitalize text-xl">serendipJs</h3>
+            <p class="text-muted-foreground max-w-xs">
+              a fully functional front end framework written from scratch
+            </p>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/AugustinSorel/ts-interpreter"
+            target="_blank"
+            class="relative flex flex-col bg-background hover:bg-background/90 focus-visible:bg-background/90 transition-colors rounded-md p-3 before:-inset-1 before:absolute before:bg-red-500 before:-z-10 before:rounded-[10px] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:bg-[linear-gradient(to_right,theme(colors.purple.400),theme(colors.pink.300),theme(colors.orange.400),theme(colors.pink.300),theme(colors.purple.400))] before:bg-[length:200%_auto] before:animate-gradient ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            <path
-              fill="#ee46e0"
-              d="M57.53,128.19c-5.86-5.34-7.57-16.57-5.13-24.7,4.23,5.13,10.1,6.75,16.17,7.67,10.41,1.56,21.21,.76,30.3-5.19,2.64,7.89-1.02,16.49-7.6,21.14-8.36,5.63-14.92,8.86-10.92,20.26-6.02-2.64-9.6-8.59-9.64-15-.02-1.6-.02-3.21-.24-4.79-.53-3.84-2.33-5.56-5.74-5.66-3.89-.16-6.6,2.57-7.21,6.27h0Z"
+            <time datetime="2023-08-01" class="text-muted-foreground text-sm"
+              >aug 2023</time
             >
-            </path>
-            <path
-              fill="currentColor"
-              d="M24.1,102.13s17.35-8.43,34.74-8.43l13.12-40.49c.49-1.96,1.92-3.29,3.54-3.29s3.05,1.33,3.54,3.29l13.12,40.49c20.6,0,34.74,8.43,34.74,8.43,0,0-29.47-80.07-29.52-80.23-.85-2.37-2.27-3.89-4.2-3.89H57.82c-1.92,0-3.29,1.52-4.2,3.89-.06,.16-29.53,80.23-29.53,80.23Z"
-            >
-            </path>
-          </svg>
-
-          <span class="capitalize" slot="text">astro</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://tailwindcss.com/"
-          iconBackgroundColor="bg-[#44a8b326]"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              d="M6.333 9.933C7.088 6.911 8.978 5.4 12 5.4c4.533 0 5.1 3.4 7.367 3.967 1.511.377 2.833-.189 3.966-1.7-.755 3.022-2.644 4.533-5.666 4.533-4.534 0-5.1-3.4-7.367-3.967-1.511-.378-2.833.189-3.967 1.7zm-5.666 6.8C1.422 13.711 3.31 12.2 6.333 12.2c4.534 0 5.1 3.4 7.367 3.967 1.51.377 2.833-.19 3.967-1.7C16.91 17.489 15.022 19 12 19c-4.533 0-5.1-3.4-7.367-3.967-1.511-.378-2.833.189-3.966 1.7z"
-              fill="#4aafb4"
-            >
-            </path>
-          </svg>
-
-          <span class="capitalize" slot="text">tailwindCSS</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://www.radix-ui.com/"
-          iconBackgroundColor="bg-primary"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              d="M12 25a8 8 0 1 1 0-16v16zM12 0H4v8h8V0zM17 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
-              fill="currentcolor"
-            >
-            </path>
-          </svg>
-
-          <span class="capitalize" slot="text">radix UI</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://ui.shadcn.com/"
-          iconBackgroundColor="bg-primary"
-        >
-          <svg
-            viewBox="0 0 256 256"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <line
-              x1="208"
-              y1="128"
-              x2="128"
-              y2="208"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="16"
-            >
-            </line>
-            <line
-              x1="192"
-              y1="40"
-              x2="40"
-              y2="192"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="16"
-            >
-            </line>
-          </svg>
-
-          <span class="capitalize" slot="text">shadcn</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://tanstack.com/query/v4"
-          iconBackgroundColor=" bg-[#ff415420]"
-        >
-          <svg
-            viewBox="0 0 256 230"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              fill="#00435B"
-              d="m157.98 142.487l-4.91 8.527a8.288 8.288 0 0 1-7.182 4.151H108.27a8.288 8.288 0 0 1-7.182-4.151l-4.911-8.527h61.802Zm13.747-23.87l-8.658 15.034h-71.98l-8.658-15.034h89.296Zm-8.34-23.342l8.354 14.506H82.417l8.354-14.506h72.616Zm-17.5-22.066a8.288 8.288 0 0 1 7.183 4.151l5.228 9.079H95.86l5.229-9.079a8.288 8.288 0 0 1 7.182-4.151h37.617Z"
-            >
-            </path>
-            <path
-              fill="#002B3B"
-              d="M53.523 69.252c-4.167-20.206-5.062-35.704-2.368-46.957c1.602-6.693 4.53-12.153 8.984-16.093c4.702-4.159 10.646-6.2 17.326-6.2c11.018 0 22.602 5.025 34.98 14.57c5.05 3.894 10.29 8.587 15.732 14.082c.434-.557.923-1.083 1.469-1.57c15.386-13.71 28.34-22.23 39.42-25.514c6.588-1.954 12.773-2.14 18.405-.244c5.946 2 10.683 6.137 14.026 11.93c5.516 9.561 6.97 22.124 4.914 37.637c-.838 6.323-2.271 13.21-4.296 20.673c.764.092 1.53.262 2.288.513c19.521 6.47 33.345 13.426 41.714 21.377c4.98 4.73 8.231 9.996 9.407 15.826c1.24 6.153.03 12.324-3.308 18.113c-5.506 9.548-15.63 17.077-30.052 23.041c-5.79 2.395-12.343 4.564-19.664 6.515c.334.754.594 1.555.767 2.395c4.167 20.206 5.061 35.704 2.368 46.957c-1.602 6.693-4.531 12.153-8.985 16.093c-4.701 4.159-10.646 6.2-17.325 6.2c-11.019 0-22.602-5.025-34.98-14.57c-5.104-3.936-10.402-8.687-15.907-14.258a11.737 11.737 0 0 1-2.084 2.442c-15.386 13.712-28.34 22.23-39.42 25.515c-6.588 1.954-12.773 2.14-18.405.244c-5.946-2-10.683-6.137-14.026-11.93c-5.516-9.561-6.97-22.124-4.914-37.637c.869-6.551 2.376-13.709 4.518-21.485a11.732 11.732 0 0 1-2.51-.537c-19.521-6.47-33.345-13.426-41.714-21.377c-4.98-4.73-8.231-9.996-9.407-15.826c-1.24-6.153-.03-12.325 3.308-18.114c5.506-9.547 15.63-17.077 30.052-23.04c5.963-2.467 12.734-4.693 20.32-6.689a11.81 11.81 0 0 1-.633-2.082Z"
-            >
-            </path>
-            <path
-              fill="#FF4154"
-              d="M189.647 161.333a3.684 3.684 0 0 1 4.235 2.81l.023.112l.207 1.075c6.71 35.276 1.983 52.915-14.18 52.915c-15.813 0-35.944-15.051-60.392-45.153a3.684 3.684 0 0 1 2.777-6.005h.114l1.288.009c10.288.056 20.289-.303 30.004-1.076c11.467-.913 23.442-2.475 35.924-4.687ZM78.646 134.667l.062.105l.646 1.127c5.177 9 10.57 17.542 16.18 25.627c6.608 9.52 14.038 19.158 22.29 28.914a3.684 3.684 0 0 1-.309 5.082l-.093.083l-.83.715c-27.307 23.397-45.055 28.068-53.244 14.012c-8.017-13.757-5.11-38.773 8.719-75.047a3.683 3.683 0 0 1 6.579-.618Zm124.857-52.054l.112.037l1.028.354c33.705 11.725 46.51 24.61 38.416 38.655c-7.916 13.736-30.93 23.738-69.041 30.004a3.683 3.683 0 0 1-3.773-5.501c5.458-9.286 10.375-18.524 14.749-27.717c4.96-10.425 9.615-21.616 13.965-33.57a3.684 3.684 0 0 1 4.432-2.295l.112.033ZM84.446 76.71a3.683 3.683 0 0 1 1.31 5.042c-5.46 9.285-10.376 18.524-14.75 27.717c-4.96 10.425-9.615 21.615-13.965 33.57a3.684 3.684 0 0 1-4.544 2.262l-.112-.037l-1.028-.355c-33.705-11.724-46.51-24.61-38.416-38.654c7.916-13.737 30.93-23.738 69.041-30.004c.85-.14 1.722.022 2.464.459Zm108.206-57.748c8.017 13.758 5.11 38.774-8.719 75.048a3.683 3.683 0 0 1-6.579.618l-.062-.105l-.646-1.127c-5.177-9-10.57-17.542-16.18-25.627c-6.608-9.52-14.038-19.158-22.29-28.914a3.684 3.684 0 0 1 .309-5.082l.093-.083l.83-.715c27.307-23.397 45.055-28.068 53.244-14.013ZM77.45 10.59c15.814 0 35.945 15.05 60.392 45.152a3.684 3.684 0 0 1-2.777 6.005h-.114l-1.288-.008c-10.287-.056-20.289.303-30.003 1.076c-11.468.913-23.443 2.475-35.925 4.687a3.684 3.684 0 0 1-4.234-2.81l-.024-.113l-.207-1.074C56.56 28.228 61.286 10.59 77.45 10.59Z"
-            >
-            </path>
-            <path
-              fill="#FFD94C"
-              d="M111.295 73.67h31.576a12.89 12.89 0 0 1 11.181 6.475l15.855 27.626a12.892 12.892 0 0 1 0 12.834l-15.855 27.626a12.892 12.892 0 0 1-11.181 6.475h-31.576c-4.618 0-8.883-2.47-11.182-6.475L84.26 120.605a12.892 12.892 0 0 1 0-12.834l15.854-27.626a12.892 12.892 0 0 1 11.182-6.475Zm26.763 8.338c4.62 0 8.888 2.473 11.185 6.481l11.056 19.288a12.892 12.892 0 0 1 0 12.822l-11.056 19.288a12.892 12.892 0 0 1-11.185 6.48h-21.95c-4.62 0-8.888-2.472-11.185-6.48l-11.056-19.288a12.892 12.892 0 0 1 0-12.822l11.056-19.288a12.892 12.892 0 0 1 11.184-6.48h21.951Zm-5.187 9.12h-11.576a12.892 12.892 0 0 0-11.179 6.47l-5.842 10.167a12.892 12.892 0 0 0 0 12.846l5.842 10.168a12.892 12.892 0 0 0 11.179 6.47h11.576c4.616 0 8.88-2.468 11.179-6.47l5.842-10.168a12.892 12.892 0 0 0 0-12.846l-5.842-10.168a12.892 12.892 0 0 0-11.179-6.47Zm-4.994 8.729c4.612 0 8.873 2.464 11.173 6.46l.829 1.44a12.892 12.892 0 0 1 0 12.862l-.829 1.44a12.892 12.892 0 0 1-11.173 6.46h-1.588a12.892 12.892 0 0 1-11.173-6.46l-.829-1.44a12.892 12.892 0 0 1 0-12.862l.829-1.44a12.892 12.892 0 0 1 11.173-6.46h1.588Zm-.792 8.599a5.738 5.738 0 0 0-4.97 2.866a5.729 5.729 0 0 0 0 5.732a5.738 5.738 0 0 0 9.937 0a5.729 5.729 0 0 0 0-5.732a5.736 5.736 0 0 0-4.967-2.866Zm-46.509 5.732h10.32"
-            >
-            </path>
-          </svg>
-
-          <span class="capitalize" slot="text">react query</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://zod.dev/"
-          iconBackgroundColor="bg-[#274d8230]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1080 1080"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <use
-              xlink:href="#_Image1"
-              x="112.458"
-              y="229.1"
-              width="867.625px"
-              height="669.651px"
-              transform="matrix(0.999568,0,0,0.999479,0,0)"
-            >
-            </use>
-            <g transform="matrix(0.116243,0,0,0.473619,-23.7923,-3587.35)">
-              <rect
-                x="3083.23"
-                y="8972.31"
-                width="3500.78"
-                height="135.721"
-                style="fill:rgb(39,77,130);"
-              >
-              </rect>
-            </g>
-            <g transform="matrix(0.0900481,0,0,0.473619,101.204,-3534.08)">
-              <rect
-                x="3083.23"
-                y="8972.31"
-                width="3500.78"
-                height="135.721"
-                style="fill:rgb(39,77,130);"
-              >
-              </rect>
-            </g>
-            <g transform="matrix(0.0481846,0,0,0.133311,454.599,-550.685)">
-              <rect
-                x="3083.23"
-                y="8972.31"
-                width="3500.78"
-                height="135.721"
-                style="fill:rgb(39,77,130);"
-              >
-              </rect>
-            </g>
-            <g
-              transform="matrix(0.17212,-0.0993737,0.446387,0.773164,-4264.21,-6040.13)"
-            >
-              <rect
-                x="3083.23"
-                y="8972.31"
-                width="3500.78"
-                height="135.721"
-                style="fill:rgb(39,77,130);"
-              >
-              </rect>
-            </g>
-            <g
-              transform="matrix(0.110306,-0.0636855,0.0916929,0.158817,-1037.66,-798.056)"
-            >
-              <rect
-                x="3083.23"
-                y="8972.31"
-                width="3500.78"
-                height="135.721"
-                style="fill:rgb(39,77,130);"
-              >
-              </rect>
-            </g>
-            <g
-              transform="matrix(0.110306,-0.0636855,0.0916929,0.158817,-1050.22,-812.682)"
-            >
-              <rect
-                x="3083.23"
-                y="8972.31"
-                width="3500.78"
-                height="135.721"
-                style="fill:rgb(39,77,130);"
-              >
-              </rect>
-            </g>
-            <g
-              transform="matrix(0.110306,-0.0636855,0.0916929,0.158817,-1062.67,-824.113)"
-            >
-              <rect
-                x="3083.23"
-                y="8972.31"
-                width="3500.78"
-                height="135.721"
-                style="fill:rgb(39,77,130);"
-              >
-              </rect>
-            </g>
-            <g
-              transform="matrix(0.116652,-0.067349,0.0722158,0.125081,-870.022,-471.251)"
-            >
-              <rect
-                x="3083.23"
-                y="8972.31"
-                width="3500.78"
-                height="135.721"
-                style="fill:#274d82;"></rect>
-            </g>
-            <g
-              transform="matrix(0.12113,-0.0699344,0.0722158,0.125081,-874.027,-449.65)"
-            >
-              <rect
-                x="3083.23"
-                y="8972.31"
-                width="3500.78"
-                height="135.721"
-                style="fill:rgb(39,77,130);"></rect>
-            </g>
-            <g
-              transform="matrix(0.129529,-0.0747837,0.0916929,0.158817,-1067.52,-724.985)"
-            >
-              <rect
-                x="3083.23"
-                y="8972.31"
-                width="3500.78"
-                height="135.721"
-                style="fill:rgb(39,77,130);"></rect>
-            </g>
-            <g
-              transform="matrix(0.0389201,-0.0224705,0.296775,0.514029,-2065.36,-4228.86)"
-            >
-              <rect
-                x="3083.23"
-                y="8972.31"
-                width="3500.78"
-                height="135.721"
-                style="fill:rgb(39,77,130);"></rect>
-            </g>
-            <use
-              xlink:href="#_Image2"
-              x="30"
-              y="160"
-              width="1045px"
-              height="842px"></use>
-            <g
-              transform="matrix(1.01688,0,-5.64483e-17,1.01688,-1013.22,-4627.54)"
-            >
-              <path
-                d="M1825.05,4726.89L1250.49,4726.89L1040.57,4935.73L1517.16,5509.64L1555.18,5466.98L2026.94,4937.69L1825.05,4726.89ZM1804.06,4776.06L1960,4938.89L1518.48,5434.26L1107.11,4938.89L1270.78,4776.06L1804.06,4776.06Z"
-                style="fill:rgb(48,104,183);"></path>
-            </g>
-          </svg>
-
-          <span class="capitalize" slot="text">zod</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://airbnb.io/visx"
-          iconBackgroundColor="bg-primary"
-        >
-          <svg
-            viewBox="0 0 1000 1000"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              fill="currentColor"
-              d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z"
-            >
-            </path>
-          </svg>
-
-          <span class="capitalize" slot="text">visx</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://sass-lang.com/"
-          iconBackgroundColor=" bg-[#cf649a26]"
-        >
-          <svg
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              fill="#cf649a"
-              d="M511.78 328.07c-1.47-11.92-7.51-22.26-18-30.77a3.58 3.58 0 00-.43-.44l-.53-.38-.17-.12-5.57-4-.19-.14-.71-.5a3.5 3.5 0 00-.83-.35c-17.62-10.49-46.79-17.84-91.42-2.09-10.65-17.92-11.86-32.28-4.73-54.28 1.27-3.83.09-6.36-3.71-8-7.64-3.25-18.1-1.59-25.52.37-3.46.9-5.54 2.86-6.2 5.83-4.7 22-18.36 42.1-31.57 61.5l-.78 1.14c-8.14-17.26-6.45-30.63-.78-47.38 1.13-3.34.24-5.56-2.89-7.22-8.74-4.51-21.85-1.41-27.07.13-6.62 1.93-13.72 19.82-21.65 41.24-2 5.39-3.72 10-4.75 12.15-2.45 5-4.79 10.7-7.27 16.75-5.6 13.69-11.91 29.1-20.93 38.78-3.28-7.25 1.88-18.68 6.89-29.77 5.93-13.11 11.53-25.5 5.08-33.41a11.82 11.82 0 00-8.33-4.32 13.26 13.26 0 00-6.15 1c.67-5.65.7-10.11-.95-15.5-2.36-7.69-8.49-12-16.93-11.77-19.22.56-35.48 14.88-45.75 26.8-6.84 8-22 14.1-35.31 19.45-5.26 2.23-10.26 4.23-14.43 6.23-6.65-5.62-15.1-11.29-24-17.28-25-16.78-53.33-35.81-54.31-61.61-1.4-38.11 42-65.14 79.88-84.43 28.71-14.6 53.67-24.28 76.31-29.57 31.8-7.43 58.66-5.93 79.82 4.44 11.58 5.67 17 18 13.56 30.68-9 32.95-46.29 55.53-78.18 65.69-19.21 6.12-35.56 8.68-50 7.84-18.1-1.05-32.88-10.13-39.2-14a21.18 21.18 0 00-3.2-1.8l-.29-.07a3.21 3.21 0 00-3.19 1c-1.3 1.55-.84 4-.37 5.24 6.15 16.07 18.85 26.22 37.74 30.17a92.09 92.09 0 0018.78 1.79c44.21 0 100.62-25.49 121.34-46.48 14.13-14.3 24.42-29 28.68-54.35 4.45-26.55-13.55-45-31.89-53.5-44.57-20.57-95.19-12.44-129.81-2-40.5 12.21-82.4 34.41-114.94 60.93-40.12 32.67-54.62 63-43.12 90.25 11.81 27.93 40.61 45.4 68.46 62.3 9 5.45 17.56 10.64 25.27 16-2.32 1.13-4.69 2.28-7.1 3.43-23.38 11.33-49.9 24.08-64.61 45.15-10.68 15.35-12.68 30.63-5.94 45.42 3.6 7.87 10 13.21 18.89 15.87A50 50 0 0053 432c17.31 0 36.36-7 46.73-13.47 18.32-11.5 30.19-26.94 35.29-45.89 4.54-16.86 3.45-33.61-3.15-48.56l22.45-11.32c-10.83 36-2.53 57.5 6.59 69.36 3.36 4.37 9.42 7 16.19 7.12s13-2.43 16.52-6.77c6.66-8.25 11.58-17.9 16.11-27.55-.24 6.3.06 12.68 2.21 18.09 1.93 4.87 5.11 8.1 9.21 9.34 4.36 1.33 9.47.21 14.39-3.15 22.17-15.17 37.33-51.58 49.51-80.85 1.73-4.16 3.39-8.16 5-11.9a152.5 152.5 0 0012.5 31.07c1.18 2.14 1.08 3.08-.52 4.84-2.41 2.64-5.77 5.83-9.33 9.21-10.78 10.23-24.2 23-26 34.23-.7 4.5 2.4 8.6 7.21 9.53 14.47 2.88 31.9-1.33 46.64-11.25 13.4-9 18.44-21.55 15-37.19-3.33-15.06 4.27-33.76 22.59-55.62 3 12.53 7 22.66 12.52 31.53l-.15.12c-13.34 11.65-31.62 27.6-28.78 46.95a13.35 13.35 0 005.58 9.22 14.22 14.22 0 0011.2 2.06c17.47-3.67 30.62-11.06 40.18-22.57s6.07-24.27 2.85-34.17c25-6.78 47.26-6.61 68.1.5 11.7 4 20.09 10.57 24.93 19.64 6.09 11.41 2.8 21.94-9.29 29.65-3.71 2.37-5.5 3.82-5.61 5.65a2.65 2.65 0 001 2.23c1.4 1.15 5.72 3.15 15.49-3 9-5.65 14.28-13.34 15.63-23a39 39 0 00-.01-8.01zm-399.73 25.06l-.1 1.28c-1.56 14.64-9 27.4-22.15 38-8.26 6.66-17.23 10.75-25.25 11.53-5.6.54-9.67-.22-12.09-2.27-1.81-1.53-2.78-3.82-3-7-1.64-25.48 38.32-50.8 60.81-59.13a51.39 51.39 0 011.78 17.59zm102.35-71.86c-3.7 21.09-14.49 60.9-31.45 76.35-.81.74-1.49 1-1.8.93s-.55-.44-.8-1c-5.66-13.12-3.57-35.28 5-52.69 6.59-13.42 16-22.31 26.52-25a5.29 5.29 0 011.34-.19 1.58 1.58 0 011 .27 1.64 1.64 0 01.19 1.33zm83.49 76.88c-3.19 3.33-7.56 2.88-6.53 1.66l16.24-17.24c-1.31 5.93-5.18 10.84-9.71 15.58zm67.37-14.91a14.07 14.07 0 01-4.93 1.39c-.46-9.07 8.33-19.28 17-26.09 2.33 9.46-2.44 19.46-12.07 24.7z"
-            >
-            </path>
-          </svg>
-
-          <span class="uppercase" slot="text">sass</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://developer.mozilla.org/en-US/docs/Web/HTML"
-          iconBackgroundColor="bg-[#dd4b2526]"
-        >
-          <svg
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              fill="#dd4b25"
-              d="M64 32l34.94 403.21L255.77 480 413 435.15 448 32zm308 132H188l4 51h176l-13.51 151.39L256 394.48l-98.68-28-6.78-77.48h48.26l3.42 39.29L256 343.07l53.42-14.92L315 264H148l-12.59-149.59H376.2z"
-            >
-            </path>
-          </svg>
-
-          <span class="uppercase" slot="text">html</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://developer.mozilla.org/en-US/docs/Web/CSS"
-          iconBackgroundColor="bg-[#264de426]"
-        >
-          <svg
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              fill="#264de4"
-              d="m18.824 0-1.61 17.996L9.997 20l-7.203-2L1.187 0Zm0 0"
-            >
-            </path>
-            <path
-              fill="#ebebeb"
-              d="M10.004 8.148H4.867l.2 2.207h4.937ZM10.004 3.68H4.469l.199 2.207h5.336ZM5.164 11.46l.309 3.466 4.523 1.254h.008v-2.297h-.008l-2.46-.664-.157-1.758Zm0 0"
-            >
-            </path>
-            <path
-              fill="#fff"
-              d="m12.715 10.355-.254 2.864-2.465.664v2.297l4.527-1.254.032-.371.52-5.813.054-.594.398-4.468h-5.53v2.207h3.112l-.203 2.261h-2.91v2.207Zm0 0"
-            ></path>
-          </svg>
-
-          <span class="uppercase" slot="text">css</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-          iconBackgroundColor="bg-[#f0db4f70] dark:bg-[#f0db4f26]"
-        >
-          <svg
-            viewBox="0 0 1052 1052"
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path fill="#f0db4f" d="M0 0h1052v1052H0z"></path>
-            <path
-              d="M965.9 801.1c-7.7-48-39-88.3-131.7-125.9-32.2-14.8-68.1-25.399-78.8-49.8-3.8-14.2-4.3-22.2-1.9-30.8 6.9-27.9 40.2-36.6 66.6-28.6 17 5.7 33.1 18.801 42.8 39.7 45.4-29.399 45.3-29.2 77-49.399-11.6-18-17.8-26.301-25.4-34-27.3-30.5-64.5-46.2-124-45-10.3 1.3-20.699 2.699-31 4-29.699 7.5-58 23.1-74.6 44-49.8 56.5-35.6 155.399 25 196.1 59.7 44.8 147.4 55 158.6 96.9 10.9 51.3-37.699 67.899-86 62-35.6-7.4-55.399-25.5-76.8-58.4-39.399 22.8-39.399 22.8-79.899 46.1 9.6 21 19.699 30.5 35.8 48.7 76.2 77.3 266.899 73.5 301.1-43.5 1.399-4.001 10.6-30.801 3.199-72.101zm-394-317.6h-98.4c0 85-.399 169.4-.399 254.4 0 54.1 2.8 103.7-6 118.9-14.4 29.899-51.7 26.2-68.7 20.399-17.3-8.5-26.1-20.6-36.3-37.699-2.8-4.9-4.9-8.7-5.601-9-26.699 16.3-53.3 32.699-80 49 13.301 27.3 32.9 51 58 66.399 37.5 22.5 87.9 29.4 140.601 17.3 34.3-10 63.899-30.699 79.399-62.199 22.4-41.3 17.6-91.3 17.4-146.6.5-90.2 0-180.4 0-270.9z"
-              fill="#323330"
-            >
-            </path>
-          </svg>
-
-          <span class="capitalize" slot="text">javascript</span>
-        </TechCard>
-      </nav>
-      <h3 class="capitalize text-muted font-light mt-5 mb-2">backend</h3>
-      <nav
-        class="grid grid-cols-[repeat(auto-fill,minmax(min(200px,100%),1fr))] gap-3"
-      >
-        <TechCard
-          docsLink="https://nextjs.org/"
-          iconBackgroundColor="bg-primary"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 256 256"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              d="M119.616813,0.0688905149 C119.066276,0.118932037 117.314565,0.294077364 115.738025,0.419181169 C79.3775171,3.69690087 45.3192571,23.3131775 23.7481916,53.4631946 C11.7364614,70.2271045 4.05395894,89.2428829 1.15112414,109.384595 C0.12512219,116.415429 0,118.492153 0,128.025062 C0,137.557972 0.12512219,139.634696 1.15112414,146.665529 C8.10791789,194.730411 42.3163245,235.11392 88.7116325,250.076335 C97.0197458,252.753556 105.778299,254.580072 115.738025,255.680985 C119.616813,256.106338 136.383187,256.106338 140.261975,255.680985 C157.453763,253.779407 172.017986,249.525878 186.382014,242.194795 C188.584164,241.068861 189.00958,240.768612 188.709286,240.518404 C188.509091,240.36828 179.124927,227.782837 167.86393,212.570214 L147.393939,184.922273 L121.743891,146.965779 C107.630108,126.098464 96.0187683,109.034305 95.9186706,109.034305 C95.8185728,109.009284 95.7184751,125.873277 95.6684262,146.465363 C95.5933529,182.52028 95.5683284,183.971484 95.1178886,184.82219 C94.4672532,186.048207 93.9667644,186.548623 92.915738,187.099079 C92.114956,187.499411 91.4142717,187.574474 87.6355816,187.574474 L83.3063539,187.574474 L82.1552297,186.848872 C81.4044966,186.373477 80.8539589,185.747958 80.4785924,185.022356 L79.9530792,183.896422 L80.0031281,133.729796 L80.0782014,83.5381493 L80.8539589,82.5623397 C81.25435,82.0369037 82.1051808,81.3613431 82.7057674,81.0360732 C83.7317693,80.535658 84.1321603,80.4856165 88.4613881,80.4856165 C93.5663734,80.4856165 94.4172043,80.6857826 95.7434995,82.1369867 C96.1188661,82.5373189 110.007429,103.454675 126.623656,128.650581 C143.239883,153.846488 165.962072,188.250034 177.122972,205.139048 L197.392766,235.839522 L198.418768,235.163961 C207.502639,229.259062 217.112023,220.852086 224.719453,212.09482 C240.910264,193.504394 251.345455,170.835585 254.848876,146.665529 C255.874878,139.634696 256,137.557972 256,128.025062 C256,118.492153 255.874878,116.415429 254.848876,109.384595 C247.892082,61.3197135 213.683675,20.9362052 167.288368,5.97379012 C159.105376,3.32158945 150.396872,1.49507389 140.637341,0.394160408 C138.234995,0.143952798 121.693842,-0.131275573 119.616813,0.0688905149 L119.616813,0.0688905149 Z M172.017986,77.4831252 C173.219159,78.0836234 174.195112,79.2345784 174.545455,80.435575 C174.74565,81.0861148 174.795699,94.9976579 174.74565,126.348671 L174.670577,171.336 L166.73783,159.17591 L158.780059,147.01582 L158.780059,114.313685 C158.780059,93.1711423 158.880156,81.2862808 159.030303,80.7108033 C159.430694,79.3096407 160.306549,78.2087272 161.507722,77.5581875 C162.533724,77.0327515 162.909091,76.98271 166.837928,76.98271 C170.541544,76.98271 171.19218,77.0327515 172.017986,77.4831252 Z"
-              fill="currentColor"
-            >
-            </path>
-          </svg>
-
-          <span class="capitalize" slot="text">nextJS</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://trpc.io/"
-          iconBackgroundColor="bg-[#007acc26]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            fill="none"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <rect width="100%" height="100%" rx="150" fill="#398CCB"></rect>
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M255.446 75L326.523 116.008V138.556L412.554 188.238V273.224L435.631 286.546V368.608L364.6 409.615L333.065 391.378L256.392 435.646L180.178 391.634L149.085 409.615L78.0538 368.538V286.546L100.231 273.743V188.238L184.415 139.638L184.462 139.636V116.008L255.446 75ZM326.523 159.879V198.023L255.492 239.031L184.462 198.023V160.936L184.415 160.938L118.692 198.9V263.084L149.085 245.538L220.115 286.546V368.538L198.626 380.965L256.392 414.323L314.618 380.712L293.569 368.538V286.546L364.6 245.538L394.092 262.565V198.9L326.523 159.879ZM312.031 357.969V307.915L355.369 332.931V382.985L312.031 357.969ZM417.169 307.846L373.831 332.862V382.985L417.169 357.9V307.846ZM96.5154 357.9V307.846L139.854 332.862V382.915L96.5154 357.9ZM201.654 307.846L158.315 332.862V382.915L201.654 357.9V307.846ZM321.262 291.923L364.6 266.908L407.938 291.923L364.6 316.962L321.262 291.923ZM149.085 266.838L105.746 291.923L149.085 316.892L192.423 291.923L149.085 266.838ZM202.923 187.362V137.308L246.215 162.346V212.377L202.923 187.362ZM308.015 137.308L264.723 162.346V212.354L308.015 187.362V137.308ZM212.154 121.338L255.446 96.3231L298.785 121.338L255.446 146.354L212.154 121.338Z"
-              fill="white"></path>
-          </svg>
-
-          <span class="uppercase" slot="text">trpc</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://www.prisma.io/"
-          iconBackgroundColor="bg-primary"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              fill="currentColor"
-              d="M 19.867188 18.234375 L 11.5625 0.753906 C 11.351562 0.316406 10.917969 0.0273438 10.425781 0.00390625 C 9.9375 -0.03125 9.46875 0.210938 9.214844 0.625 L 0.207031 15.085938 C -0.0742188 15.53125 -0.0664062 16.097656 0.222656 16.535156 L 4.625 23.296875 C 4.96875 23.816406 5.613281 24.050781 6.214844 23.875 L 18.996094 20.128906 C 19.386719 20.015625 19.707031 19.742188 19.875 19.375 C 20.042969 19.011719 20.039062 18.59375 19.867188 18.234375 Z M 18.007812 18.984375 L 7.164062 22.160156 C 6.832031 22.257812 6.515625 21.976562 6.582031 21.644531 L 10.457031 3.257812 C 10.53125 2.914062 11.011719 2.859375 11.160156 3.179688 L 18.335938 18.273438 C 18.398438 18.410156 18.398438 18.566406 18.335938 18.703125 C 18.273438 18.839844 18.152344 18.941406 18.007812 18.984375 Z M 18.007812 18.984375 "
-            ></path>
-          </svg>
-
-          <span class="capitalize" slot="text">prisma</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://orm.drizzle.team/"
-          iconBackgroundColor="bg-primary"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 160 160"
-            class="h-5 w-5 fill-current dark:fill-[#c5f74f]"
-            slot="icon"
-          >
-            <rect
-              width="9.63139"
-              height="40.8516"
-              rx="4.8157"
-              transform="matrix(0.873028 0.48767 -0.497212 0.867629 43.4805 67.3037)"
-            >
-            </rect>
-            <rect
-              width="9.63139"
-              height="40.8516"
-              rx="4.8157"
-              transform="matrix(0.873028 0.48767 -0.497212 0.867629 76.9395 46.5342)"
-            >
-            </rect>
-            <rect
-              width="9.63139"
-              height="40.8516"
-              rx="4.8157"
-              transform="matrix(0.873028 0.48767 -0.497212 0.867629 128.424 46.5352)"
-            >
-            </rect>
-            <rect
-              width="9.63139"
-              height="40.8516"
-              rx="4.8157"
-              transform="matrix(0.873028 0.48767 -0.497212 0.867629 94.957 67.3037)"
-            >
-            </rect>
-          </svg>
-
-          <span class="capitalize" slot="text">drizzle</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://www.w3schools.com/sql/"
-          iconBackgroundColor="bg-red-900/10"
-        >
-          <span class="font-bold uppercase text-red-500 text-xs" slot="icon">
-            sql
-          </span>
-
-          <span class="uppercase" slot="text">sql</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://www.postgresql.org/docs/"
-          iconBackgroundColor="bg-[#33679130]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="-4 0 264 264"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              d="M255.008 158.086c-1.535-4.649-5.556-7.887-10.756-8.664-2.452-.366-5.26-.21-8.583.475-5.792 1.195-10.089 1.65-13.225 1.738 11.837-19.985 21.462-42.775 27.003-64.228 8.96-34.689 4.172-50.492-1.423-57.64C233.217 10.847 211.614.683 185.552.372c-13.903-.17-26.108 2.575-32.475 4.549-5.928-1.046-12.302-1.63-18.99-1.738-12.537-.2-23.614 2.533-33.079 8.15-5.24-1.772-13.65-4.27-23.362-5.864-22.842-3.75-41.252-.828-54.718 8.685C6.622 25.672-.937 45.684.461 73.634c.444 8.874 5.408 35.874 13.224 61.48 4.492 14.718 9.282 26.94 14.237 36.33 7.027 13.315 14.546 21.156 22.987 23.972 4.731 1.576 13.327 2.68 22.368-4.85 1.146 1.388 2.675 2.767 4.704 4.048 2.577 1.625 5.728 2.953 8.875 3.74 11.341 2.835 21.964 2.126 31.027-1.848.056 1.612.099 3.152.135 4.482.06 2.157.12 4.272.199 6.25.537 13.374 1.447 23.773 4.143 31.049.148.4.347 1.01.557 1.657 1.345 4.118 3.594 11.012 9.316 16.411 5.925 5.593 13.092 7.308 19.656 7.308 3.292 0 6.433-.432 9.188-1.022 9.82-2.105 20.973-5.311 29.041-16.799 7.628-10.86 11.336-27.217 12.007-52.99.087-.729.167-1.425.244-2.088l.16-1.362 1.797.158.463.031c10.002.456 22.232-1.665 29.743-5.154 5.935-2.754 24.954-12.795 20.476-26.351"
-            >
-            </path>
-            <path
-              d="M237.906 160.722c-29.74 6.135-31.785-3.934-31.785-3.934 31.4-46.593 44.527-105.736 33.2-120.211-30.904-39.485-84.399-20.811-85.292-20.327l-.287.052c-5.876-1.22-12.451-1.946-19.842-2.067-13.456-.22-23.664 3.528-31.41 9.402 0 0-95.43-39.314-90.991 49.444.944 18.882 27.064 142.873 58.218 105.422 11.387-13.695 22.39-25.274 22.39-25.274 5.464 3.63 12.006 5.482 18.864 4.817l.533-.452c-.166 1.7-.09 3.363.213 5.332-8.026 8.967-5.667 10.541-21.711 13.844-16.235 3.346-6.698 9.302-.471 10.86 7.549 1.887 25.013 4.561 36.813-11.958l-.47 1.885c3.144 2.519 5.352 16.383 4.982 28.952-.37 12.568-.617 21.197 1.86 27.937 2.479 6.74 4.948 21.905 26.04 17.386 17.623-3.777 26.756-13.564 28.027-29.89.901-11.606 2.942-9.89 3.07-20.267l1.637-4.912c1.887-15.733.3-20.809 11.157-18.448l2.64.232c7.99.363 18.45-1.286 24.589-4.139 13.218-6.134 21.058-16.377 8.024-13.686h.002"
-              fill="#336791"
-            >
-            </path>
-            <path
-              d="M108.076 81.525c-2.68-.373-5.107-.028-6.335.902-.69.523-.904 1.129-.962 1.546-.154 1.105.62 2.327 1.096 2.957 1.346 1.784 3.312 3.01 5.258 3.28.282.04.563.058.842.058 3.245 0 6.196-2.527 6.456-4.392.325-2.336-3.066-3.893-6.355-4.35M196.86 81.599c-.256-1.831-3.514-2.353-6.606-1.923-3.088.43-6.082 1.824-5.832 3.659.2 1.427 2.777 3.863 5.827 3.863.258 0 .518-.017.78-.054 2.036-.282 3.53-1.575 4.24-2.32 1.08-1.136 1.706-2.402 1.591-3.225"
-              fill="#FFF"
-            >
-            </path>
-            <path
-              d="M247.802 160.025c-1.134-3.429-4.784-4.532-10.848-3.28-18.005 3.716-24.453 1.142-26.57-.417 13.995-21.32 25.508-47.092 31.719-71.137 2.942-11.39 4.567-21.968 4.7-30.59.147-9.463-1.465-16.417-4.789-20.665-13.402-17.125-33.072-26.311-56.882-26.563-16.369-.184-30.199 4.005-32.88 5.183-5.646-1.404-11.801-2.266-18.502-2.376-12.288-.199-22.91 2.743-31.704 8.74-3.82-1.422-13.692-4.811-25.765-6.756-20.872-3.36-37.458-.814-49.294 7.571-14.123 10.006-20.643 27.892-19.38 53.16.425 8.501 5.269 34.653 12.913 59.698 10.062 32.964 21 51.625 32.508 55.464 1.347.449 2.9.763 4.613.763 4.198 0 9.345-1.892 14.7-8.33a529.832 529.832 0 0 1 20.261-22.926c4.524 2.428 9.494 3.784 14.577 3.92.01.133.023.266.035.398a117.66 117.66 0 0 0-2.57 3.175c-3.522 4.471-4.255 5.402-15.592 7.736-3.225.666-11.79 2.431-11.916 8.435-.136 6.56 10.125 9.315 11.294 9.607 4.074 1.02 7.999 1.523 11.742 1.523 9.103 0 17.114-2.992 23.516-8.781-.197 23.386.778 46.43 3.586 53.451 2.3 5.748 7.918 19.795 25.664 19.794 2.604 0 5.47-.303 8.623-.979 18.521-3.97 26.564-12.156 29.675-30.203 1.665-9.645 4.522-32.676 5.866-45.03 2.836.885 6.487 1.29 10.434 1.289 8.232 0 17.731-1.749 23.688-4.514 6.692-3.108 18.768-10.734 16.578-17.36zm-44.106-83.48c-.061 3.647-.563 6.958-1.095 10.414-.573 3.717-1.165 7.56-1.314 12.225-.147 4.54.42 9.26.968 13.825 1.108 9.22 2.245 18.712-2.156 28.078a36.508 36.508 0 0 1-1.95-4.009c-.547-1.326-1.735-3.456-3.38-6.404-6.399-11.476-21.384-38.35-13.713-49.316 2.285-3.264 8.084-6.62 22.64-4.813zm-17.644-61.787c21.334.471 38.21 8.452 50.158 23.72 9.164 11.711-.927 64.998-30.14 110.969a171.33 171.33 0 0 0-.886-1.117l-.37-.462c7.549-12.467 6.073-24.802 4.759-35.738-.54-4.488-1.05-8.727-.92-12.709.134-4.22.692-7.84 1.232-11.34.663-4.313 1.338-8.776 1.152-14.037.139-.552.195-1.204.122-1.978-.475-5.045-6.235-20.144-17.975-33.81-6.422-7.475-15.787-15.84-28.574-21.482 5.5-1.14 13.021-2.203 21.442-2.016zM66.674 175.778c-5.9 7.094-9.974 5.734-11.314 5.288-8.73-2.912-18.86-21.364-27.791-50.624-7.728-25.318-12.244-50.777-12.602-57.916-1.128-22.578 4.345-38.313 16.268-46.769 19.404-13.76 51.306-5.524 64.125-1.347-.184.182-.376.352-.558.537-21.036 21.244-20.537 57.54-20.485 59.759-.002.856.07 2.068.168 3.735.362 6.105 1.036 17.467-.764 30.334-1.672 11.957 2.014 23.66 10.111 32.109a36.275 36.275 0 0 0 2.617 2.468c-3.604 3.86-11.437 12.396-19.775 22.426zm22.479-29.993c-6.526-6.81-9.49-16.282-8.133-25.99 1.9-13.592 1.199-25.43.822-31.79-.053-.89-.1-1.67-.127-2.285 3.073-2.725 17.314-10.355 27.47-8.028 4.634 1.061 7.458 4.217 8.632 9.645 6.076 28.103.804 39.816-3.432 49.229-.873 1.939-1.698 3.772-2.402 5.668l-.546 1.466c-1.382 3.706-2.668 7.152-3.465 10.424-6.938-.02-13.687-2.984-18.819-8.34zm1.065 37.9c-2.026-.506-3.848-1.385-4.917-2.114.893-.42 2.482-.992 5.238-1.56 13.337-2.745 15.397-4.683 19.895-10.394 1.031-1.31 2.2-2.794 3.819-4.602l.002-.002c2.411-2.7 3.514-2.242 5.514-1.412 1.621.67 3.2 2.702 3.84 4.938.303 1.056.643 3.06-.47 4.62-9.396 13.156-23.088 12.987-32.921 10.526zm69.799 64.952c-16.316 3.496-22.093-4.829-25.9-14.346-2.457-6.144-3.665-33.85-2.808-64.447.011-.407-.047-.8-.159-1.17a15.444 15.444 0 0 0-.456-2.162c-1.274-4.452-4.379-8.176-8.104-9.72-1.48-.613-4.196-1.738-7.46-.903.696-2.868 1.903-6.107 3.212-9.614l.549-1.475c.618-1.663 1.394-3.386 2.214-5.21 4.433-9.848 10.504-23.337 3.915-53.81-2.468-11.414-10.71-16.988-23.204-15.693-7.49.775-14.343 3.797-17.761 5.53-.735.372-1.407.732-2.035 1.082.954-11.5 4.558-32.992 18.04-46.59 8.489-8.56 19.794-12.788 33.568-12.56 27.14.444 44.544 14.372 54.366 25.979 8.464 10.001 13.047 20.076 14.876 25.51-13.755-1.399-23.11 1.316-27.852 8.096-10.317 14.748 5.644 43.372 13.315 57.129 1.407 2.521 2.621 4.7 3.003 5.626 2.498 6.054 5.732 10.096 8.093 13.046.724.904 1.426 1.781 1.96 2.547-4.166 1.201-11.649 3.976-10.967 17.847-.55 6.96-4.461 39.546-6.448 51.059-2.623 15.21-8.22 20.875-23.957 24.25zm68.104-77.936c-4.26 1.977-11.389 3.46-18.161 3.779-7.48.35-11.288-.838-12.184-1.569-.42-8.644 2.797-9.547 6.202-10.503.535-.15 1.057-.297 1.561-.473.313.255.656.508 1.032.756 6.012 3.968 16.735 4.396 31.874 1.271l.166-.033c-2.042 1.909-5.536 4.471-10.49 6.772z"
-              fill="#FFF"
-            >
-            </path>
-          </svg>
-
-          <span class="capitalize" slot="text">postgreSQL</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://nodejs.org/en"
-          iconBackgroundColor="bg-[#6FA66030]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="#6FA660"
-            viewBox="0 0 512 512"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              d="M429.76 130.07L274.33 36.85a37 37 0 00-36.65 0L82.24 130.06A38.2 38.2 0 0064 162.83V349a38.26 38.26 0 0018.24 32.8L123 406.14l.23.13c20.58 10.53 28.46 10.53 37.59 10.53 32.14 0 52.11-20.8 52.11-54.29V182a8.51 8.51 0 00-8.42-8.58h-22.38a8.51 8.51 0 00-8.42 8.58v180.51a15 15 0 01-6.85 13.07c-5.9 3.6-14.47 2.84-24.14-2.15l-39.06-23.51a1.1 1.1 0 01-.48-.92V165.46a1.32 1.32 0 01.59-1.06l151.84-93a.82.82 0 01.73 0l151.93 93a1.34 1.34 0 01.55 1.1V349a1.28 1.28 0 01-.45 1l-152.06 90.65a1.22 1.22 0 01-.8 0l-38.83-23.06a7.8 7.8 0 00-7.83-.41l-.34.2c-10.72 6.35-13.6 8-23.54 11.62-1.62.59-5.43 2-5.76 5.77s3.29 6.45 6.51 8.32l51.9 31.87a35.67 35.67 0 0018.3 5.07h.58a35.87 35.87 0 0017.83-5.07l155.43-93.13A38.37 38.37 0 00448 349V162.83a38.21 38.21 0 00-18.24-32.76z"
-            >
-            </path>
-            <path
-              d="M307.88 318.05c-37.29 0-45.24-10.42-47.6-27.24a8.43 8.43 0 00-8.22-7.32h-19.8a8.44 8.44 0 00-8.26 8.58c0 14.58 5.12 62.17 83.92 62.17 24.38 0 44.66-5.7 58.63-16.49S388 311.26 388 292.55c0-37.55-24.5-47.83-72.75-54.55-49.05-6.82-49.05-10.29-49.05-17.89 0-5.47 0-18.28 35.46-18.28 25.23 0 38.74 3.19 43.06 20a8.35 8.35 0 008.06 6.67h19.87a8.24 8.24 0 006.16-2.86 8.91 8.91 0 002.12-6.44c-2.57-35.55-28.56-53.58-79.24-53.58-46.06 0-73.55 20.75-73.55 55.5 0 38.1 28.49 48.87 71.29 53.33 50 5.17 50 12.71 50 19.37.03 10.38-4.28 24.23-41.55 24.23z"
-            >
-            </path>
-          </svg>
-
-          <span class="capitalize" slot="text">nodeJS</span>
-        </TechCard>
-
-        <TechCard docsLink="https://bun.sh/" iconBackgroundColor="bg-primary">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 80 70"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              id="Shadow"
-              d="M71.09,20.74c-.16-.17-.33-.34-.5-.5s-.33-.34-.5-.5-.33-.34-.5-.5-.33-.34-.5-.5-.33-.34-.5-.5-.33-.34-.5-.5-.33-.34-.5-.5A26.46,26.46,0,0,1,75.5,35.7c0,16.57-16.82,30.05-37.5,30.05-11.58,0-21.94-4.23-28.83-10.86l.5.5.5.5.5.5.5.5.5.5.5.5.5.5C19.55,65.3,30.14,69.75,42,69.75c20.68,0,37.5-13.48,37.5-30C79.5,32.69,76.46,26,71.09,20.74Z"
-            >
-            </path>
-            <g id="Body">
-              <path
-                id="Background"
-                d="M73,35.7c0,15.21-15.67,27.54-35,27.54S3,50.91,3,35.7C3,26.27,9,17.94,18.22,13S33.18,3,38,3s8.94,4.13,19.78,10C67,17.94,73,26.27,73,35.7Z"
-                style="fill:#fbf0df"
-              >
-              </path>
-              <path
-                id="Bottom_Shadow"
-                data-name="Bottom Shadow"
-                d="M73,35.7a21.67,21.67,0,0,0-.8-5.78c-2.73,33.3-43.35,34.9-59.32,24.94A40,40,0,0,0,38,63.24C57.3,63.24,73,50.89,73,35.7Z"
-                style="fill:#f6dece"
-              >
-              </path>
-              <path
-                id="Light_Shine"
-                data-name="Light Shine"
-                d="M24.53,11.17C29,8.49,34.94,3.46,40.78,3.45A9.29,9.29,0,0,0,38,3c-2.42,0-5,1.25-8.25,3.13-1.13.66-2.3,1.39-3.54,2.15-2.33,1.44-5,3.07-8,4.7C8.69,18.13,3,26.62,3,35.7c0,.4,0,.8,0,1.19C9.06,15.48,20.07,13.85,24.53,11.17Z"
-                style="fill:#fffefc"
-              >
-              </path>
-              <path
-                id="Top"
-                d="M35.12,5.53A16.41,16.41,0,0,1,29.49,18c-.28.25-.06.73.3.59,3.37-1.31,7.92-5.23,6-13.14C35.71,5,35.12,5.12,35.12,5.53Zm2.27,0A16.24,16.24,0,0,1,39,19c-.12.35.31.65.55.36C41.74,16.56,43.65,11,37.93,5,37.64,4.74,37.19,5.14,37.39,5.49Zm2.76-.17A16.42,16.42,0,0,1,47,17.12a.33.33,0,0,0,.65.11c.92-3.49.4-9.44-7.17-12.53C40.08,4.54,39.82,5.08,40.15,5.32ZM21.69,15.76a16.94,16.94,0,0,0,10.47-9c.18-.36.75-.22.66.18-1.73,8-7.52,9.67-11.12,9.45C21.32,16.4,21.33,15.87,21.69,15.76Z"
-                style="fill:#ccbea7;fill-rule:evenodd"
-              >
-              </path>
-              <path
-                id="Outline"
-                d="M38,65.75C17.32,65.75.5,52.27.5,35.7c0-10,6.18-19.33,16.53-24.92,3-1.6,5.57-3.21,7.86-4.62,1.26-.78,2.45-1.51,3.6-2.19C32,1.89,35,.5,38,.5s5.62,1.2,8.9,3.14c1,.57,2,1.19,3.07,1.87,2.49,1.54,5.3,3.28,9,5.27C69.32,16.37,75.5,25.69,75.5,35.7,75.5,52.27,58.68,65.75,38,65.75ZM38,3c-2.42,0-5,1.25-8.25,3.13-1.13.66-2.3,1.39-3.54,2.15-2.33,1.44-5,3.07-8,4.7C8.69,18.13,3,26.62,3,35.7,3,50.89,18.7,63.25,38,63.25S73,50.89,73,35.7C73,26.62,67.31,18.13,57.78,13,54,11,51.05,9.12,48.66,7.64c-1.09-.67-2.09-1.29-3-1.84C42.63,4,40.42,3,38,3Z"
-              >
-              </path>
-            </g>
-            <g id="Mouth">
-              <g id="Background-2" data-name="Background">
-                <path
-                  d="M45.05,43a8.93,8.93,0,0,1-2.92,4.71,6.81,6.81,0,0,1-4,1.88A6.84,6.84,0,0,1,34,47.71,8.93,8.93,0,0,1,31.12,43a.72.72,0,0,1,.8-.81H44.26A.72.72,0,0,1,45.05,43Z"
-                  style="fill:#b71422"
-                >
-                </path>
-              </g>
-              <g id="Tongue">
-                <path
-                  id="Background-3"
-                  data-name="Background"
-                  d="M34,47.79a6.91,6.91,0,0,0,4.12,1.9,6.91,6.91,0,0,0,4.11-1.9,10.63,10.63,0,0,0,1-1.07,6.83,6.83,0,0,0-4.9-2.31,6.15,6.15,0,0,0-5,2.78C33.56,47.4,33.76,47.6,34,47.79Z"
-                  style="fill:#ff6164"
-                >
-                </path>
-                <path
-                  id="Outline-2"
-                  data-name="Outline"
-                  d="M34.16,47a5.36,5.36,0,0,1,4.19-2.08,6,6,0,0,1,4,1.69c.23-.25.45-.51.66-.77a7,7,0,0,0-4.71-1.93,6.36,6.36,0,0,0-4.89,2.36A9.53,9.53,0,0,0,34.16,47Z"
-                >
-                </path>
-              </g>
-              <path
-                id="Outline-3"
-                data-name="Outline"
-                d="M38.09,50.19a7.42,7.42,0,0,1-4.45-2,9.52,9.52,0,0,1-3.11-5.05,1.2,1.2,0,0,1,.26-1,1.41,1.41,0,0,1,1.13-.51H44.26a1.44,1.44,0,0,1,1.13.51,1.19,1.19,0,0,1,.25,1h0a9.52,9.52,0,0,1-3.11,5.05A7.42,7.42,0,0,1,38.09,50.19Zm-6.17-7.4c-.16,0-.2.07-.21.09a8.29,8.29,0,0,0,2.73,4.37A6.23,6.23,0,0,0,38.09,49a6.28,6.28,0,0,0,3.65-1.73,8.3,8.3,0,0,0,2.72-4.37.21.21,0,0,0-.2-.09Z"
-              >
-              </path>
-            </g>
-            <g id="Face">
-              <ellipse
-                id="Right_Blush"
-                data-name="Right Blush"
-                cx="53.22"
-                cy="40.18"
-                rx="5.85"
-                ry="3.44"
-                style="fill:#febbd0"
-              >
-              </ellipse>
-              <ellipse
-                id="Left_Bluch"
-                data-name="Left Bluch"
-                cx="22.95"
-                cy="40.18"
-                rx="5.85"
-                ry="3.44"
-                style="fill:#febbd0"
-              >
-              </ellipse>
-              <path
-                id="Eyes"
-                d="M25.7,38.8a5.51,5.51,0,1,0-5.5-5.51A5.51,5.51,0,0,0,25.7,38.8Zm24.77,0A5.51,5.51,0,1,0,45,33.29,5.5,5.5,0,0,0,50.47,38.8Z"
-                style="fill-rule:evenodd"
-              >
-              </path>
-              <path
-                id="Iris"
-                d="M24,33.64a2.07,2.07,0,1,0-2.06-2.07A2.07,2.07,0,0,0,24,33.64Zm24.77,0a2.07,2.07,0,1,0-2.06-2.07A2.07,2.07,0,0,0,48.75,33.64Z"
-                style="fill:#fff;fill-rule:evenodd"
-              >
-              </path>
-            </g>
-          </svg>
-
-          <span class="capitalize" slot="text">bun</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://jwt.io/"
-          iconBackgroundColor="bg-[#D63AFF20]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 101 101"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <g transform="translate(-150.000000, -538.000000)">
-              <g transform="translate(0.000000, 413.000000)">
-                <g transform="translate(150.000000, 125.000000)">
-                  <g>
-                    <path
-                      d="M57.8,27.2 L57.7,0.3 L42.7,0.3 L42.8,27.2 L50.3,37.5 L57.8,27.2 Z"
-                      fill="#FFFFFF"></path>
-                    <path
-                      d="M42.8,73.3 L42.8,100.3 L57.8,100.3 L57.8,73.3 L50.3,63 L42.8,73.3 Z"
-                      fill="#FFFFFF"></path>
-                    <path
-                      d="M57.8,73.3 L73.6,95.1 L85.7,86.3 L69.9,64.5 L57.8,60.6 L57.8,73.3 Z"
-                      fill="#00F2E6"></path>
-                    <path
-                      d="M42.8,27.2 L26.9,5.4 L14.8,14.2 L30.6,36 L42.8,39.9 L42.8,27.2 Z"
-                      fill="#00F2E6"></path>
-                    <path
-                      d="M30.6,36 L5,27.7 L0.4,41.9 L26,50.3 L38.1,46.3 L30.6,36 Z"
-                      fill="#00B9F1"></path>
-                    <path
-                      d="M62.4,54.2 L69.9,64.5 L95.5,72.8 L100.1,58.6 L74.5,50.3 L62.4,54.2 Z"
-                      fill="#00B9F1"></path>
-                    <path
-                      d="M74.5,50.3 L100.1,41.9 L95.5,27.7 L69.9,36 L62.4,46.3 L74.5,50.3 Z"
-                      fill="#D63AFF"></path>
-                    <path
-                      d="M26,50.3 L0.4,58.6 L5,72.8 L30.6,64.5 L38.1,54.2 L26,50.3 Z"
-                      fill="#D63AFF"></path>
-                    <path
-                      d="M30.6,64.5 L14.8,86.3 L26.9,95.1 L42.8,73.3 L42.8,60.6 L30.6,64.5 Z"
-                      fill="#FB015B"></path>
-                    <path
-                      d="M69.9,36 L85.7,14.2 L73.6,5.4 L57.8,27.2 L57.8,39.9 L69.9,36 Z"
-                      fill="#FB015B"></path>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
-
-          <span class="uppercase" slot="text">jwt</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://docs.docker.com/"
-          iconBackgroundColor="bg-[#066da520]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            slot="icon"
-            viewBox="0 0 500 500"
-            class="h-5 w-5"
-          >
-            <path
-              stroke="#066da5"
-              stroke-width="38"
-              d="M296 226h42m-92 0h42m-91 0h42m-91 0h41m-91 0h42m8-46h41m8 0h42m7 0h42m-42-46h42"
-            ></path>
-            <path
-              fill="#066da5"
-              d="m472 228s-18-17-55-11c-4-29-35-46-35-46s-29 35-8 74c-6 3-16 7-31 7H68c-5 19-5 145 133 145 99 0 173-46 208-130 52 4 63-39 63-39"
-            ></path>
-          </svg>
-          <span class="capitalize" slot="text">docker</span>
-        </TechCard>
-      </nav>
-      <h3 class="capitalize text-muted font-light mt-5 mb-2">tools</h3>
-      <nav
-        class="grid grid-cols-[repeat(auto-fill,minmax(min(200px,100%),1fr))] gap-3"
-      >
-        <TechCard
-          docsLink="https://helix-editor.com/"
-          iconBackgroundColor="bg-[#706bc830]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="663.38 37.57 575.35 903.75"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <g transform="matrix(1,0,0,1,-31352.7,-1817.25)">
-              <g transform="matrix(1,0,0,1,31062.7,-20.8972)">
-                <g transform="matrix(1,0,0,1,-130.173,0.00185558)">
-                  <path
-                    d="M1083.58,1875.72L1635.06,2194.12C1649.8,2202.63 1658.88,2218.37 1658.88,2235.39C1658.88,2264.98 1658.88,2311.74 1658.88,2341.33C1658.88,2349.84 1656.61,2358.03 1652.5,2365.16C1652.5,2365.16 1214.7,2112.4 1107.2,2050.33C1092.58,2041.89 1083.58,2026.29 1083.58,2009.41C1083.58,1963.5 1083.58,1875.72 1083.58,1875.72Z"
-                    style="fill:#706bc8;"
-                  >
-                  </path>
-                </g>
-                <g transform="matrix(1,0,0,1,-130.173,0.00185558)">
-                  <path
-                    d="M1635.26,2604.84C1649.88,2613.28 1658.88,2628.87 1658.88,2645.75C1658.88,2691.67 1658.88,2779.44 1658.88,2779.44L1107.41,2461.05C1092.66,2452.53 1083.58,2436.8 1083.58,2419.78C1083.58,2390.19 1083.58,2343.42 1083.58,2313.84C1083.58,2305.32 1085.85,2297.13 1089.96,2290.01C1089.96,2290.01 1527.76,2542.77 1635.26,2604.84Z"
-                    style="fill:#55c5e4;"
-                  >
-                  </path>
-                </g>
-                <g transform="matrix(1,0,0,1,216.062,984.098)">
-                  <path
-                    d="M790.407,1432.56C785.214,1435.55 780.717,1439.9 777.509,1445.46C767.862,1462.16 773.473,1483.76 790.004,1493.59L789.998,1493.59L761.173,1476.95C746.427,1468.44 737.344,1452.71 737.344,1435.68C737.344,1406.09 737.344,1359.33 737.344,1329.74C737.344,1312.71 746.427,1296.98 761.173,1288.47L1259.59,1000.74L1259.83,1000.6C1264.92,997.617 1269.33,993.314 1272.48,987.844C1282.13,971.136 1276.52,949.544 1259.99,939.707L1260,939.707L1288.82,956.349C1303.57,964.862 1312.65,980.595 1312.65,997.622C1312.65,1027.21 1312.65,1073.97 1312.65,1103.56C1312.65,1120.59 1303.57,1136.32 1288.82,1144.83L1259.19,1161.94L1259.59,1161.68L790.407,1432.56Z"
-                    style="fill:#84ddea;"
-                  >
-                  </path>
-                </g>
-                <g transform="matrix(1,0,0,1,216.062,984.098)">
-                  <path
-                    d="M790.407,1686.24C785.214,1689.23 780.717,1693.58 777.509,1699.13C767.862,1715.84 773.473,1737.43 790.004,1747.27L789.998,1747.27L761.173,1730.63C746.427,1722.12 737.344,1706.38 737.344,1689.36C737.344,1659.77 737.344,1613.01 737.344,1583.42C737.344,1566.39 746.427,1550.66 761.173,1542.15L1259.59,1254.42L1259.83,1254.28C1264.92,1251.29 1269.33,1246.99 1272.48,1241.52C1282.13,1224.81 1276.52,1203.22 1259.99,1193.38L1260,1193.38L1288.82,1210.03C1303.57,1218.54 1312.65,1234.27 1312.65,1251.3C1312.65,1280.89 1312.65,1327.65 1312.65,1357.24C1312.65,1374.26 1303.57,1390 1288.82,1398.51L1259.19,1415.61L1259.59,1415.36L790.407,1686.24Z"
-                    style="fill:#997bc8;"
-                  >
-                  </path>
-                </g>
-              </g>
-            </g>
-          </svg>
-
-          <span class="capitalize" slot="text">helix</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://pop.system76.com/"
-          iconBackgroundColor="bg-[#48b9c730]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 200 200"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <g transform="matrix(0.21141649,0,0,0.21141649,5,4.7885835)">
-              <circle fill="#48b9c7" cx="449.4" cy="450.4" r="473"></circle>
-              <path
-                fill="white"
-                d="M236.4,702.4h426c20.4,0,37,16.6,37,37v3c0,20.4-16.6,37-37,37h-426c-20.4,0-37-16.6-37-37v-3 C199.4,718.9,215.9,702.4,236.4,702.4z"
-              >
-              </path>
-              <path
-                fill="white"
-                d="M512.4,333.4c-24,51-64,92-120,112l48,125c9,23,17,47,10,69 c-7,22-39,29-62,5c-44-47-192-343-203-365c-11-22-23-40-23-62c1-33,52-67,77-84c25-17,74-40,117-41s61,9,86,25c38,25,65,64,75,109   c10,45,7,80-5,105 M399.4,277.4c-9-31-28-61-53-81c-5-4-11-9-18-11c-46-15-26,62-19,82c7,20,26,62,47,83c5,5,10,9,16,10   c6,1,18-5,23-13c5-8,6-14,6-22C403.7,309.4,403,293.1,399.4,277.4z"
-              >
-              </path>
-              <path
-                fill="white"
-                d="M601.4,640.4c-2,9-7,17-15,22c-8,5-27,5-38-4 c-11-9-13-24-10-36c3-12,13-25,27-29C594.4,584.4,607.4,616.4,601.4,640.4z"
-              >
-              </path>
-              <path
-                fill="white"
-                d="M583.4,549.4c-18-7-12-103,5-220c5-32,13-48,22-56 c9-8,36-12,52-9c18.4,2.7,35.5,11.1,49,24c12,11,13,23,9,38s-18,47-29,70l-28,53C609.4,545.4,598.4,555.4,583.4,549.4z"
-              >
-              </path>
-            </g>
-          </svg>
-
-          <span class="capitalize" slot="text">Pop!_OS</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://github.com/tmux/tmux/wiki"
-          iconBackgroundColor="bg-[#1bb91f20]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 160 160"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <g clip-rule="evenodd" fill-rule="evenodd">
-              <path
-                d="M0 116h160v28.996c0 8.287-6.722 15.004-14.998 15.004H14.998C6.716 160 0 153.293 0 144.996zm0 0h160v30H0z"
-                fill="#1bb91f"
-              >
-              </path>
-              <path
-                d="M83 70V0h-6v146h6V76h77v-6zM0 15.007C0 6.719 6.722 0 14.998 0h130.004C153.285 0 160 6.725 160 15.007V146H0z"
-                class="fill-[#3c3c3c50] dark:fill-[#3c3c3c75]"
-              >
-              </path>
-            </g>
-          </svg>
-
-          <span class="capitalize" slot="text">tmux</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://git-scm.com/"
-          iconBackgroundColor="bg-[#F0513330]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              fill="#F05133"
-              d="M92.71 44.408 52.591 4.291c-2.31-2.311-6.057-2.311-8.369 0l-8.33 8.332L46.459 23.19c2.456-.83 5.272-.273 7.229 1.685 1.969 1.97 2.521 4.81 1.67 7.275l10.186 10.185c2.465-.85 5.307-.3 7.275 1.671 2.75 2.75 2.75 7.206 0 9.958-2.752 2.751-7.208 2.751-9.961 0-2.068-2.07-2.58-5.11-1.531-7.658l-9.5-9.499v24.997c.67.332 1.303.774 1.861 1.332 2.75 2.75 2.75 7.206 0 9.959-2.75 2.749-7.209 2.749-9.957 0-2.75-2.754-2.75-7.21 0-9.959.68-.679 1.467-1.193 2.307-1.537v-25.23c-.84-.344-1.625-.853-2.307-1.537-2.083-2.082-2.584-5.14-1.516-7.698L31.798 16.715 4.288 44.222c-2.311 2.313-2.311 6.06 0 8.371l40.121 40.118c2.31 2.311 6.056 2.311 8.369 0L92.71 52.779c2.311-2.311 2.311-6.06 0-8.371z"
-            >
-            </path>
-          </svg>
-
-          <span class="capitalize" slot="text">git</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://aws.amazon.com/"
-          iconBackgroundColor="bg-[#ff990020]"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 304 182"
-            class="h-5 w-5"
-            slot="icon"
-          >
-            <path
-              fill="currentColor"
-              d="M86.4,66.4c0,3.7,0.4,6.7,1.1,8.9c0.8,2.2,1.8,4.6,3.2,7.2c0.5,0.8,0.7,1.6,0.7,2.3c0,1-0.6,2-1.9,3l-6.3,4.2   c-0.9,0.6-1.8,0.9-2.6,0.9c-1,0-2-0.5-3-1.4C76.2,90,75,88.4,74,86.8c-1-1.7-2-3.6-3.1-5.9c-7.8,9.2-17.6,13.8-29.4,13.8   c-8.4,0-15.1-2.4-20-7.2c-4.9-4.8-7.4-11.2-7.4-19.2c0-8.5,3-15.4,9.1-20.6c6.1-5.2,14.2-7.8,24.5-7.8c3.4,0,6.9,0.3,10.6,0.8   c3.7,0.5,7.5,1.3,11.5,2.2v-7.3c0-7.6-1.6-12.9-4.7-16c-3.2-3.1-8.6-4.6-16.3-4.6c-3.5,0-7.1,0.4-10.8,1.3c-3.7,0.9-7.3,2-10.8,3.4   c-1.6,0.7-2.8,1.1-3.5,1.3c-0.7,0.2-1.2,0.3-1.6,0.3c-1.4,0-2.1-1-2.1-3.1v-4.9c0-1.6,0.2-2.8,0.7-3.5c0.5-0.7,1.4-1.4,2.8-2.1   c3.5-1.8,7.7-3.3,12.6-4.5c4.9-1.3,10.1-1.9,15.6-1.9c11.9,0,20.6,2.7,26.2,8.1c5.5,5.4,8.3,13.6,8.3,24.6V66.4z M45.8,81.6   c3.3,0,6.7-0.6,10.3-1.8c3.6-1.2,6.8-3.4,9.5-6.4c1.6-1.9,2.8-4,3.4-6.4c0.6-2.4,1-5.3,1-8.7v-4.2c-2.9-0.7-6-1.3-9.2-1.7   c-3.2-0.4-6.3-0.6-9.4-0.6c-6.7,0-11.6,1.3-14.9,4c-3.3,2.7-4.9,6.5-4.9,11.5c0,4.7,1.2,8.2,3.7,10.6   C37.7,80.4,41.2,81.6,45.8,81.6z M126.1,92.4c-1.8,0-3-0.3-3.8-1c-0.8-0.6-1.5-2-2.1-3.9L96.7,10.2c-0.6-2-0.9-3.3-0.9-4   c0-1.6,0.8-2.5,2.4-2.5h9.8c1.9,0,3.2,0.3,3.9,1c0.8,0.6,1.4,2,2,3.9l16.8,66.2l15.6-66.2c0.5-2,1.1-3.3,1.9-3.9c0.8-0.6,2.2-1,4-1   h8c1.9,0,3.2,0.3,4,1c0.8,0.6,1.5,2,1.9,3.9l15.8,67l17.3-67c0.6-2,1.3-3.3,2-3.9c0.8-0.6,2.1-1,3.9-1h9.3c1.6,0,2.5,0.8,2.5,2.5   c0,0.5-0.1,1-0.2,1.6c-0.1,0.6-0.3,1.4-0.7,2.5l-24.1,77.3c-0.6,2-1.3,3.3-2.1,3.9c-0.8,0.6-2.1,1-3.8,1h-8.6c-1.9,0-3.2-0.3-4-1   c-0.8-0.7-1.5-2-1.9-4L156,23l-15.4,64.4c-0.5,2-1.1,3.3-1.9,4c-0.8,0.7-2.2,1-4,1H126.1z M254.6,95.1c-5.2,0-10.4-0.6-15.4-1.8   c-5-1.2-8.9-2.5-11.5-4c-1.6-0.9-2.7-1.9-3.1-2.8c-0.4-0.9-0.6-1.9-0.6-2.8v-5.1c0-2.1,0.8-3.1,2.3-3.1c0.6,0,1.2,0.1,1.8,0.3   c0.6,0.2,1.5,0.6,2.5,1c3.4,1.5,7.1,2.7,11,3.5c4,0.8,7.9,1.2,11.9,1.2c6.3,0,11.2-1.1,14.6-3.3c3.4-2.2,5.2-5.4,5.2-9.5   c0-2.8-0.9-5.1-2.7-7c-1.8-1.9-5.2-3.6-10.1-5.2L246,52c-7.3-2.3-12.7-5.7-16-10.2c-3.3-4.4-5-9.3-5-14.5c0-4.2,0.9-7.9,2.7-11.1   c1.8-3.2,4.2-6,7.2-8.2c3-2.3,6.4-4,10.4-5.2c4-1.2,8.2-1.7,12.6-1.7c2.2,0,4.5,0.1,6.7,0.4c2.3,0.3,4.4,0.7,6.5,1.1   c2,0.5,3.9,1,5.7,1.6c1.8,0.6,3.2,1.2,4.2,1.8c1.4,0.8,2.4,1.6,3,2.5c0.6,0.8,0.9,1.9,0.9,3.3v4.7c0,2.1-0.8,3.2-2.3,3.2   c-0.8,0-2.1-0.4-3.8-1.2c-5.7-2.6-12.1-3.9-19.2-3.9c-5.7,0-10.2,0.9-13.3,2.8c-3.1,1.9-4.7,4.8-4.7,8.9c0,2.8,1,5.2,3,7.1   c2,1.9,5.7,3.8,11,5.5l14.2,4.5c7.2,2.3,12.4,5.5,15.5,9.6c3.1,4.1,4.6,8.8,4.6,14c0,4.3-0.9,8.2-2.6,11.6   c-1.8,3.4-4.2,6.4-7.3,8.8c-3.1,2.5-6.8,4.3-11.1,5.6C264.4,94.4,259.7,95.1,254.6,95.1z"
-            >
-            </path>
-            <path
-              fill="#ff9900"
-              d="M273.5,143.7c-32.9,24.3-80.7,37.2-121.8,37.2c-57.6,0-109.5-21.3-148.7-56.7c-3.1-2.8-0.3-6.6,3.4-4.4    c42.4,24.6,94.7,39.5,148.8,39.5c36.5,0,76.6-7.6,113.5-23.2C274.2,133.6,278.9,139.7,273.5,143.7z"
-            >
-            </path>
-            <path
-              fill="#ff9900"
-              d="M287.2,128.1c-4.2-5.4-27.8-2.6-38.5-1.3c-3.2,0.4-3.7-2.4-0.8-4.5c18.8-13.2,49.7-9.4,53.3-5    c3.6,4.5-1,35.4-18.6,50.2c-2.7,2.3-5.3,1.1-4.1-1.9C282.5,155.7,291.4,133.4,287.2,128.1z"
-            >
-            </path>
-          </svg>
-
-          <span class="uppercase" slot="text">aws</span>
-        </TechCard>
-
-        <TechCard
-          docsLink="https://vercel.com/"
-          iconBackgroundColor="bg-primary"
-        >
-          <svg viewBox="0 0 24 24" class="h-5 w-5" slot="icon">
-            <path
-              d="M12 2L2 19.7778H22L12 2Z"
-              fill="currentColor"
-              stroke="currentColor"
-            >
-            </path>
-          </svg>
-
-          <span class="capitalize" slot="text">vercel</span>
-        </TechCard>
-      </nav>
-    </section>
-
-    <section id="work">
-      <h2 class="uppercase text-muted text-lg font-light">
-        professional experiences
-      </h2>
-      <hr class="border-border mb-5 mt-2" />
-      <nav
-        class="grid grid-cols-[repeat(auto-fill,minmax(min(400px,100%),1fr))] gap-3"
-      >
-        <ProfessionalExpCard
-          companyLink="https://squaredup.com/"
-          companyName="SquaredUp"
-          jobTitle="front end engineer"
-        >
-          <div class="bg-[#FF3E5120] p-2 rounded-md" slot="icon">
-            <svg
-              viewBox="0 0 30 30"
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-8 w-8"
-            >
-              <path
-                d="M11.6131 19.7015V21.8815L21.8815 18.8458V2.20038L0 0V28.8902L3.91178 29.2773V4.33964L17.8068 5.74543L17.929 15.9527L11.6131 17.8068V19.7015Z"
-                fill="#FF3E51"></path>
-              <path
-                d="M23.7763 2.38397V20.2315L9.71836 24.3674V6.82548L5.80658 6.418V29.4609L27.7085 23.0023V2.79145L23.7763 2.38397Z"
-                fill="#FF3E51"></path>
-            </svg>
-          </div>
-        </ProfessionalExpCard>
-
-        <ProfessionalExpCard
-          companyLink="https://www.tarmactechnologies.com/"
-          companyName="tarmac technologies"
-          jobTitle="front end engineer"
-        >
-          <div class="bg-[#01CBB120] p-2 rounded-md" slot="icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 25 25"
-              class="h-8 w-8"
-            >
-              <path
-                fill="currentColor"
-                d="M9.907 18.247h3.995v-.644l-1.129-.381a.374.374 0 0 1-.254-.371l.122-2.862a.375.375 0 0 1 .375-.36h4.464v-.606l-4.452-1.168a.374.374 0 0 1-.279-.378l.158-3.696a.993.993 0 0 0-.278-.737 1.024 1.024 0 0 0-1.45 0 .996.996 0 0 0-.277.737l.158 3.696a.374.374 0 0 1-.279.378L6.33 13.023v.607h4.464c.2 0 .366.158.374.359l.123 2.862a.375.375 0 0 1-.255.37l-1.128.382v.644zm4.37.75H9.532a.375.375 0 0 1-.375-.375v-1.287c0-.161.103-.304.255-.356l1.117-.378-.096-2.221H5.954a.375.375 0 0 1-.375-.375v-1.271c0-.171.115-.32.28-.362l4.44-1.165-.146-3.395a1.738 1.738 0 0 1 .485-1.288c.668-.696 1.865-.694 2.533 0 .334.349.506.807.485 1.288l-.145 3.395 4.44 1.165c.164.043.28.19.28.362v1.27a.375.375 0 0 1-.376.376h-4.48l-.095 2.22 1.117.379a.377.377 0 0 1 .255.356v1.287a.375.375 0 0 1-.375.375z"
-              ></path>
-              <path
-                fill="#01CBB1"
-                d="M11.922 22.977c-.477 0-.956-.032-1.437-.099-4.972-.675-8.781-4.797-9.058-9.799a.375.375 0 0 1 .354-.395c.194-.035.384.146.395.354.257 4.643 3.794 8.47 8.41 9.098a9.684 9.684 0 0 0 7.207-1.897 9.675 9.675 0 0 0 3.754-6.438.368.368 0 0 1 .423-.32.375.375 0 0 1 .32.422 10.416 10.416 0 0 1-4.043 6.932 10.402 10.402 0 0 1-6.325 2.142"
-              ></path>
-              <path
-                fill="#01D997"
-                stroke-width=".25"
-                stroke="#01CBB1"
-                d="M3.835 14.598a.244.244 0 0 1-.344.031l-1.659-1.38-1.256 1.754a.244.244 0 0 1-.341.057.244.244 0 0 1-.057-.34l1.563-2.182 2.062 1.716c.104.087.118.24.032.344z"
-              ></path>
-              <path
-                fill="#01CBB1"
-                stroke-width=".25"
-                stroke="#01CBB1"
-                d="M20.06 10.602a.244.244 0 0 1 .345-.008l1.56 1.494 1.375-1.666a.244.244 0 0 1 .343-.032c.104.086.118.24.032.344l-1.708 2.068-1.94-1.854a.245.245 0 0 1-.007-.346z"
-              ></path>
-              <path
-                fill="#01CBB1"
-                d="M22.01 12.648a.375.375 0 0 1-.375-.367c-.095-4.819-3.638-8.789-8.423-9.441-5.31-.713-10.237 3.015-10.96 8.335a.375.375 0 0 1-.743-.101c.78-5.73 6.075-9.76 11.805-8.977 5.152.702 8.967 4.98 9.071 10.168a.376.376 0 0 1-.368.383h-.007z"
-              ></path>
-            </svg>
-          </div>
-        </ProfessionalExpCard>
-      </nav>
+            <h3 class="capitalize text-xl">ts interpreter</h3>
+            <p class="text-muted-foreground max-w-xs">
+              programming language made from scratch with typescript
+            </p>
+          </a>
+        </li>
+      </ol>
     </section>
   </main>
 
-  <footer class="px-max-width mt-16">
-    <div
-      class="flex items-center text-sm font-light text-muted-foreground justify-between py-5 border-border border-t"
-    >
-      <p class="capitalize">2023 - augustin sorel</p>
-
-      <nav class="space-x-2">
-        <Link href="./CV-2024-EN.pdf" variant="underline" target="_blank">
-          {"view CV"}
-        </Link>
-
-        <Link
-          href="https://github.com/augustinsorel"
-          variant="underline"
-          target="_blank"
-        >
-          {"Gtihub"}
-        </Link>
-      </nav>
-    </div>
+  <footer
+    class="flex items-center justify-between gap-1 text-sm text-muted-foreground"
+  >
+    <p data-current-full-year></p>
+    <nav class="space-x-1">
+      <a
+        href="/CV-2024-EN.pdf"
+        target="_blank"
+        class="hover:underline ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        >resume</a
+      >
+      <a
+        href="https://github.com/AugustinSorel/"
+        target="_blank"
+        class="hover:underline ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        >github</a
+      >
+    </nav>
   </footer>
 </Layout>
+
+<script>
+  for (const el of document.querySelectorAll("[data-current-full-year]")) {
+    el.textContent = new Date().getFullYear().toString();
+  }
+</script>
