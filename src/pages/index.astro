@@ -5,10 +5,10 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
   <header class="flex items-center justify-between">
     <h1 class="capitalize text-muted-foreground">augustin sorel</h1>
-    <fieldset class="text-muted-foreground text-xs" data-theme-togglers>
+    <fieldset class="text-xs text-muted-foreground" data-theme-togglers>
       <legend class="sr-only">change color theme</legend>
       <label
-        class="cursor-pointer checked:text-foreground transition-colors hover:text-foreground [&:has(input:checked)]:text-foreground ring-offset-background [&:has(input:focus-visible)]:outline-none [&:has(input:focus-visible)]:ring-2 [&:has(input:focus-visible)]:ring-ring [&:has(input:focus-visible)]:ring-offset-2"
+        class="cursor-pointer ring-offset-background transition-colors checked:text-foreground hover:text-foreground [&:has(input:checked)]:text-foreground [&:has(input:focus-visible)]:outline-none [&:has(input:focus-visible)]:ring-2 [&:has(input:focus-visible)]:ring-ring [&:has(input:focus-visible)]:ring-offset-2"
       >
         <input
           name="theme"
@@ -21,14 +21,14 @@ import Layout from "../layouts/Layout.astro";
       </label>
       <span>/</span>
       <label
-        class="cursor-pointer checked:text-foreground transition-colors hover:text-foreground [&:has(input:checked)]:text-foreground ring-offset-background [&:has(input:focus-visible)]:outline-none [&:has(input:focus-visible)]:ring-2 [&:has(input:focus-visible)]:ring-ring [&:has(input:focus-visible)]:ring-offset-2"
+        class="cursor-pointer ring-offset-background transition-colors checked:text-foreground hover:text-foreground [&:has(input:checked)]:text-foreground [&:has(input:focus-visible)]:outline-none [&:has(input:focus-visible)]:ring-2 [&:has(input:focus-visible)]:ring-ring [&:has(input:focus-visible)]:ring-offset-2"
       >
         <input name="theme" type="radio" class="sr-only" value="light" />
         light
       </label>
       <span>/</span>
       <label
-        class="cursor-pointer checked:text-foreground transition-colors hover:text-foreground [&:has(input:checked)]:text-foreground ring-offset-background [&:has(input:focus-visible)]:outline-none [&:has(input:focus-visible)]:ring-2 [&:has(input:focus-visible)]:ring-ring [&:has(input:focus-visible)]:ring-offset-2"
+        class="cursor-pointer ring-offset-background transition-colors checked:text-foreground hover:text-foreground [&:has(input:checked)]:text-foreground [&:has(input:focus-visible)]:outline-none [&:has(input:focus-visible)]:ring-2 [&:has(input:focus-visible)]:ring-ring [&:has(input:focus-visible)]:ring-offset-2"
       >
         <input name="theme" type="radio" class="sr-only" value="dark" />
         dark
@@ -39,7 +39,7 @@ import Layout from "../layouts/Layout.astro";
   <main class="space-y-20">
     <section class="space-y-3">
       <div
-        class="relative bg-muted rounded-full w-max flex items-center justify-center after:h-8 after:w-8 after:bg-background after:absolute after:bottom-0 after:-right-2 after:rounded-full after:content-['🎉'] after:flex after:items-center after:justify-center after:shadow-lg transition-colors after:transition-colors"
+        class="relative flex w-max items-center justify-center rounded-full bg-muted transition-colors after:absolute after:-right-2 after:bottom-0 after:flex after:h-8 after:w-8 after:items-center after:justify-center after:rounded-full after:bg-background after:shadow-lg after:transition-colors after:content-['🎉']"
       >
         <img
           src="/avatar.png"
@@ -49,7 +49,7 @@ import Layout from "../layouts/Layout.astro";
           class="translate-y-0.5"
         />
       </div>
-      <h2 class="first-letter:capitalize text-2xl">i craft interfaces</h2>
+      <h2 class="text-2xl first-letter:capitalize">i craft interfaces</h2>
       <p class="text-muted-foreground">
         I’m a passionate full-stack developer with a strong focus on crafting
         efficient, scalable, and user-friendly applications. My journey in tech
@@ -65,13 +65,13 @@ import Layout from "../layouts/Layout.astro";
           <a
             href="https://github.com/AugustinSorel/gym-graphs"
             target="_blank"
-            class="relative flex flex-col bg-background hover:bg-background/90 focus-visible:bg-background/90 transition-colors rounded-md p-3 before:-inset-1 before:absolute before:bg-red-500 before:-z-10 before:rounded-[10px] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:bg-[linear-gradient(to_right,theme(colors.purple.400),theme(colors.pink.300),theme(colors.orange.400),theme(colors.pink.300),theme(colors.purple.400))] before:bg-[length:200%_auto] before:animate-gradient ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            class="relative flex flex-col rounded-md bg-background p-3 ring-offset-background transition-colors before:absolute before:-inset-1 before:-z-10 before:animate-gradient before:rounded-[10px] before:bg-red-500 before:bg-[linear-gradient(to_right,theme(colors.purple.400),theme(colors.pink.300),theme(colors.orange.400),theme(colors.pink.300),theme(colors.purple.400))] before:bg-[length:200%_auto] before:opacity-0 before:transition-opacity hover:bg-background/90 hover:before:opacity-100 focus-visible:bg-background/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            <time datetime="2024-08-01" class="text-muted-foreground text-sm"
+            <time datetime="2024-08-01" class="text-sm text-muted-foreground"
               >aug 2024</time
             >
-            <h3 class="capitalize text-xl">gym graphs</h3>
-            <p class="text-muted-foreground max-w-xs">
+            <h3 class="text-xl capitalize">gym graphs</h3>
+            <p class="max-w-xs text-muted-foreground">
               Gym Graphs allows users to track their gym progress with the help
               of graphs.
             </p>
@@ -81,13 +81,13 @@ import Layout from "../layouts/Layout.astro";
           <a
             href="https://github.com/AugustinSorel/serendipjs"
             target="_blank"
-            class="relative flex flex-col bg-background hover:bg-background/90 focus-visible:bg-background/90 transition-colors rounded-md p-3 before:-inset-1 before:absolute before:bg-red-500 before:-z-10 before:rounded-[10px] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:bg-[linear-gradient(to_right,theme(colors.purple.400),theme(colors.pink.300),theme(colors.orange.400),theme(colors.pink.300),theme(colors.purple.400))] before:bg-[length:200%_auto] before:animate-gradient ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            class="relative flex flex-col rounded-md bg-background p-3 ring-offset-background transition-colors before:absolute before:-inset-1 before:-z-10 before:animate-gradient before:rounded-[10px] before:bg-red-500 before:bg-[linear-gradient(to_right,theme(colors.purple.400),theme(colors.pink.300),theme(colors.orange.400),theme(colors.pink.300),theme(colors.purple.400))] before:bg-[length:200%_auto] before:opacity-0 before:transition-opacity hover:bg-background/90 hover:before:opacity-100 focus-visible:bg-background/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            <time datetime="2024-02-01" class="text-muted-foreground text-sm"
+            <time datetime="2024-02-01" class="text-sm text-muted-foreground"
               >feb 2024</time
             >
-            <h3 class="capitalize text-xl">serendipJs</h3>
-            <p class="text-muted-foreground max-w-xs">
+            <h3 class="text-xl capitalize">serendipJs</h3>
+            <p class="max-w-xs text-muted-foreground">
               a fully functional front end framework written from scratch
             </p>
           </a>
@@ -96,13 +96,13 @@ import Layout from "../layouts/Layout.astro";
           <a
             href="https://github.com/AugustinSorel/ts-interpreter"
             target="_blank"
-            class="relative flex flex-col bg-background hover:bg-background/90 focus-visible:bg-background/90 transition-colors rounded-md p-3 before:-inset-1 before:absolute before:bg-red-500 before:-z-10 before:rounded-[10px] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:bg-[linear-gradient(to_right,theme(colors.purple.400),theme(colors.pink.300),theme(colors.orange.400),theme(colors.pink.300),theme(colors.purple.400))] before:bg-[length:200%_auto] before:animate-gradient ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            class="relative flex flex-col rounded-md bg-background p-3 ring-offset-background transition-colors before:absolute before:-inset-1 before:-z-10 before:animate-gradient before:rounded-[10px] before:bg-red-500 before:bg-[linear-gradient(to_right,theme(colors.purple.400),theme(colors.pink.300),theme(colors.orange.400),theme(colors.pink.300),theme(colors.purple.400))] before:bg-[length:200%_auto] before:opacity-0 before:transition-opacity hover:bg-background/90 hover:before:opacity-100 focus-visible:bg-background/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            <time datetime="2023-08-01" class="text-muted-foreground text-sm"
+            <time datetime="2023-08-01" class="text-sm text-muted-foreground"
               >aug 2023</time
             >
-            <h3 class="capitalize text-xl">ts interpreter</h3>
-            <p class="text-muted-foreground max-w-xs">
+            <h3 class="text-xl capitalize">ts interpreter</h3>
+            <p class="max-w-xs text-muted-foreground">
               programming language made from scratch with typescript
             </p>
           </a>
@@ -119,13 +119,13 @@ import Layout from "../layouts/Layout.astro";
       <a
         href="/CV-2024-EN.pdf"
         target="_blank"
-        class="hover:underline ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        class="ring-offset-background transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >resume</a
       >
       <a
         href="https://github.com/AugustinSorel/"
         target="_blank"
-        class="hover:underline ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+        class="ring-offset-background transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >github</a
       >
     </nav>
