@@ -136,7 +136,25 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <script>
-  for (const el of document.querySelectorAll("[data-current-full-year]")) {
-    el.textContent = new Date().getFullYear().toString();
-  }
+  document.querySelectorAll("[data-current-full-year]").forEach((year) => {
+    year.textContent = new Date().getFullYear().toString();
+  });
+
+  document
+    .querySelectorAll(`input[value='${localStorage.getItem("theme")}']`)
+    .forEach((input) => input.setAttribute("checked", true));
+
+  document.querySelectorAll("[data-theme-togglers]").forEach((toggler) => {
+    toggler.addEventListener("change", (e) => {
+      const theme = e.target.value;
+
+      if (theme === "system") {
+        localStorage.removeItem("theme");
+        document.documentElement.removeAttribute("data-theme");
+      } else {
+        localStorage.setItem("theme", theme);
+        document.documentElement.setAttribute("data-theme", theme);
+      }
+    });
+  });
 </script>

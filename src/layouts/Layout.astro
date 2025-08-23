@@ -1,3 +1,7 @@
+---
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,38 +11,12 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>augustin</title>
-    <script>
-      const THEME_OWNER = document.documentElement;
-      const THEME_STORAGE_KEY = "theme";
+    <script is:inline>
+      const cachedTheme = localStorage.getItem("theme");
 
-      const cachedTheme = localStorage.getItem(THEME_STORAGE_KEY);
       if (cachedTheme) {
-        THEME_OWNER.dataset[THEME_STORAGE_KEY] = cachedTheme;
+        document.documentElement.dataset["theme"] = cachedTheme;
       }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const initialTheme = cachedTheme ?? "system";
-
-        for (const container of document.querySelectorAll(
-          "[data-theme-togglers]",
-        )) {
-          container.querySelector("input[checked]")?.removeAttribute("checked");
-          container
-            .querySelector(`input[value="${initialTheme}"]`)
-            ?.setAttribute("checked", "");
-
-          container.addEventListener("change", (e) => {
-            const theme = (e.target as HTMLInputElement)?.value;
-            if (theme === "system") {
-              delete THEME_OWNER.dataset[THEME_STORAGE_KEY];
-              localStorage.removeItem(THEME_STORAGE_KEY);
-            } else {
-              THEME_OWNER.dataset[THEME_STORAGE_KEY] = theme;
-              localStorage.setItem(THEME_STORAGE_KEY, theme);
-            }
-          });
-        }
-      });
     </script>
     {
       import.meta.env.PROD && (
@@ -63,48 +41,3 @@
     <slot />
   </body>
 </html>
-<style is:global>
-  html,
-  html[data-theme="light"] {
-    color-scheme: light;
-
-    --foreground: 0 0 0%;
-    --background: 0 0 100%;
-
-    --muted: 0 0 95%;
-    --muted-foreground: 0 0 40%;
-
-    --ring: 0 0 0%;
-  }
-
-  html[data-theme="dark"] {
-    color-scheme: dark;
-
-    --foreground: 0 0 100%;
-    --background: 0 0 0%;
-
-    --muted: 0 0 5%;
-    --muted-foreground: 0 0 60%;
-
-    --ring: 0 0 100%;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    html:not([data-theme]) {
-      color-scheme: dark;
-
-      --foreground: 0 0 100%;
-      --background: 0 0 0%;
-
-      --muted: 0 0 5%;
-      --muted-foreground: 0 0 60%;
-
-      --ring: 0 0 100%;
-    }
-  }
-
-  :root {
-    --max-width: 40rem;
-    --padding-max-width: max(calc((100vw - var(--max-width)) / 2), 1rem);
-  }
-</style>

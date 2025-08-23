@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-ring: var(--ring);
+
+  --spacing-max-width: var(--padding-max-width);
+}
+
+@layer base {
+  html {
+    color-scheme: light dark;
+  }
+
+  [data-theme="light"] {
+    color-scheme: light;
+  }
+
+  [data-theme="dark"] {
+    color-scheme: dark;
+  }
+
+  :root {
+    --foreground: light-dark(hsl(0 0 0%), hsl(0 0 100%));
+    --background: light-dark(hsl(0 0 100%), hsl(0 0 0%));
+
+    --muted: light-dark(hsl(0 0 95%), hsl(0 0 5%));
+    --muted-foreground: light-dark(hsl(0 0 40%), hsl(0 0 60%));
+
+    --ring: light-dark(hsl(0 0 0%), hsl(0 0 100%));
+
+    --max-width: 40rem;
+    --padding-max-width: max(calc((100vw - var(--max-width)) / 2), 1rem);
+  }
+}
