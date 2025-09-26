@@ -13,18 +13,11 @@
     {
       devShells.${system} = {
         default =
-          let
-            cv-watch = pkgs.writeShellScriptBin "cv_watch" ''
-              typst watch ./cv.typ ./public/cv.pdf
-            '';
-          in
           pkgs.mkShell
             {
               buildInputs = with pkgs;[
                 bun
                 typescript
-                typst
-                cv-watch
               ];
             };
       };
